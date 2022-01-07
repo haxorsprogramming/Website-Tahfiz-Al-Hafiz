@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class TblSantri extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('tbl_santri', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('id_santri', 20);
+            $table -> char('nama', 200);
+            $table -> char('jk', 1);
+            $table -> date('tanggal_lahir') -> nullable();
+            $table -> char('tempat_lahir', 200) -> nullable();
+            $table -> char('no_hp', 30) -> nullable();
+            $table -> char('email', 200) -> nullable();
+            $table -> timestamps(); 
+            $table -> char('active', 1);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('tbl_santri');
+    }
+}
