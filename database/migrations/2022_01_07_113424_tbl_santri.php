@@ -17,7 +17,7 @@ class TblSantri extends Migration
             $table -> id();
             $table -> char('id_santri', 20);
             $table -> char('nama', 200);
-            $table -> char('jk', 1);
+            $table -> char('jk', 1); // L - P
             $table -> date('tanggal_lahir') -> nullable();
             $table -> char('tempat_lahir', 200) -> nullable();
             $table -> char('no_hp', 30) -> nullable();
