@@ -13,7 +13,15 @@ class TblSpp extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_spp', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('token_pembayaran', 50);
+            $table -> char('id_santri', 20);
+            $table -> char('bulan');
+            $table -> double('total', 30);
+            $table -> timestamps(); 
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class TblSpp extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_spp');
     }
 }
