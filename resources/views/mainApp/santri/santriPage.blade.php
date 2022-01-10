@@ -27,9 +27,16 @@
                     @else
                     <td>Perempuan</td>
                     @endif
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $santri -> alamat }}</td>
+                    <td>{{ $santri -> kafilahData -> nama }}</td>
+                    <td>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-primary">
+                            <i class="fas fa-exclamation-circle"></i> Detail
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-sm btn-warning">
+                            <i class="fas fa-trash-alt"></i> Hapus
+                        </a>
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -85,6 +92,10 @@
                 <div class="card card-primary">
                     <div class="card-header"></div>
                     <div class="card-body">
+                        <div class="form-group">
+                            <label>Alamat</label>
+                            <input type="text" class="form-control" id="txtAlamat">
+                        </div>
                         <div class="form-group">
                             <label>No Hp (Orangtua)</label>
                             <input type="text" class="form-control" id="txtNoHp">

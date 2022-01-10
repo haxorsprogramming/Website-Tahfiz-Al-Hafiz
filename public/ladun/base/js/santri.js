@@ -26,7 +26,8 @@ var santriApp = new Vue({
             let hp = document.querySelector("#txtNoHp").value;
             let email = document.querySelector("#txtEmail").value;
             let kafilah = document.querySelector("#txtKafilah").value;
-            let ds = {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah}
+            let alamat = document.querySelector("#txtAlamat").value;
+            let ds = {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah, 'alamat':alamat}
             axios.post(rProcessAddSantri, ds).then(function(res){
                 let obj = res.data;
                 pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data santri');

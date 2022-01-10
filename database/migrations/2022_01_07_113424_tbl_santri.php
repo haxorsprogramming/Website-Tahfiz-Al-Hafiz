@@ -20,6 +20,7 @@ class TblSantri extends Migration
             $table -> char('jk', 1); // L - P
             $table -> date('tanggal_lahir') -> nullable();
             $table -> char('tempat_lahir', 200) -> nullable();
+            $table -> text('alamat');
             $table -> char('no_hp', 30) -> nullable();
             $table -> char('email', 200) -> nullable();
             $table -> char('id_kafilah', 80);

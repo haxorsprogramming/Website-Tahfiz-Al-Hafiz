@@ -14,11 +14,17 @@ class M_Santri extends Model
         'jk',
         'tanggal_lahir',
         'tempat_lahir',
+        'alamat',
         'no_hp',
         'email',
         'active',
         'id_kafilah'
     ];
+
+    public function kafilahData()
+    {
+        return $this -> belongsTo(M_Kafilah::class, 'id_kafilah', 'id_kafilah');
+    }
 
 }
 

@@ -26,6 +26,7 @@ class C_Santri extends Controller
         $santri -> jk = $request -> jk;
         $santri -> tanggal_lahir = $request -> tgl;
         $santri -> tempat_lahir = $request -> tmpt;
+        $santri -> alamat = $request -> alamat;
         $santri -> no_hp = $request -> hp;
         $santri -> email = $request -> email;
         $santri -> id_kafilah = $request -> kafilah;
