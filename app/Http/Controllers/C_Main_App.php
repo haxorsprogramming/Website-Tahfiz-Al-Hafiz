@@ -10,4 +10,8 @@ class C_Main_App extends Controller
     {
         return view('mainApp.mainAppPage');
     }
+    public function dashboardPage()
+    {
+        return view('mainApp.dashboardPage');
+    }
 }
