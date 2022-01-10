@@ -17,7 +17,23 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this -> createRole("1", "ADMINISTRASI", "User untuk mamanajemen seluruh kegiatan tahfiz");
-        $this -> createUser("tyo", "1", "admin");
+        $this -> createUser("admin", "1", "admin");
+        $this -> createKafilah("AL HALIM", "-", "HANIFAH");
+        $this -> createKafilah("AL FATTAH", "-", "MAULANA");
+        $this -> createKafilah("AR RAHMAN", "-", "DITA");
+    }
+
+    function createKafilah($nama, $deks, $userWali)
+    {
+        DB::table('tbl_kafilah') -> insert([
+            'id_kafilah' => Str::uuid(),
+            'nama' => $nama,
+            'deksripsi' => $deks,
+            'username_wali' => $userWali,
+            'created_at' => now(),
+            'updated_at' => now(),
+            'active' => '1'
+        ]);
     }
 
     function createUser($username, $role="1", $password)
