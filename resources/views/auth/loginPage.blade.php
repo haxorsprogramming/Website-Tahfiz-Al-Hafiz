@@ -41,7 +41,7 @@
 
                                             </div>
                                             <div class="mt-3">
-                                                <a id="btnMasuk" @click="loginAtc()" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="#!">Masuk</a>
+                                                <a id="btnMasuk" @click="loginAtc()" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="javascript:void(0)">Masuk</a>
                                             </div>
                                             <div class="mt-2">
                                                 <div style="padding-top:12px;">
@@ -61,20 +61,20 @@
             </div>
             <!-- container-scroller -->
             <!-- base:js -->
-            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-            <script src="{{ asset('ladun') }}/stisla/vendors/base/vendor.bundle.base.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-            <!-- endinject -->
-            <!-- inject:js -->
-            <script src="{{ asset('ladun') }}/stisla/js/template.js"></script>
-            <!-- endinject -->
-            <script>
-                const server = "{{ url('/') }}";
-            </script>
-            <script src="{{ asset('ladun') }}/stisla/js/login.js"></script>
+    <script src="{{ asset('ladun') }}/stisla/vendors/base/vendor.bundle.base.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="{{ asset('ladun') }}/stisla/js/template.js"></script>
+    <!-- endinject -->
+    <script>
+        const server = "{{ url('/') }}/";
+    </script>
+    <script src="{{ asset('ladun') }}/base/js/login.js"></script>
 </body>
 
 </html>
