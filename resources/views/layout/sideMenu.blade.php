@@ -15,6 +15,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="javascript:void(0)" @click="santriAtc()">Santri</a></li>
                     <li><a class="nav-link" href="javascript:void(0)" @click="pengurusAtc()">Pengurus</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)">Kafilah</a></li>
                 </ul>
             </li>
             <li><a class="nav-link" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Laporan</span></a></li>

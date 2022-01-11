@@ -15,7 +15,7 @@ class TblPengurus extends Migration
     {
         Schema::create('tbl_pengurus', function (Blueprint $table) {
             $table -> id();
-            $table -> char('id_pengurus', 1);
+            $table -> char('id_pengurus', 30);
             $table -> char('nama', 50);
             $table -> char('jk', 1);
             $table -> char('tempat_lahir', 200);

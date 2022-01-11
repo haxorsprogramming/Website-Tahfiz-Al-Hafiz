@@ -21,3 +21,5 @@ Route::post('/app/santri/add/process', [C_Santri::class, 'processAddSantri']);
 Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri']);
 // data pengurus 
 Route::get('/app/pengurus', [C_Pengurus::class, 'pengurusPage']);
+Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus']);
+Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePengurus']);

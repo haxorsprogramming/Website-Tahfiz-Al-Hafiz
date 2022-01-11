@@ -11,15 +11,33 @@
                 <tr>
                     <th>No</th>
                     <th>No. Induk</th>
-                    <th>Nama Santri</th>
+                    <th>Nama Pengurus</th>
                     <th>JK</th>
                     <th>Alamat</th>
-                    <th>Kafilah</th>
+                    <th>Jabatan</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-               
+            @foreach($dataPengurus as $pengurus)
+            <tr>
+                <td>{{ $loop -> iteration }}</td>
+                <td>{{ $pengurus -> id_pengurus }}</td>
+                <td><b>{{ $pengurus -> nama }}</b></td>
+                @if($pengurus -> jk == 'L')
+                <td>Laki Laki</td>
+                @else
+                <td>Perempuan</td>
+                @endif
+                <td>{{ $pengurus -> alamat }}</td>
+                <td>{{ $pengurus -> jabatan }}</td>
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-warning" @click="hapusAtc('{{ $pengurus -> id_pengurus }}')">
+                        <i class="fas fa-trash-alt"></i> Hapus
+                    </a>
+                </td>
+            </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
