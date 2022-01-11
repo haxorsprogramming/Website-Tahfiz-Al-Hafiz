@@ -10,6 +10,7 @@ use App\Models\M_Santri;
 
 class C_Santri extends Controller
 {
+    
     public function santriPage()
     {
         $kafilah = M_Kafilah::all();
@@ -17,6 +18,7 @@ class C_Santri extends Controller
         $dr = ['dataKafilah' => $kafilah, 'dataSantri' => $santri];
         return view('mainApp.santri.santriPage', $dr);
     }
+
     public function processAddSantri(Request $request)
     {
         // {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah}
@@ -30,11 +32,13 @@ class C_Santri extends Controller
         $santri -> no_hp = $request -> hp;
         $santri -> email = $request -> email;
         $santri -> id_kafilah = $request -> kafilah;
+        $santri -> status_ortu = $request -> ortu;
         $santri -> active = "1";
         $santri -> save();
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
+
     function getIdSantri()
     {
         $totalBk = M_Santri::count();
@@ -54,5 +58,12 @@ class C_Santri extends Controller
             $noGr = $huruf . sprintf("%07s", $urutan);
             return($noGr);
         }
+    }
+
+    function processDeleteSantri(Request $request)
+    {
+        M_Santri::where('id_santri', $request -> idSantri) -> delete();
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
     }
 }

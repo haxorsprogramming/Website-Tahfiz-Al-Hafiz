@@ -10,6 +10,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>No. Induk</th>
                         <th>Nama Santri</th>
                         <th>JK</th>
                         <th>Alamat</th>
@@ -21,7 +22,8 @@
                 @foreach($dataSantri as $santri)
                 <tr>
                     <td>{{ $loop -> iteration }}</td>
-                    <td>{{ $santri -> nama }}</td>
+                    <td>{{ $santri -> id_santri }}</td>
+                    <td><b>{{ $santri -> nama }}</b></td>
                     @if($santri -> jk == 'L')
                     <td>Laki Laki</td>
                     @else
@@ -33,7 +35,7 @@
                         <a href="javascript:void(0)" class="btn btn-sm btn-primary">
                             <i class="fas fa-exclamation-circle"></i> Detail
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-sm btn-warning">
+                        <a href="javascript:void(0)" class="btn btn-sm btn-warning" @click="hapusAtc('{{ $santri -> id_santri }}')">
                             <i class="fas fa-trash-alt"></i> Hapus
                         </a>
                     </td>
@@ -57,11 +59,11 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Nama Santri</label>
-                            <input type="text" class="form-control" id="txtNamaSantri">
+                            <label>Nama Santri **<small>Wajib di isi</small></label>
+                            <input type="text" class="form-control" id="txtNamaSantri" placeholder="Nama santri">
                         </div>
                         <div class="form-group">
-                            <label>Jenis Kelamin</label>
+                            <label>Jenis Kelamin **<small>Wajib di isi</small></label>
                             <select class="form-control" id="txtJk">
                                 <option value="none">--- Pilih jenis kelamin ---</option>
                                 <option value="L">Laki laki</option>
@@ -75,6 +77,15 @@
                         <div class="form-group">
                             <label>Tempat Lahir</label>
                             <input type="text" class="form-control" id="txtTempatLahir">
+                        </div>
+                        <div class="form-group">
+                            <label>Status Orang Tua **<small>Wajib di isi</small></label>
+                            <select class="form-control" id="txtStatusOrtu">
+                                <option value="LENGKAP">Lengkap</option>
+                                <option value="YATIM">Tidak ada ayah (YATIM)</option>
+                                <option value="PIATU">Tidak ada ibu (PIATU)</option>
+                                <option value="YATIM PIATU">Tidak ada ayah & ibu (YATIM PIATU)</option>
+                            </select>
                         </div>
                         <div>
                             <a href="javascript:void(0)" class="btn btn-lg btn-primary btn-icon icon-left" @click="prosesTambahSantriAtc()">
@@ -93,7 +104,7 @@
                     <div class="card-header"></div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Alamat</label>
+                            <label>Alamat **<small>Wajib di isi</small></label>
                             <input type="text" class="form-control" id="txtAlamat">
                         </div>
                         <div class="form-group">
@@ -105,9 +116,9 @@
                             <input type="text" class="form-control" id="txtEmail">
                         </div>
                         <div class="form-group">
-                            <label>Kafilah</label>
+                            <label>Kafilah **<small>Wajib di isi (Bisa di ganti kemudian)</small></label>
                             <select class="form-control" id="txtKafilah">
-                                <option>--- Pilih kafilah ---</option>
+                                <option value="none">--- Pilih kafilah ---</option>
                                 @foreach($dataKafilah as $kafilah)
                                 <option value="{{ $kafilah -> id_kafilah }}">{{ $kafilah -> nama }}</option>
                                 @endforeach

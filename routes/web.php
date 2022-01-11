@@ -17,3 +17,4 @@ Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);
 // data santri 
 Route::get('/app/santri', [C_Santri::class, 'santriPage']);
 Route::post('/app/santri/add/process', [C_Santri::class, 'processAddSantri']);
+Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri']);

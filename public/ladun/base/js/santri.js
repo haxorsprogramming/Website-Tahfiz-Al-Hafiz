@@ -1,5 +1,6 @@
 // route 
 var rProcessAddSantri = server + "app/santri/add/process";
+var rProcessDeleteSantri = server + "app/santri/delete/process";
 // vue object 
 var santriApp = new Vue({
     el : '#divSantri',
@@ -15,9 +16,9 @@ var santriApp = new Vue({
         },
         kembaliAtc : function()
         {
-
+            load_page(rSantri, "Santri");
         },
-        prosesTambahSantriAtc : function()
+        prosesTambahSantriAtc : async function()
         {
             let nama = document.querySelector("#txtNamaSantri").value;
             let jk = document.querySelector("#txtJk").value;
@@ -27,14 +28,34 @@ var santriApp = new Vue({
             let email = document.querySelector("#txtEmail").value;
             let kafilah = document.querySelector("#txtKafilah").value;
             let alamat = document.querySelector("#txtAlamat").value;
-            let ds = {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah, 'alamat':alamat}
-            axios.post(rProcessAddSantri, ds).then(function(res){
-                let obj = res.data;
+            let ortu = document.querySelector("#txtStatusOrtu").value;
+
+            if(nama === "" || jk === "none" || alamat === "" || kafilah === "none"){
+              pesanUmumApp('warning', 'Isi field !!!', 'Harap isi nama, jk, alamat, & kafilah');
+            }else{
+              let ds = {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah, 'alamat':alamat, 'ortu':ortu}
+
+              axios.post(rProcessAddSantri, ds).then(function(res){
                 pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data santri');
                 load_page(rSantri, "Santri");
-            });
+              });
+            }
+
+        },
+        hapusAtc : function(idSantri)
+        {
+            confirmQuest('info', 'Konfirmasi', 'Hapus data santri ...?', function (x) {deleteConfirm(idSantri)});
         }
     }
 });
 // inisialisasi 
 $("#tblSantri").dataTable();
+
+function deleteConfirm(idSantri)
+{
+  let ds = {'idSantri':idSantri}
+    axios.post(rProcessDeleteSantri, ds).then(function(res){
+      pesanUmumApp('success', 'Sukses', 'Berhasil menghapus data santri');
+      load_page(rSantri, "Santri");
+    });
+}

@@ -24,6 +24,7 @@ class TblSantri extends Migration
             $table -> char('no_hp', 30) -> nullable();
             $table -> char('email', 200) -> nullable();
             $table -> char('id_kafilah', 80);
+            $table -> char('status_ortu', 20); //  LENGKAP - YATIM - PIATU - YATIM_PIATU
             $table -> timestamps(); 
             $table -> char('active', 1);
         });
