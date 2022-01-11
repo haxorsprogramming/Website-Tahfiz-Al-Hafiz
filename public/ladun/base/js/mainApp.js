@@ -1,5 +1,6 @@
 var rDashboard = server + "app/dashboard";
 var rSantri = server + "app/santri";
+var rPengurus = server + "app/pengurus";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -14,6 +15,10 @@ var menuApp = new Vue({
         santriAtc : function()
         {
             load_page(rSantri, "Santri");
+        },
+        pengurusAtc : function()
+        {
+            load_page(rPengurus, "Pengurus");
         }
     }
 });
