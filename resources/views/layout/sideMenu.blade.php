@@ -10,6 +10,8 @@
         </div>
         <ul class="sidebar-menu" style="margin-top:20px;">
             <li><a class="nav-link" @click="dashboardAtc()" href="javascript:void(0)"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Absensi Harian</span></a></li>
+            <li><a class="nav-link" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Pembayaran SPP</span></a></li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-newspaper"></i> <span>Data Master</span></a>
                 <ul class="dropdown-menu">
@@ -18,7 +20,14 @@
                     <li><a class="nav-link" href="javascript:void(0)">Kafilah</a></li>
                 </ul>
             </li>
-            <li><a class="nav-link" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Laporan</span></a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-newspaper"></i> <span>Keuangan</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="javascript:void(0)">Penggajian</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)">Pengeluaran</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)">Donasi</a></li>
+                </ul>
+            </li>
             <li><a class="nav-link" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt"></i> <span>Log Out</span></a></li>
         </ul>
     </aside>

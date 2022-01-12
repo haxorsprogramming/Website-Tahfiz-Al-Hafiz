@@ -10,4 +10,9 @@ class C_Home extends Controller
     {
         echo "indahnya";
     }
+
+    public function tesTailwind()
+    {
+        return view('test.tailwind');
+    }
 }

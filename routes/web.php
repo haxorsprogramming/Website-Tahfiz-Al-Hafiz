@@ -12,6 +12,7 @@ Route::get('/', [C_Home::class, 'homePage']);
 // auth 
 Route::get('/login', [C_Auth::class, 'loginPage']);
 Route::post('/auth/login/process', [C_Auth::class, 'loginProcess']);
+Route::get('/logout', [C_Auth::class, 'logoutProcess']);
 // main app 
 Route::get('/app', [C_Main_App::class, 'mainAppPage']);
 Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);
@@ -23,3 +24,6 @@ Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri
 Route::get('/app/pengurus', [C_Pengurus::class, 'pengurusPage']);
 Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus']);
 Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePengurus']);
+
+// testing 
+Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);
