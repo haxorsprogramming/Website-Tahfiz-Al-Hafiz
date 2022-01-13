@@ -5,6 +5,20 @@ var appSpp = new Vue({
 
     },
     methods : {
-        
+        tambahPembayaranSppAtc : function()
+        {
+            $("#divDataSpp").hide();
+            $("#divAddPembayaran").show();
+        },
+        showModalSantriAtc : function()
+        {
+        }
     }
 });
+// inisialisasi 
+$("#tblSpp").dataTable();
+
+// function bukaModal()
+// {
+//     $("#modalSantri").modal("show");
+// }
