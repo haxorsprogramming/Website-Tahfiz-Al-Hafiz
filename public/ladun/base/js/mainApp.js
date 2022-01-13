@@ -1,6 +1,7 @@
 var rDashboard = server + "app/dashboard";
 var rSantri = server + "app/santri";
 var rPengurus = server + "app/pengurus";
+var rPembayaranSpp = server + "app/pembayaran-spp";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -19,6 +20,10 @@ var menuApp = new Vue({
         pengurusAtc : function()
         {
             load_page(rPengurus, "Pengurus");
+        },
+        pembayaranSppAtc : function()
+        {
+            load_page(rPembayaranSpp, "Pembayaran SPP");
         }
     }
 });

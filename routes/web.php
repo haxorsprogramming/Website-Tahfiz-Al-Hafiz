@@ -7,6 +7,7 @@ use App\Http\Controllers\C_Auth;
 use App\Http\Controllers\C_Main_App;
 use App\Http\Controllers\C_Santri;
 use App\Http\Controllers\C_Pengurus;
+use App\Http\Controllers\C_Spp;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -24,6 +25,7 @@ Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri
 Route::get('/app/pengurus', [C_Pengurus::class, 'pengurusPage']);
 Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus']);
 Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePengurus']);
-
+// pembayaran spp 
+Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);
