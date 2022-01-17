@@ -15,4 +15,10 @@ class M_Spp extends Model
         'total',
         'active'
     ];
+
+    public function santriData()
+    {
+        return $this -> belongsTo(M_Santri::class, 'id_santri', 'id_santri');
+    }
+
 }

@@ -20,21 +20,39 @@
                     </thead>
                     <tbody>
                     @foreach($dataSantri as $santri)
-                        <tr>
+                        @php
+                            $bulan = date("m");
+                            $tahun = date("Y");
+                            $qSpp = DB::table('tbl_spp') -> where('id_santri', $santri -> id_santri) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
+                        @endphp
+                        @if($qSpp > 0)
+                            <tr style="background-color: #55efc4;">
+                        @else
+                            <tr>
+                        @endif
                             <td>{{ $loop -> iteration }}</td>
                             <td>{{ $santri -> id_santri }}</td>
                             <td>{{ $santri -> nama }}</td>
-                            <td></td>
-                            <td style="text-align: center;">
-                                <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary" @click="pilihSantriAtc('{{ $santri -> id_santri }}|{{ $santri -> nama }}')">Pilih</a>
-                            </td>
+                            @if($qSpp > 0)
+                                <td>Sudah bayar</td>
+                            @else
+                                <td>Belum bayar</td>
+                            @endif
+                            @if($qSpp > 0)
+                                <td></td>
+                            @else
+                                <td style="text-align: center;">
+                                    <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary" @click="pilihSantriAtc('{{ $santri -> id_santri }}|{{ $santri -> nama }}')">Pilih</a>
+                                </td>
+                            @endif
+                            
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
             <div class="modal-footer bg-whitesmoke br">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Tutup</button>
             </div>
         </div>
     </div>

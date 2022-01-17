@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\M_Santri;
 use App\Models\M_Spp;
@@ -12,8 +13,9 @@ class C_Spp extends Controller
 {
     public function pembayaranSppPage()
     {
+        $dataSpp = M_Spp::all();
         $dataSantri = M_Santri::all();
-        $dr = ['dataSantri' => $dataSantri];
+        $dr = ['dataSantri' => $dataSantri, 'dataSpp' => $dataSpp];
         return view('mainApp.spp.pembayaranSpp', $dr);
     }
     public function prosesPembayaranSpp(Request $request)

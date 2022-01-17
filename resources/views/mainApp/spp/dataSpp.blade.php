@@ -10,15 +10,32 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>No. Induk</th>
+                    <th>Token</th>
                     <th>Nama Santri</th>
+                    <th>Bulan / Tahun</th>
                     <th>Total Pembayaran</th>
-                    <th>Tanggal</th>
+                    <th>Tanggal Pembayaran</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                
+            @foreach($dataSpp as $spp)
+            @php
+                $monthNum = $spp -> bulan;
+                $mn = date("F", mktime(0, 0, 0, $monthNum, 10));
+            @endphp
+                <tr>
+                    <td>{{ $loop -> iteration }}</td>
+                    <td>{{ substr($spp -> token_pembayaran, 0, 10) }}</td>
+                    <td>{{ $spp -> santriData -> nama }}</td>
+                    <td>{{ $mn }} / {{ $spp -> tahun }}</td>
+                    <td>Rp. {{ number_format($spp -> total) }}</td>
+                    <td>{{ $spp -> created_at }}</td>
+                    <td>
+                        <a href="javascript:void(0)" class="btn btn-primary">Cetak</a>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
