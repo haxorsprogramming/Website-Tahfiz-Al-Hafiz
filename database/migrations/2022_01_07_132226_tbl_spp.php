@@ -17,7 +17,8 @@ class TblSpp extends Migration
             $table -> id();
             $table -> char('token_pembayaran', 50);
             $table -> char('id_santri', 20);
-            $table -> char('bulan');
+            $table -> char('bulan', 30);
+            $table -> char('tahun', 10);
             $table -> double('total', 30);
             $table -> timestamps(); 
             $table -> char('active', 1);

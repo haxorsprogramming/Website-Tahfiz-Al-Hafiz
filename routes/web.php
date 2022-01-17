@@ -27,5 +27,6 @@ Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus
 Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePengurus']);
 // pembayaran spp 
 Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
+Route::post('/app/pembayaran-spp/add/proses', [C_Spp::class, 'prosesPembayaranSpp']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);
