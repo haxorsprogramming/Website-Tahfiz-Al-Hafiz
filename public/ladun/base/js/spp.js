@@ -38,6 +38,10 @@ var appSpp = new Vue({
                     load_page(rPembayaranSpp, "Pembayaran SPP");
                 });
             }
+        },
+        kembaliAtc : function()
+        {
+            load_page(rPembayaranSpp, "Pembayaran SPP");
         }
     }
 });

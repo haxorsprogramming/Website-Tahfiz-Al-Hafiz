@@ -8,6 +8,7 @@ use App\Http\Controllers\C_Main_App;
 use App\Http\Controllers\C_Santri;
 use App\Http\Controllers\C_Pengurus;
 use App\Http\Controllers\C_Spp;
+use App\Http\Controllers\C_Absensi;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -28,5 +29,7 @@ Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePe
 // pembayaran spp 
 Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
 Route::post('/app/pembayaran-spp/add/proses', [C_Spp::class, 'prosesPembayaranSpp']);
+// absensi 
+Route::get('/app/absensi', [C_Absensi::class, 'absensiPage']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

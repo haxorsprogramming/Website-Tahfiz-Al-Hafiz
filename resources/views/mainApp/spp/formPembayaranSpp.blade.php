@@ -1,6 +1,6 @@
 <div id="divAddPembayaran" style="display: none;">
     <div>
-        <a href="javascript:void(0)" class="btn btn-primary btn-icon icon-left">
+        <a href="javascript:void(0)" class="btn btn-primary btn-icon icon-left" @click="kembaliAtc()">
             <i class="fas fa-reply"></i> Kembali
         </a>
     </div>
@@ -58,9 +58,11 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
             <div class="card card-primary">
-                <div class="card-header"></div>
+                <div class="card-header">Informasi Pembayaran SPP</div>
                 <div class="card-body">
-
+                    <ul>
+                        <li>Pembayaran spp untuk santri berlaku jika santri belum membayar spp tiap bulannya</li>
+                    </ul>
                 </div>
             </div>
         </div>

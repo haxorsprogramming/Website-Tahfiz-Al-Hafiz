@@ -13,7 +13,13 @@ class TblAbsensi extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tbl_absensi', function (Blueprint $table) {
+            $table -> id();
+            $table -> char('token_absensi', 50);
+            $table -> char('id_santri', 20);
+            $table -> timestamps(); 
+            $table -> char('active', 1);
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class TblAbsensi extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tbl_absensi');
     }
 }

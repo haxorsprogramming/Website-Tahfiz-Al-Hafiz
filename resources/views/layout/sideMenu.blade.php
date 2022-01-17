@@ -10,7 +10,7 @@
         </div>
         <ul class="sidebar-menu" style="margin-top:20px;">
             <li><a class="nav-link" @click="dashboardAtc()" href="javascript:void(0)"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
-            <li><a class="nav-link" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Absensi Harian</span></a></li>
+            <li><a class="nav-link" @click="absensiAtc()" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Absensi Harian</span></a></li>
             <li><a class="nav-link" @click="pembayaranSppAtc()" href="javascript:void(0)"><i class="fas fa-chart-bar"></i><span>Pembayaran SPP</span></a></li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-newspaper"></i> <span>Data Master</span></a>
