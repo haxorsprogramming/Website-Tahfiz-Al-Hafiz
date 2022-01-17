@@ -26,6 +26,7 @@
                     <li><a class="nav-link" href="javascript:void(0)">Penggajian</a></li>
                     <li><a class="nav-link" href="javascript:void(0)">Pengeluaran</a></li>
                     <li><a class="nav-link" href="javascript:void(0)">Donasi</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)">Cash Flow</a></li>
                 </ul>
             </li>
             <li><a class="nav-link" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt"></i> <span>Log Out</span></a></li>

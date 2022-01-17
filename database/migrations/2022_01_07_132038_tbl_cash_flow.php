@@ -15,10 +15,10 @@ class TblCashFlow extends Migration
     {
         Schema::create('tbl_cash_flow', function (Blueprint $table) {
             $table -> id();
-            $table -> char('token_flow', 1);
+            $table -> char('token_flow', 80);
             $table -> char('flow', 50); // MASUK - KELUAR 
             $table -> char('id_event', 70);
-            $table -> char('type', 20); // DONASI - PENGELUARAN - PEMASUKAN SPP
+            $table -> char('type', 20); // DONASI - PENGELUARAN - PEMBAYARAN SPP
             $table -> double('total', 20);
             $table -> timestamps(); 
             $table -> char('active', 1);

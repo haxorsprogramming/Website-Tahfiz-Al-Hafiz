@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\M_Santri;
 use App\Models\M_Spp;
+use App\Models\M_Cash_Flow;
 
 class C_Spp extends Controller
 {
@@ -21,6 +22,7 @@ class C_Spp extends Controller
     public function prosesPembayaranSpp(Request $request)
     {
         // {'idSantri':idSantri, 'tahun':tahun, 'bulan':bulan, 'total':total}
+        // save pembayaran 
         $token = Str::uuid();
         $spp = new M_Spp();
         $spp -> token_pembayaran = $token;
@@ -30,6 +32,16 @@ class C_Spp extends Controller
         $spp -> total = $request -> total; 
         $spp -> active = "1";
         $spp -> save();
+        // save cash flow 
+        $tokenFlow = Str::uuid();
+        $cf = new M_Cash_Flow();
+        $cf -> token_flow = $tokenFlow;
+        $cf -> flow = "MASUK";
+        $cf -> id_event = $token;
+        $cf -> type = "PEMBAYARAN_SPP";
+        $cf -> total = $request -> total;
+        $cf -> active = "1";
+        $cf -> save();
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }

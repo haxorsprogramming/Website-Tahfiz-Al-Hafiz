@@ -30,9 +30,14 @@ var appSpp = new Vue({
             let bulan = document.querySelector("#txtBulan").value;
             let total = document.querySelector("#txtTotalPembayaran").value;
             let ds = {'idSantri':idSantri, 'tahun':tahun, 'bulan':bulan, 'total':total}
-            axios.post(rProsesPembayaranSpp, ds).then(function(res){
-                console.log(res.data); 
-            });
+            if(idSantri === '' || total === ''){
+                pesanUmumApp('warning', 'Fail', 'Harap lengkapi field !!!')
+            }else{
+                axios.post(rProsesPembayaranSpp, ds).then(function(res){
+                    pesanUmumApp('success', 'Sukses', 'Berhasil memproses pembayaran SPP ..'); 
+                    load_page(rPembayaranSpp, "Pembayaran SPP");
+                });
+            }
         }
     }
 });
