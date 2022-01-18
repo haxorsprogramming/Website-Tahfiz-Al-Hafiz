@@ -7,9 +7,15 @@ var appAbsensi = new Vue({
     methods : {
         tambahAbsensiAtc : function()
         {
-
+            $("#divDataAbsensi").hide();
+            $("#divTambahAbsensi").show();
+        },
+        setAbsensiAtc : function()
+        {
+            
         }
     }
 });
 // inisialisasi 
 $("#tblAbsensi").dataTable();
+$("#tblDataSantri").dataTable();
