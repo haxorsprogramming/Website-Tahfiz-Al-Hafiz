@@ -17,7 +17,17 @@
                 </tr>
             </thead>
             <tbody>
-                
+            @foreach($dataAbsensi as $absensi)
+            <tr>
+                <td>{{ $loop -> iteration }}</td>
+                <td>{{ substr($absensi -> token_absensi, 0, 7) }} ...</td>
+                <td>{{ $absensi -> santriData -> nama }}</td>
+                <td>{{ $absensi -> created_at }}</td>
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-primary" @click="hapusAbsensiAtc('{{ $absensi -> token_absensi }}')">Hapus</a>
+                </td>
+            </tr>
+            @endforeach
             </tbody>
         </table>
     </div>

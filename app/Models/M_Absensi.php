@@ -18,4 +18,9 @@ class M_Absensi extends Model
         'active'
     ];
     
+    public function santriData()
+    {
+        return $this -> belongsTo(M_Santri::class, 'id_santri', 'id_santri');
+    }
+
 }

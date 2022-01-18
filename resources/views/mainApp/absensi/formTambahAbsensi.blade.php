@@ -24,6 +24,20 @@
                         </thead>
                         <tbody>
                             @foreach($dataSantri as $santri)
+                            @php
+                                $idSantri = $santri -> id_santri;
+                                $tanggal = date("d");
+                                $bulan = date("m");
+                                $tahun = date("Y");
+                                $cekAbsensi = DB::table('tbl_absensi') -> where('id_santri', $idSantri) -> where('tanggal', $tanggal) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
+                            @endphp
+                            <?php
+                            if($cekAbsensi < 1){
+                                $stCheck = "";
+                            }else{
+                                $stCheck = "checked";
+                            }
+                            ?>
                             <tr>
                                 <td>{{ $loop -> iteration }}</td>
                                 <td>{{ $santri -> id_santri }}</td>
@@ -31,7 +45,7 @@
                                 <td>{{ $santri -> kafilahData -> nama }}</td>
                                 <td>
                                     <label class="custom-switch mt-2">
-                                        <input type="checkbox" @click="setAbsensiAtc('{{ $santri -> id_santri }}|{{ $santri -> nama }}')" name="custom-switch-checkbox" id="ck_{{ $santri -> id_santri }}" class="custom-switch-input">
+                                        <input type="checkbox" <?=$stCheck; ?> @click="setAbsensiAtc('{{ $santri -> id_santri }}|{{ $santri -> nama }}')" name="custom-switch-checkbox" id="ck_{{ $santri -> id_santri }}" class="custom-switch-input">
                                         <span class="custom-switch-indicator"></span>
                                     </label>
                                 </td>

@@ -1,4 +1,5 @@
 var rProsesAbsensi = server + "app/absensi/proses";
+var rProsesHapusAbsensi = server + "app/absensi/hapus/proses";
 // vue object 
 var appAbsensi = new Vue({
     el : "#divAbsensi",
@@ -24,9 +25,22 @@ var appAbsensi = new Vue({
                     position: 'topRight'
                 });
             });
+        },
+        hapusAbsensiAtc : function(token)
+        {
+            confirmQuest("warning", "Konfirmasi ...", "Hapus absensi? menghapus absensi akan mengembalikan status ketidakhadiran santri ...",  function (x) {konfirmasiHapus(token)});
         }
     }
 });
 // inisialisasi 
 $("#tblAbsensi").dataTable();
 $("#tblDataSantri").dataTable();
+
+function konfirmasiHapus(token)
+{
+    let dr = {'token':token}
+    axios.post(rProsesHapusAbsensi, dr).then(function(res){
+        pesanUmumApp('success', 'Sukses', 'Berhasil menghapus data absensi santri ...');
+        load_page(rAbsensi, "Absensi Santri");
+    });
+}
