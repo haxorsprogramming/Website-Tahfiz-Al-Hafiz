@@ -2,7 +2,7 @@
 <div id="divDataAbsensi">
     <div style="margin-bottom:15px;">
         <a href="javascript:void(0)" class="btn btn-lg btn-primary  btn-icon icon-left" @click="tambahAbsensiAtc()">
-            <i class="fas fa-plus-circle"></i> Tambah Absensi
+            <i class="fas fa-plus-circle"></i> Rekap Absensi Hari Ini
         </a>
     </div>
     <div class="row" style="padding-left:20px;margin-right:10px;">

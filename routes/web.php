@@ -31,5 +31,6 @@ Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
 Route::post('/app/pembayaran-spp/add/proses', [C_Spp::class, 'prosesPembayaranSpp']);
 // absensi 
 Route::get('/app/absensi', [C_Absensi::class, 'absensiPage']);
+Route::post('/app/absensi/proses', [C_Absensi::class, 'prosesAbsensi']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

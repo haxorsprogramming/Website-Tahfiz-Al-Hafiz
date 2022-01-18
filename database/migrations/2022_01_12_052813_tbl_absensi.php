@@ -17,6 +17,9 @@ class TblAbsensi extends Migration
             $table -> id();
             $table -> char('token_absensi', 50);
             $table -> char('id_santri', 20);
+            $table -> char('tanggal', 2);
+            $table -> char('bulan', 2);
+            $table -> char('tahun', 4);
             $table -> timestamps(); 
             $table -> char('active', 1);
         });

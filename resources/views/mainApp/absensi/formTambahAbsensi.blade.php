@@ -19,7 +19,7 @@
                                 <th>ID Santri</th>
                                 <th>Nama</th>
                                 <th>Khafilah</th>
-                                <th>Aksi</th>
+                                <th>Kehadiran</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,9 +30,8 @@
                                 <td>{{ $santri -> nama }}</td>
                                 <td>{{ $santri -> kafilahData -> nama }}</td>
                                 <td>
-                                    <div class="control-label">Kehadiran</div>
                                     <label class="custom-switch mt-2">
-                                        <input type="checkbox" @click="setAbsensiAtc()" name="custom-switch-checkbox" id="ck_{{ $santri -> id_santri }}" class="custom-switch-input">
+                                        <input type="checkbox" @click="setAbsensiAtc('{{ $santri -> id_santri }}|{{ $santri -> nama }}')" name="custom-switch-checkbox" id="ck_{{ $santri -> id_santri }}" class="custom-switch-input">
                                         <span class="custom-switch-indicator"></span>
                                     </label>
                                 </td>

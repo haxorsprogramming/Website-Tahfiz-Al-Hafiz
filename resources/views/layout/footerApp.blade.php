@@ -16,6 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="{{ asset('ladun') }}/dashboard/stisla/js/scripts.js"></script>
+<script src="{{ asset('ladun') }}/iziToast/iziToast.min.js"></script>
 <!-- Page Specific JS File -->
 <script>
     const server = "{{ url('/') }}/";

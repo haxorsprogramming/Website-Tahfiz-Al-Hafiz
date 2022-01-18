@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/summernote-bs4.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/datatables.min.css">
+    <link rel="stylesheet" href="{{ asset('ladun') }}/iziToast/iziToast.min.css">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/style.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/components.css">

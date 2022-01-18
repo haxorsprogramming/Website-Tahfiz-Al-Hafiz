@@ -12,6 +12,9 @@ class M_Absensi extends Model
     protected $fillable = [
         'token_absensi',
         'id_santri',
+        'tanggal',
+        'bulan',
+        'tahun',
         'active'
     ];
     
