@@ -29,6 +29,10 @@ var appAbsensi = new Vue({
         hapusAbsensiAtc : function(token)
         {
             confirmQuest("warning", "Konfirmasi ...", "Hapus absensi? menghapus absensi akan mengembalikan status ketidakhadiran santri ...",  function (x) {konfirmasiHapus(token)});
+        },
+        kembaliAtc : function()
+        {
+            load_page(rAbsensi, "Absensi Santri");
         }
     }
 });

@@ -3,6 +3,7 @@ var rSantri = server + "app/santri";
 var rPengurus = server + "app/pengurus";
 var rPembayaranSpp = server + "app/pembayaran-spp";
 var rAbsensi = server + "app/absensi";
+var rPenggajian = server + "app/penggajian";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -29,6 +30,10 @@ var menuApp = new Vue({
         absensiAtc : function()
         {
             load_page(rAbsensi, "Absensi Santri");
+        },
+        penggajianAtc : function()
+        {
+            load_page(rPenggajian, "Penggajian Pengurus Tahfiz");
         }
     }
 });

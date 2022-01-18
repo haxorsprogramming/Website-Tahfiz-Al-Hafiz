@@ -10,6 +10,14 @@ use App\Models\M_Absensi;
 
 class C_Absensi extends Controller
 {
+
+    public function __construct()
+    {
+        $this -> tanggal = date("d");
+        $this -> bulan = date("m");
+        $this -> tahun = date("Y");
+    }
+
     public function absensiPage()
     {
         $dataSantri = M_Santri::all();
@@ -21,23 +29,20 @@ class C_Absensi extends Controller
     {
         $tokenAbsensi = Str::uuid();
         $idSantri = $request -> idSantri;
-        $tanggal = date("d");
-        $bulan = date("m");
-        $tahun = date("Y");
         // cek apakah sudah absensi 
-        $cekAbsensi = M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $tanggal) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
+        $cekAbsensi = M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $this -> tanggal) -> where('bulan', $this -> bulan) -> where('tahun', $this -> tahun) -> count();
         if($cekAbsensi < 1){
             $ab = new M_Absensi();
             $ab -> token_absensi = $tokenAbsensi;
             $ab -> id_santri = $idSantri;
-            $ab -> tanggal = $tanggal;
-            $ab -> bulan = $bulan;
-            $ab -> tahun = $tahun;
+            $ab -> tanggal = $this -> tanggal;
+            $ab -> bulan = $this -> bulan;
+            $ab -> tahun = $this -> tahun;
             $ab -> active = "1";
             $ab -> save();
             $status = "INSERT";
         }else{
-            M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $tanggal) -> where('bulan', $bulan) -> where('tahun', $tahun) -> delete();
+            M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $this -> tanggal) -> where('bulan', $this -> bulan) -> where('tahun', $this -> tahun) -> delete();
             $status = "DELETE";
         }
         

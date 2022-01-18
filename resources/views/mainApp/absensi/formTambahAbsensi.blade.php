@@ -1,7 +1,7 @@
 <!-- div form add absensi  -->
 <div id="divTambahAbsensi" style="display: none;">
     <div>
-        <a href="javascript:void(0)" class="btn btn-primary btn-icon icon-left">
+        <a href="javascript:void(0)" class="btn btn-primary btn-icon icon-left" @click="kembaliAtc()">
             <i class="fas fa-reply"></i> Kembali
         </a>
     </div>
