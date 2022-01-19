@@ -36,5 +36,6 @@ Route::post('/app/absensi/proses', [C_Absensi::class, 'prosesAbsensi']);
 Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi']);
 // penggajian 
 Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);
+Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

@@ -23,10 +23,12 @@
                     @foreach($dataPengurus as $pengurus)
                     <tr>
                         <td>{{ $loop -> iteration }}</td>
-                        <td><b>{{ $pengurus -> id_pengurus }}</b></td>
-                        <td>{{ $pengurus -> nama }}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $pengurus -> id_pengurus }}</td>
+                        <td><b>{{ $pengurus -> nama }}</b></td>
+                        <td>{{ $pengurus -> jabatan }}</td>
+                        <td>
+                            <a href="javascript:void(0)" data-dismiss="modal" class="btn btn-primary" @click="pilihPengurusAtc('{{ $pengurus -> id_pengurus }}|{{ $pengurus -> nama }}')">Pilih</a>
+                        </td>
                     </tr>
                     @endforeach
                     </tbody>
