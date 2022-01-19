@@ -20,4 +20,10 @@ class M_Penggajian extends Model
         'total_gaji',
         'active'
     ];
+
+    public function pengurusData()
+    {
+        return $this -> belongsTo(M_Pengurus::class, 'id_pengurus', 'id_pengurus');
+    }
+
 }

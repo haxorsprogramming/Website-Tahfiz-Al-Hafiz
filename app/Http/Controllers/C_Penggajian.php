@@ -4,17 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use App\Http\Controllers\C_Helper;
 use App\Models\M_Pengurus;
 use App\Models\M_Penggajian;
 
-
 class C_Penggajian extends Controller
 {
+    protected $helperCtr;
+
+    public function __construct(C_Helper $helperCtr)
+    {
+        $this -> helperCtr = $helperCtr;
+    }
+
     public function penggajianPage()
     {
         $dataPengurus = M_Pengurus::all();
-        $dr = ['dataPengurus' => $dataPengurus];
+        $dataPenggajian = M_Penggajian::all();
+        $dr = ['dataPengurus' => $dataPengurus, 'dataPenggajian' => $dataPenggajian];
         return view('mainApp.penggajian.penggajianPage', $dr);
     }
     public function prosesSplitPenggajian(Request $request)
@@ -33,6 +40,8 @@ class C_Penggajian extends Controller
         $split -> total_gaji = $request -> gp + $request -> tun - $request -> pot;
         $split -> active = "1";
         $split -> save(); 
+        // simpan cash flow 
+        $this -> helperCtr -> createCashFlow($token, "KELUAR", "PEMBAYARAN_GAJI", $request -> gp + $request -> tun - $request -> pot);
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }

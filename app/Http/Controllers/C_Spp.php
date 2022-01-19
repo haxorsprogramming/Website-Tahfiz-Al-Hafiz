@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\C_Helper;
 use App\Models\M_Santri;
 use App\Models\M_Spp;
 use App\Models\M_Cash_Flow;
 
 class C_Spp extends Controller
 {
+    protected $helperCtr;
+
+    public function __construct(C_Helper $helperCtr)
+    {
+        $this -> helperCtr = $helperCtr;
+    }
+
     public function pembayaranSppPage()
     {
         $dataSpp = M_Spp::all();
@@ -32,16 +39,8 @@ class C_Spp extends Controller
         $spp -> total = $request -> total; 
         $spp -> active = "1";
         $spp -> save();
-        // save cash flow 
-        $tokenFlow = Str::uuid();
-        $cf = new M_Cash_Flow();
-        $cf -> token_flow = $tokenFlow;
-        $cf -> flow = "MASUK";
-        $cf -> id_event = $token;
-        $cf -> type = "PEMBAYARAN_SPP";
-        $cf -> total = $request -> total;
-        $cf -> active = "1";
-        $cf -> save();
+        // simpan cash flow 
+        $this -> helperCtr -> createCashFlow($token, "MASUK", "PEMBAYARAN_SPP", $request -> total);
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }

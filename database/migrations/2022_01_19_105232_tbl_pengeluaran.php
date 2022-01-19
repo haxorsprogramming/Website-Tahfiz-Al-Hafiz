@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblCashFlow extends Migration
+class TblPengeluaran extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class TblCashFlow extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_cash_flow', function (Blueprint $table) {
+        Schema::create('tbl_pengeluaran', function (Blueprint $table) {
             $table -> id();
-            $table -> char('token_flow', 80);
-            $table -> char('flow', 50); // MASUK - KELUAR 
-            $table -> char('id_event', 70);
-            $table -> char('type', 20); // DONASI - PENGELUARAN - PEMBAYARAN SPP - PEMBAYARAN_GAJI
-            $table -> double('total', 20);
+            $table -> char('token', 50);
+            $table -> char('nama_pengeluaran', 200);
+            $table -> text('detail');
+            $table -> char('kategori', 50); // LISTRIK, ATK, PAJAK, AIR, KEBUTUHAN_TAHFIZ 
+            $table -> char('total', 30);
             $table -> timestamps(); 
             $table -> char('active', 1);
         });
@@ -32,6 +32,6 @@ class TblCashFlow extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_cash_flow');
+        Schema::dropIfExists('tbl_pengeluaran');
     }
 }

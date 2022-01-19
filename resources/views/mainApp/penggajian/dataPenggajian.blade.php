@@ -14,13 +14,26 @@
                             <tr>
                                 <th>No</th>
                                 <th>Token</th>
-                                <th>Nama Santri</th>
-                                <th>Kafilah</th>
-                                <th>Waktu Absen</th>
+                                <th>Nama Pengurus</th>
+                                <th>Tanggal Penggajian</th>
+                                <th>Total Gaji</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        
+                        <tbody>
+                        @foreach($dataPenggajian as $gaji)
+                        <tr>
+                            <td>{{ $loop -> iteration }}</td>
+                            <td>{{ substr($gaji -> token_penggajian, 0, 7) }} ...</td>
+                            <td>{{ $gaji -> pengurusData -> nama }}</td>
+                            <td>{{ Carbon\Carbon::parse($gaji-> tanggal_pembayaran) -> format('d-m-Y'); }}</td>
+                            <td>Rp. {{ number_format($gaji -> total_gaji) }}</td>
+                            <td>
+                                <a href="#!" class="btn btn-primary">Cetak Slip</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

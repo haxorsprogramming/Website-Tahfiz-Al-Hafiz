@@ -24,7 +24,7 @@
                 <a href="javascript:void(0)" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-newspaper"></i> <span>Keuangan</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="javascript:void(0)" @click="penggajianAtc()">Penggajian</a></li>
-                    <li><a class="nav-link" href="javascript:void(0)">Pengeluaran</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)" @click="pengeluaranAtc()">Pengeluaran</a></li>
                     <li><a class="nav-link" href="javascript:void(0)">Donasi</a></li>
                     <li><a class="nav-link" href="javascript:void(0)">Cash Flow</a></li>
                 </ul>

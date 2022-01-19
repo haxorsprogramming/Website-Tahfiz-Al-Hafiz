@@ -4,6 +4,7 @@ var rPengurus = server + "app/pengurus";
 var rPembayaranSpp = server + "app/pembayaran-spp";
 var rAbsensi = server + "app/absensi";
 var rPenggajian = server + "app/penggajian";
+var rPengeluaran = server + "app/pengeluaran";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -34,6 +35,10 @@ var menuApp = new Vue({
         penggajianAtc : function()
         {
             load_page(rPenggajian, "Penggajian Pengurus Tahfiz");
+        },
+        pengeluaranAtc : function()
+        {
+            load_page(rPengeluaran, "Pengeluaran Tahfiz");
         }
     }
 });

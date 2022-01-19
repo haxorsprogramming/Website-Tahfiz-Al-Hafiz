@@ -10,6 +10,7 @@ use App\Http\Controllers\C_Pengurus;
 use App\Http\Controllers\C_Spp;
 use App\Http\Controllers\C_Absensi;
 use App\Http\Controllers\C_Penggajian;
+use App\Http\Controllers\C_Pengeluaran;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -37,5 +38,7 @@ Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi'
 // penggajian 
 Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);
 Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
+// pengeluaran 
+Route::get('/app/pengeluaran', [C_Pengeluaran::class, 'pengeluaranPage']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);
