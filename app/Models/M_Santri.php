@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\M_Absensi;
+
 class M_Santri extends Model
 {
     protected $table = "tbl_santri";
@@ -25,6 +27,14 @@ class M_Santri extends Model
     public function kafilahData()
     {
         return $this -> belongsTo(M_Kafilah::class, 'id_kafilah', 'id_kafilah');
+    }
+
+    public function getAbsensiData($idSantri)
+    {
+        $tanggal = date("d");
+        $bulan = date("m");
+        $tahun = date("Y");
+        return M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $tanggal) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
     }
 
 }

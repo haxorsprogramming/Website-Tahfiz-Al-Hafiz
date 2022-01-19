@@ -26,10 +26,7 @@
                             @foreach($dataSantri as $santri)
                             @php
                                 $idSantri = $santri -> id_santri;
-                                $tanggal = date("d");
-                                $bulan = date("m");
-                                $tahun = date("Y");
-                                $cekAbsensi = DB::table('tbl_absensi') -> where('id_santri', $idSantri) -> where('tanggal', $tanggal) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
+                                $cekAbsensi = $santri -> getAbsensiData($idSantri);
                             @endphp
                             <?php
                             if($cekAbsensi < 1){

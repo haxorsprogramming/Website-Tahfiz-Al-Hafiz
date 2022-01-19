@@ -21,6 +21,7 @@
                                 <th>No</th>
                                 <th>Token</th>
                                 <th>Nama Santri</th>
+                                <th>Kafilah</th>
                                 <th>Waktu Absen</th>
                                 <th>Aksi</th>
                             </tr>
@@ -31,6 +32,7 @@
                                 <td>{{ $loop -> iteration }}</td>
                                 <td>{{ substr($absensi -> token_absensi, 0, 7) }} ...</td>
                                 <td>{{ $absensi -> santriData -> nama }}</td>
+                                <td>{{ $absensi -> getKafilahData($absensi -> id_santri) }}</td>
                                 <td>{{ Carbon\Carbon::parse($absensi-> created_at) -> format('d-m-Y H:i:s'); }}</td>
                                 <td>
                                     <a href="javascript:void(0)" class="btn btn-primary" @click="hapusAbsensiAtc('{{ $absensi -> token_absensi }}')">Hapus</a>
