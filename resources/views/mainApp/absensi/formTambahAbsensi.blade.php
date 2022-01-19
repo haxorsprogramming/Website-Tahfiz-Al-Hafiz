@@ -53,15 +53,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div>
-                        <a href="javascript:void(0)" class="btn btn-lg btn-primary btn-icon icon-left">
-                            <i class="fas fa-save"></i>Proses Absensi
-                        </a>
-                        &nbsp;&nbsp;
-                        <a href="javascript:void(0)" class="btn btn-lg btn-info btn-icon icon-left" id="btnClearForm">
-                            <i class="fas fa-i-cursor"></i> Clear
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
