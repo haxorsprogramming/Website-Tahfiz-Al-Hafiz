@@ -20,4 +20,8 @@ class C_Helper extends Controller
         $cf -> active = "1";
         $cf -> save();
     }
+    public function deleteCashFlow($idEvent)
+    {
+        M_Cash_Flow::where('id_event', $idEvent) -> delete();
+    }
 }

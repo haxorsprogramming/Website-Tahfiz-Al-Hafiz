@@ -40,5 +40,7 @@ Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);
 Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
 // pengeluaran 
 Route::get('/app/pengeluaran', [C_Pengeluaran::class, 'pengeluaranPage']);
+Route::post('/app/pengeluaran/tambah/proses', [C_Pengeluaran::class, 'prosesTambahPengeluaran']);
+Route::post('/app/pengeluaran/hapus/proses', [C_Pengeluaran::class, 'prosesHapusPengeluaran']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

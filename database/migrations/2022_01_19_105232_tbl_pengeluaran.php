@@ -17,9 +17,10 @@ class TblPengeluaran extends Migration
             $table -> id();
             $table -> char('token', 50);
             $table -> char('nama_pengeluaran', 200);
-            $table -> text('detail');
+            $table -> text('detail') -> nullable();
             $table -> char('kategori', 50); // LISTRIK, ATK, PAJAK, AIR, KEBUTUHAN_TAHFIZ 
             $table -> char('total', 30);
+            $table -> date('tanggal_pengeluaran');
             $table -> timestamps(); 
             $table -> char('active', 1);
         });
