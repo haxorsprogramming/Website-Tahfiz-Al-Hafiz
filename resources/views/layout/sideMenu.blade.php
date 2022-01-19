@@ -25,7 +25,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="javascript:void(0)" @click="penggajianAtc()">Penggajian</a></li>
                     <li><a class="nav-link" href="javascript:void(0)" @click="pengeluaranAtc()">Pengeluaran</a></li>
-                    <li><a class="nav-link" href="javascript:void(0)">Donasi</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)" @click="donasiAtc()">Donasi</a></li>
                     <li><a class="nav-link" href="javascript:void(0)">Cash Flow</a></li>
                 </ul>
             </li>

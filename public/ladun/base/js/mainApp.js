@@ -5,6 +5,7 @@ var rPembayaranSpp = server + "app/pembayaran-spp";
 var rAbsensi = server + "app/absensi";
 var rPenggajian = server + "app/penggajian";
 var rPengeluaran = server + "app/pengeluaran";
+var rDonasi = server + "app/donasi";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -39,6 +40,10 @@ var menuApp = new Vue({
         pengeluaranAtc : function()
         {
             load_page(rPengeluaran, "Pengeluaran Tahfiz");
+        },
+        donasiAtc : function()
+        {
+            load_page(rDonasi, "Donasi");
         }
     }
 });

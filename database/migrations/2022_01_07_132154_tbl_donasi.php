@@ -15,11 +15,12 @@ class TblDonasi extends Migration
     {
         Schema::create('tbl_donasi', function (Blueprint $table) {
             $table -> id();
-            $table -> char('token_flow', 1);
-            $table -> char('flow', 50); // MASUK - KELUAR 
-            $table -> char('id_event', 70);
-            $table -> char('type', 20); // DONASI - PENGELUARAN - PEMASUKAN SPP
-            $table -> double('total', 20);
+            $table -> char('token', 50);
+            $table -> char('nama_donatur', 200);
+            $table -> text('detail') -> nullable();
+            $table -> char('tipe', 30); //PERSEORANGAN - INSTANSI
+            $table -> date('tanggal_donasi');
+            $table -> char('nominal', 30);
             $table -> timestamps(); 
             $table -> char('active', 1);
         });

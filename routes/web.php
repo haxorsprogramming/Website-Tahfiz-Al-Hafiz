@@ -11,6 +11,7 @@ use App\Http\Controllers\C_Spp;
 use App\Http\Controllers\C_Absensi;
 use App\Http\Controllers\C_Penggajian;
 use App\Http\Controllers\C_Pengeluaran;
+use App\Http\Controllers\C_Donasi;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -42,5 +43,8 @@ Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPe
 Route::get('/app/pengeluaran', [C_Pengeluaran::class, 'pengeluaranPage']);
 Route::post('/app/pengeluaran/tambah/proses', [C_Pengeluaran::class, 'prosesTambahPengeluaran']);
 Route::post('/app/pengeluaran/hapus/proses', [C_Pengeluaran::class, 'prosesHapusPengeluaran']);
+// donasi 
+Route::get('/app/donasi', [C_Donasi::class, 'donasiPage']);
+Route::post('/app/donasi/tambah/proses', [C_Donasi::class, 'prosesTambahDonasi']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);
