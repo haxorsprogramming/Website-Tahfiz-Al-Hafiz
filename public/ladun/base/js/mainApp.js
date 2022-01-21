@@ -6,6 +6,7 @@ var rAbsensi = server + "app/absensi";
 var rPenggajian = server + "app/penggajian";
 var rPengeluaran = server + "app/pengeluaran";
 var rDonasi = server + "app/donasi";
+var rCashFlow = server + "app/cash-flow";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -44,6 +45,10 @@ var menuApp = new Vue({
         donasiAtc : function()
         {
             load_page(rDonasi, "Donasi");
+        },
+        cashFlowAtc : function()
+        {
+            load_page(rCashFlow, "Cash Flow");
         }
     }
 });

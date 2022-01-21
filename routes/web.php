@@ -12,6 +12,7 @@ use App\Http\Controllers\C_Absensi;
 use App\Http\Controllers\C_Penggajian;
 use App\Http\Controllers\C_Pengeluaran;
 use App\Http\Controllers\C_Donasi;
+use App\Http\Controllers\C_Cash_Flow;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -47,5 +48,7 @@ Route::post('/app/pengeluaran/hapus/proses', [C_Pengeluaran::class, 'prosesHapus
 Route::get('/app/donasi', [C_Donasi::class, 'donasiPage']);
 Route::post('/app/donasi/tambah/proses', [C_Donasi::class, 'prosesTambahDonasi']);
 Route::post('/app/donasi/hapus/proses', [C_Donasi::class, 'prosesHapusPengeluaran']);
+// cash flow 
+Route::get('/app/cash-flow', [C_Cash_Flow::class, 'cashFlow']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);
