@@ -42,4 +42,14 @@ class C_Donasi extends Controller
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
+
+    public function prosesHapusPengeluaran(Request $request)
+    {
+        $token = $request -> token;
+        M_Donasi::where('token', $token) -> delete();
+        // hapus cash flow 
+        $this -> helperCtr -> deleteCashFlow($token);
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
 }

@@ -46,5 +46,6 @@ Route::post('/app/pengeluaran/hapus/proses', [C_Pengeluaran::class, 'prosesHapus
 // donasi 
 Route::get('/app/donasi', [C_Donasi::class, 'donasiPage']);
 Route::post('/app/donasi/tambah/proses', [C_Donasi::class, 'prosesTambahDonasi']);
+Route::post('/app/donasi/hapus/proses', [C_Donasi::class, 'prosesHapusPengeluaran']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

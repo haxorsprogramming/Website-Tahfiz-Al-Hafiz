@@ -24,13 +24,15 @@
                 @foreach($dataDonasi as $donasi)
                 <tr>
                     <td>{{ $loop -> iteration }}</td>
-                    <td>{{ substr($donasi -> token_flow, 0, 7) }} ...</td>
+                    <td>{{ substr($donasi -> token, 0, 7) }} ...</td>
                     <td><b>{{ $donasi -> nama_donatur }}</b></td>
                     <td>{{ $donasi -> detail }}</td>
                     <td>{{ $donasi -> tipe }}</td>
                     <td>Rp. {{ number_format($donasi -> nominal) }}</td>
                     <td>{{ $donasi -> tanggal_donasi }}</td>
-                    <td></td>
+                    <td>
+                        <a href="javascript:void(0)" class="btn btn-warning" @click="hapusAtc('{{ $donasi -> token }}')">Hapus</a>
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>

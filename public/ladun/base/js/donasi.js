@@ -1,5 +1,6 @@
 // route 
 var rProsesTambahDonasi = server + "app/donasi/tambah/proses";
+var rProsesHapusDonasi = server + "app/donasi/hapus/proses";
 // vue object 
 var appDonasi = new Vue({
     el : '#divDonasi',
@@ -25,8 +26,21 @@ var appDonasi = new Vue({
                 pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data donasi ...');
                 load_page(rDonasi, "Donasi");
             });
+        },
+        hapusAtc : function(token)
+        {
+            confirmQuest('warning', 'Konfirmasi', 'Hapus data donasi ...?', function (x) {konfirmasiHapus(token)});
         }
     }
 });
 // inisialisasi 
 $("#tblDonasi").dataTable();
+
+function konfirmasiHapus(token)
+{
+    let ds = {'token':token}
+    axios.post(rProsesHapusDonasi, ds).then(function(res){
+        pesanUmumApp('success', 'Sukses', 'Berhasil menghapus data donasi ...');
+        load_page(rDonasi, "Donasi");
+    });
+}
