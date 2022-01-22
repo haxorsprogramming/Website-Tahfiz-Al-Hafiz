@@ -53,5 +53,6 @@ Route::post('/app/donasi/hapus/proses', [C_Donasi::class, 'prosesHapusPengeluara
 Route::get('/app/cash-flow', [C_Cash_Flow::class, 'cashFlow']);
 // laporan keuangan 
 Route::get('/app/laporan-keuangan/{tahun}', [C_Laporan_Keuangan::class, 'laporanKeuanganPage']);
+Route::get('/app/laporan-keuangan/{bulan}/{tahun}/cetak', [C_Laporan_Keuangan::class, 'cetakLaporanBulanan']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

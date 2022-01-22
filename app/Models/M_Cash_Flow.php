@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 use App\Models\M_Donasi;
 use App\Models\M_Spp;
@@ -39,6 +40,11 @@ class M_Cash_Flow extends Model
                 $d = M_Penggajian::where('token_penggajian', $token) -> first();
                 return "Pembayaran gaji " . $d -> pengurusData -> nama;
         }
+    }
+
+    public function setTanggal($tanggal)
+    {
+        return Carbon::parse($tanggal) -> format('d-m-Y');
     }
 
 }

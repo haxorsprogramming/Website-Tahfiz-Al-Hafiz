@@ -28,7 +28,7 @@
                     <td>Rp. {{ number_format($lap['flowKeluar']) }}</td>
                     <td>Rp. {{ number_format($lap['selisih']) }}</td>
                     <td>
-                        <a href="javascript:void(0)" class="btn btn-primary">Cetak</a>
+                        <a href="{{ url('app/laporan-keuangan/'.$lap['bulan'].'/'.$tahun.'/cetak') }}" class="btn btn-primary" target="new">Cetak</a>
                     </td>
                 </tr>
                 @endforeach
