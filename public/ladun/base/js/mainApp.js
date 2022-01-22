@@ -1,3 +1,6 @@
+var d = new Date();
+var tahun = d.getFullYear();
+
 var rDashboard = server + "app/dashboard";
 var rSantri = server + "app/santri";
 var rPengurus = server + "app/pengurus";
@@ -7,7 +10,7 @@ var rPenggajian = server + "app/penggajian";
 var rPengeluaran = server + "app/pengeluaran";
 var rDonasi = server + "app/donasi";
 var rCashFlow = server + "app/cash-flow";
-var rLaporanKeuangan = server + "app/laporan-keuangan";
+var rLaporanKeuangan = server + "app/laporan-keuangan/"+tahun;
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',

@@ -7,7 +7,12 @@ var lapKeu = new Vue({
     methods : {
         pilihTahunAtc : function()
         {
-            console.log("daa");
+            $('#modalTahun').appendTo("body").modal('show');
+        },
+        pilihTahunModalAtc : function(tahun)
+        {
+            var sLaporanKeuangan = server + "app/laporan-keuangan/"+tahun;
+            load_page(sLaporanKeuangan, "Laporan Keuangan");
         }
     }
 });

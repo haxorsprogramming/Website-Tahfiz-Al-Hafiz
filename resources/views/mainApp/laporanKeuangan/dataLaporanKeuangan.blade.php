@@ -6,7 +6,7 @@
         </a>
     </div>
     <div class="row" style="padding-left:20px;margin-right:10px;">
-    <h4 class="card-title">Laporan keuangan tahun</h4>
+    <h4 class="card-title">Laporan keuangan tahun {{ $tahun }}</h4>
         <div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
             <table id="tblLapkeu" class="table table-hover table-bordered table-stripped">
                 <thead>
@@ -24,10 +24,12 @@
                 <tr>
                     <td>{{ $loop -> iteration }}</td>
                     <td>{{ $lap['namaBulan'] }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>Rp. {{ number_format($lap['flowMasuk']) }}</td>
+                    <td>Rp. {{ number_format($lap['flowKeluar']) }}</td>
+                    <td>Rp. {{ number_format($lap['selisih']) }}</td>
+                    <td>
+                        <a href="javascript:void(0)" class="btn btn-primary">Cetak</a>
+                    </td>
                 </tr>
                 @endforeach
                 </tbody>
