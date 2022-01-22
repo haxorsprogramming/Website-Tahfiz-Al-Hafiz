@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\M_Donasi;
 use App\Models\M_Spp;
+use App\Models\M_Pengeluaran;
+use App\Models\M_Penggajian;
 
 class M_Cash_Flow extends Model
 {
@@ -28,12 +30,14 @@ class M_Cash_Flow extends Model
                 $d = M_Donasi::where('token', $token) -> first();
                 return "Donasi dari ". $d -> nama_donatur;
             case "PENGELUARAN":
-                return "Pembelian ";
+                $d = M_Pengeluaran::where('token', $token) -> first();
+                return "Pembelian " . $d -> nama_pengeluaran;
             case "PEMBAYARAN_SPP":
                 $d = M_Spp::where('token_pembayaran', $token) -> first();
                 return "Pembayaran spp santri ". $d -> santriData -> nama;
-            case "PEMBAYARAN_GAJI";
-                return "Pembayaran gaji";
+            case "PEMBAYARAN_GAJI":
+                $d = M_Penggajian::where('token_penggajian', $token) -> first();
+                return "Pembayaran gaji " . $d -> pengurusData -> nama;
         }
     }
 

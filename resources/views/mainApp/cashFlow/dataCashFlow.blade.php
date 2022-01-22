@@ -12,7 +12,6 @@
                         <th>Detail</th>
                         <th>Nominal</th>
                         <th>Waktu</th>
-                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -24,8 +23,7 @@
                         <td>{{ $flow -> type }}</td>
                         <td>{{ $flow -> setDetail($flow -> type, $flow -> id_event) }}</td>
                         <td>Rp. {{ number_format($flow -> total) }}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $flow -> created_at }}</td>
                     </tr>
                 @endforeach
                 </tbody>
