@@ -31,7 +31,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-newspaper"></i> <span>Laporan & Statistik</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="javascript:void(0)">Laporan Keuangan</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)" @click="laporanKeuanganAtc()">Laporan Keuangan</a></li>
                     <li><a class="nav-link" href="javascript:void(0)">Rekap Absensi</a></li>
                 </ul>
             </li>

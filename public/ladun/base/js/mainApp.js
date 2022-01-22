@@ -7,6 +7,7 @@ var rPenggajian = server + "app/penggajian";
 var rPengeluaran = server + "app/pengeluaran";
 var rDonasi = server + "app/donasi";
 var rCashFlow = server + "app/cash-flow";
+var rLaporanKeuangan = server + "app/laporan-keuangan";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -49,6 +50,10 @@ var menuApp = new Vue({
         cashFlowAtc : function()
         {
             load_page(rCashFlow, "Cash Flow");
+        },
+        laporanKeuanganAtc : function()
+        {
+            load_page(rLaporanKeuangan, "Laporan Keuangan");
         }
     }
 });
