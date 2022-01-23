@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Controllers\C_Helper;
@@ -44,5 +44,12 @@ class C_Penggajian extends Controller
         $this -> helperCtr -> createCashFlow($token, "KELUAR", "PEMBAYARAN_GAJI", $request -> gp + $request -> tun - $request -> pot);
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
+    }
+    public function cetakSlipGaji(Request $request, $token)
+    {
+        $dr = ['judul' => 'Slip Gaji'];
+        $pdf = PDF::loadview('mainApp.penggajian.cetakSlipGaji', $dr);
+        $pdf -> setPaper('A4', 'portait');
+        return $pdf -> stream();
     }
 }

@@ -14,6 +14,7 @@ use App\Http\Controllers\C_Pengeluaran;
 use App\Http\Controllers\C_Donasi;
 use App\Http\Controllers\C_Cash_Flow;
 use App\Http\Controllers\C_Laporan_Keuangan;
+use App\Http\Controllers\C_Rekap_Absensi;
 
 Route::get('/', [C_Home::class, 'homePage']);
 // auth 
@@ -41,6 +42,7 @@ Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi'
 // penggajian 
 Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);
 Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
+Route::get('/app/penggajian/cetak-slip-gaji/{token}', [C_Penggajian::class, 'cetakSlipGaji']);
 // pengeluaran 
 Route::get('/app/pengeluaran', [C_Pengeluaran::class, 'pengeluaranPage']);
 Route::post('/app/pengeluaran/tambah/proses', [C_Pengeluaran::class, 'prosesTambahPengeluaran']);
@@ -54,5 +56,7 @@ Route::get('/app/cash-flow', [C_Cash_Flow::class, 'cashFlow']);
 // laporan keuangan 
 Route::get('/app/laporan-keuangan/{tahun}', [C_Laporan_Keuangan::class, 'laporanKeuanganPage']);
 Route::get('/app/laporan-keuangan/{bulan}/{tahun}/cetak', [C_Laporan_Keuangan::class, 'cetakLaporanBulanan']);
+// rekap absensi 
+Route::get('/app/rekap-absensi', [C_Rekap_Absensi::class, 'rekapAbsensiPage']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

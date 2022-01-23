@@ -11,6 +11,7 @@ var rPengeluaran = server + "app/pengeluaran";
 var rDonasi = server + "app/donasi";
 var rCashFlow = server + "app/cash-flow";
 var rLaporanKeuangan = server + "app/laporan-keuangan/"+tahun;
+var rRekapAbsensi = server + "app/rekap-absensi";
 // vue object 
 var menuApp = new Vue({
     el : '#divMenu',
@@ -57,6 +58,10 @@ var menuApp = new Vue({
         laporanKeuanganAtc : function()
         {
             load_page(rLaporanKeuangan, "Laporan Keuangan");
+        },
+        rekapAbsensi : function()
+        {
+            load_page(rRekapAbsensi, "Rekap Absensi");
         }
     }
 });
