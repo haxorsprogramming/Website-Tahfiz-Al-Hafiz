@@ -5,6 +5,11 @@ var absen = new Vue({
 
     },
     methods : {
-        
+        pilihWaktuAtc : function()
+        {
+
+        }
     }
 });
+// inisialisasi 
+$("#tblAbsensi").dataTable();
