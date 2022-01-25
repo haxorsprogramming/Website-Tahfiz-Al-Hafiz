@@ -27,7 +27,7 @@
                         <td>{{ Carbon\Carbon::parse($gaji-> tanggal_pembayaran) -> format('d-m-Y'); }}</td>
                         <td>Rp. {{ number_format($gaji -> total_gaji) }}</td>
                         <td>
-                            <a href="#!" class="btn btn-primary">Cetak Slip</a>
+                            <a href="{{ url('/app/penggajian/'.$gaji -> token_penggajian.'/cetak') }}" target="new" class="btn btn-primary">Cetak Slip</a>
                         </td>
                     </tr>
                     @endforeach

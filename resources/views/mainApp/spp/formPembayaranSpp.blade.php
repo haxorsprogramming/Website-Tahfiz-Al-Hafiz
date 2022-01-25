@@ -44,6 +44,14 @@
                         <label>Total Pembayaran</label>
                         <input type="text" class="form-control" id="txtTotalPembayaran">
                     </div>
+                    <div class="form-group">
+                        <label>Petugas Administrasi</label>
+                        <select class="form-control" id="txtPetugas">
+                        @foreach($dataPengurus as $pengurus)
+                            <option value="{{ $pengurus -> id_pengurus }}">{{ $pengurus -> nama }}</option>
+                        @endforeach
+                        </select>
+                    </div>
                     <div>
                         <a href="javascript:void(0)" class="btn btn-lg btn-primary btn-icon icon-left" @click="prosesPembayaranSppAtc()">
                             <i class="fas fa-save"></i>Proses Pembayaran SPP

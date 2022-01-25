@@ -42,7 +42,7 @@ var appGaji = new Vue({
             let ds = {'idPengurus':idPengurus, 'tgl':tgl, 'gp':gp, 'tun':tun, 'pot':pot, 'capTun':capTun, 'capPot':capPot}
             axios.post(rProsesSplitPenggajian, ds).then(function(res){
                 let obj = res.data;
-                let token = "1";
+                let token = obj.token;
                 confirmQuest("success", "Sukses", "Berhasil memproses spill penggajian, cetak slip gaji? ..",  function (x) {cetakSlipGaji(token)});
                 load_page(rPenggajian, "Penggajian Pengurus Tahfiz");
             });
@@ -55,7 +55,8 @@ $("#tblDataPengurus").dataTable();
 
 function cetakSlipGaji(token)
 {
-
+    let rCetak = server + "app/penggajian/"+token+"/cetak";
+    window.open(rCetak);
 }
 
 function setGaji()

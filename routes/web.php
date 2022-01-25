@@ -35,6 +35,7 @@ Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePe
 // pembayaran spp 
 Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
 Route::post('/app/pembayaran-spp/add/proses', [C_Spp::class, 'prosesPembayaranSpp']);
+Route::get('/app/pembayaran/spp/{token}/cetak', [C_Spp::class, 'cetakPembayaranSpp']);
 // absensi 
 Route::get('/app/absensi', [C_Absensi::class, 'absensiPage']);
 Route::post('/app/absensi/proses', [C_Absensi::class, 'prosesAbsensi']);
@@ -42,7 +43,7 @@ Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi'
 // penggajian 
 Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);
 Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
-Route::get('/app/penggajian/cetak-slip-gaji/{token}', [C_Penggajian::class, 'cetakSlipGaji']);
+Route::get('/app/penggajian/{token}/cetak', [C_Penggajian::class, 'cetakSlipGaji']);
 // pengeluaran 
 Route::get('/app/pengeluaran', [C_Pengeluaran::class, 'pengeluaranPage']);
 Route::post('/app/pengeluaran/tambah/proses', [C_Pengeluaran::class, 'prosesTambahPengeluaran']);

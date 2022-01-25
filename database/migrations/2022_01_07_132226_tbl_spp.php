@@ -20,6 +20,7 @@ class TblSpp extends Migration
             $table -> char('bulan', 30);
             $table -> char('tahun', 10);
             $table -> double('total', 30);
+            $table -> char('id_pengurus', 30);
             $table -> timestamps(); 
             $table -> char('active', 1);
         });

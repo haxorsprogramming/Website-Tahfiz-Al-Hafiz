@@ -42,12 +42,13 @@ class C_Penggajian extends Controller
         $split -> save(); 
         // simpan cash flow 
         $this -> helperCtr -> createCashFlow($token, "KELUAR", "PEMBAYARAN_GAJI", $request -> gp + $request -> tun - $request -> pot);
-        $dr = ['status' => 'sukses'];
+        $dr = ['status' => 'sukses', 'token' => $token];
         return \Response::json($dr);
     }
     public function cetakSlipGaji(Request $request, $token)
     {
-        $dr = ['judul' => 'Slip Gaji'];
+        $dataGaji = M_Penggajian::where('token_penggajian', $token) -> first();
+        $dr = ['judul' => 'Slip Gaji', 'dataGaji' => $dataGaji];
         $pdf = PDF::loadview('mainApp.penggajian.cetakSlipGaji', $dr);
         $pdf -> setPaper('A4', 'portait');
         return $pdf -> stream();

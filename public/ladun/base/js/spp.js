@@ -29,7 +29,8 @@ var appSpp = new Vue({
             let tahun = document.querySelector("#txtTahun").value;
             let bulan = document.querySelector("#txtBulan").value;
             let total = document.querySelector("#txtTotalPembayaran").value;
-            let ds = {'idSantri':idSantri, 'tahun':tahun, 'bulan':bulan, 'total':total}
+            let petugas = document.querySelector("#txtPetugas").value;
+            let ds = {'idSantri':idSantri, 'tahun':tahun, 'bulan':bulan, 'total':total, 'petugas':petugas}
             if(idSantri === '' || total === ''){
                 pesanUmumApp('warning', 'Fail', 'Harap lengkapi field !!!')
             }else{

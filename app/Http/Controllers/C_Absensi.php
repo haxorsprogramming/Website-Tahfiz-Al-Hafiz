@@ -21,7 +21,7 @@ class C_Absensi extends Controller
     public function absensiPage()
     {
         $dataSantri = M_Santri::all();
-        $dataAbsensi = M_Absensi::all();
+        $dataAbsensi = M_Absensi::whereRaw('MONTH(created_at)='.$this -> bulan) -> whereRaw('DAY(created_at)='.$this -> tanggal) -> whereRaw('YEAR(created_at)='.$this -> tahun) -> get();
         $dr = ['dataSantri' => $dataSantri, 'dataAbsensi' => $dataAbsensi];
         return view('mainApp.absensi.absensiPage', $dr);
     }

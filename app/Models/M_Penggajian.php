@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class M_Penggajian extends Model
 {
@@ -24,6 +25,11 @@ class M_Penggajian extends Model
     public function pengurusData()
     {
         return $this -> belongsTo(M_Pengurus::class, 'id_pengurus', 'id_pengurus');
+    }
+
+    public function periodeGaji($tanggal)
+    {
+        return Carbon::parse($tanggal) -> format('m-Y');
     }
 
 }
