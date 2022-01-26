@@ -31,6 +31,7 @@
                     <td>Rp. {{ number_format($donasi -> nominal) }}</td>
                     <td>{{ $donasi -> tanggal_donasi }}</td>
                     <td>
+                        <a href="{{ url('app/donasi/'.$donasi -> token.'/cetak') }}" target="new" class="btn btn-primary">Cetak</a>&nbsp;
                         <a href="javascript:void(0)" class="btn btn-warning" @click="hapusAtc('{{ $donasi -> token }}')">Hapus</a>
                     </td>
                 </tr>

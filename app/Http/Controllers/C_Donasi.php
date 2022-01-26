@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Http\Controllers\C_Helper;
@@ -9,6 +9,7 @@ use App\Models\M_Donasi;
 
 class C_Donasi extends Controller
 {
+
     protected $helperCtr;
 
     public function __construct(C_Helper $helperCtr)
@@ -52,4 +53,13 @@ class C_Donasi extends Controller
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
+
+    public function cetakPenerimaanDonasi(Request $request, $token)
+    {
+        $dr = ['judul' => 'Penerimaan Donasi'];
+        $pdf = PDF::loadview('mainApp.donasi.cetakBuktiDonasi', $dr);
+        $pdf -> setPaper('A4', 'portait');
+        return $pdf -> stream();
+    }
+
 }
