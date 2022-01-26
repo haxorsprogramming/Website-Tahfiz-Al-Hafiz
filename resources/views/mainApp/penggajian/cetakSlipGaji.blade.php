@@ -39,7 +39,7 @@
     <strong>Batang Kuis, {{ date("d / m / Y") }}</strong><br />
     <br/>
     <br/>
-    Vania<br/>
+    M. Agung Aditya<br/>
     (Pembina Rumah Tahfiz)
 </div>
 

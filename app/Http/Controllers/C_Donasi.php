@@ -56,7 +56,8 @@ class C_Donasi extends Controller
 
     public function cetakPenerimaanDonasi(Request $request, $token)
     {
-        $dr = ['judul' => 'Penerimaan Donasi'];
+        $dataDonasi = M_Donasi::where('token', $token) -> first();
+        $dr = ['judul' => 'Penerimaan Donasi', 'dataDonasi' => $dataDonasi];
         $pdf = PDF::loadview('mainApp.donasi.cetakBuktiDonasi', $dr);
         $pdf -> setPaper('A4', 'portait');
         return $pdf -> stream();
