@@ -44,7 +44,7 @@ class C_Laporan_Keuangan extends Controller
         $pembukuan['pemasukan'] = $this -> helperCtr -> getFlowBulan("MASUK", $bulan, $tahun);
         $pembukuan['pengeluaran'] = $this -> helperCtr -> getFlowBulan("KELUAR", $bulan, $tahun);
         $pembukuan['selisih'] = $this -> helperCtr -> getSelisihBulan($bulan, $tahun);
-        $dr = ['judul' => 'Laporan Keuangan', 'dataFlow' => $dataFlow, 'pembukuan' => $pembukuan];
+        $dr = ['judul' => 'Laporan Keuangan', 'dataFlow' => $dataFlow, 'pembukuan' => $pembukuan, 'bulan' => $bulan, 'tahun' => $tahun];
         $pdf = PDF::loadview('mainApp.laporanKeuangan.cetakLaporanBulanan', $dr);
         $pdf -> setPaper('A4', 'portait');
         return $pdf -> stream();

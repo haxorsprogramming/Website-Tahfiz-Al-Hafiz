@@ -4,8 +4,8 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-12">
         <table style="width:100%;font-size:10px;">
             <tr>
-                <td>Bulan</td>
-                <td>Bulan</td>
+                <td>Bulan : {{ $bulan }}</td>
+                <td>Tahun : {{ $tahun }}</td>
             </tr>
         </table>
     </div>

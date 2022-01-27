@@ -10,4 +10,9 @@ class C_Rekap_Absensi extends Controller
     {
         return view('mainApp.rekapAbsensi.rekapAbsensiPage');
     }
+    public function setRekapAbsensi(Request $request, $bulan, $tahun)
+    {
+        $dr = ['status' => 'success'];
+        return \Response::json($dr);
+    }
 }

@@ -74,13 +74,13 @@ var mainApp = new Vue({
 // inisialisasi 
 load_page(rDashboard, "Dashboard");
 
-async function load_page(page, page_title)
+async function load_page(page, page_title, el_div="#divUtama")
 {
     NProgress.start();
-    document.querySelector("#divUtama").innerHTML = "<div style='text-align:center;width:100%;margin-top:40px;font-size:20px;'>Loading page ...</div>";
+    document.querySelector(el_div).innerHTML = "<div style='text-align:center;width:100%;margin-top:40px;font-size:20px;'>Loading page ...</div>";
     mainApp.titleSection = page_title;
     await tidur_bentar(1000);
-    $("#divUtama").load(page);
+    $(el_div).load(page);
     NProgress.done();
 }
 
