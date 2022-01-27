@@ -61,5 +61,6 @@ Route::get('/app/laporan-keuangan/{bulan}/{tahun}/cetak', [C_Laporan_Keuangan::c
 // rekap absensi 
 Route::get('/app/rekap-absensi', [C_Rekap_Absensi::class, 'rekapAbsensiPage']);
 Route::get('/app/rekap-absensi/set-rekap/{bulan}/{tahun}', [C_Rekap_Absensi::class, 'setRekapAbsensi']);
+Route::get('/app/rekap-absensi/{id_santri}/{bulan}/{tahun}/cetak', [C_Rekap_Absensi::class, 'cetakRekapAbsensi']);
 // testing 
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

@@ -37,5 +37,10 @@ class M_Santri extends Model
         return M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $tanggal) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
     }
 
+    public function getKehadiranAbsensi($idSantri, $bulan, $tahun)
+    {
+        return M_Absensi::where('id_santri', $idSantri) -> where('bulan', $bulan) -> where('tahun', $tahun) -> count();
+    }
+
 }
 

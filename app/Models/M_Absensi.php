@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Carbon\Carbon;
 use App\Models\M_Santri;
 use App\Models\M_Kafilah;
 
@@ -31,6 +31,11 @@ class M_Absensi extends Model
         $dataSantri = M_Santri::where('id_santri', $idSantri) -> first();
         $dataKafilah = M_Kafilah::where('id_kafilah', $dataSantri -> id_kafilah) -> first();
         return $dataKafilah -> nama;
+    }
+
+    public function getWaktuAbsensi($waktu)
+    {
+        return Carbon::parse($waktu) -> format('H-i-S');
     }
 
 }

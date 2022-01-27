@@ -32,6 +32,7 @@
             </div>
             <div class="form-group col-md-2" style="padding-top:30px;">
                 <a href="javascript:void(0)" class="btn btn-primary" @click="modalPilihWaktuAtc()">Filter waktu rekap</a>
+                
             </div>
         </div>
 

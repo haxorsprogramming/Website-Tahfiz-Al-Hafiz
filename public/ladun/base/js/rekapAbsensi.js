@@ -21,4 +21,3 @@ var absen = new Vue({
     }
 });
 // inisialisasi 
-$("#tblAbsensi").dataTable();
