@@ -17,6 +17,7 @@
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="{{ asset('ladun') }}/dashboard/stisla/js/scripts.js"></script>
 <script src="{{ asset('ladun') }}/iziToast/iziToast.min.js"></script>
+<script src="https://s3.jagoanstorage.com/nadhamedia/lib_cdn/owlcarousel2/owl.carousel.min.js"></script>
 <!-- Page Specific JS File -->
 <script>
     const server = "{{ url('/') }}/";
