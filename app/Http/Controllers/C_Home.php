@@ -8,11 +8,6 @@ class C_Home extends Controller
 {
     public function homePage()
     {
-        echo "indahnya";
-    }
-
-    public function tesTailwind()
-    {
-        return view('test.tailwind');
+        return view('home.homePage');
     }
 }

@@ -20,20 +20,17 @@
             </div>
             <div class="card-body">
                 <ul class="list-unstyled list-unstyled-border">
-                    <?php for($x=1; $x <= 6; $x++){ ?> 
+                    @foreach($hAbsen as $absen)
                     <li class="media">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="cbx-1">
-                            <label class="custom-control-label" for="cbx-1"></label>
-                        </div>
                         <img class="mr-3 rounded-circle" width="50" src="https://demo.getstisla.com/assets/img/avatar/avatar-4.png" alt="avatar">
                         <div class="media-body">
-                            <div class="badge badge-pill badge-danger mb-1 float-right">Not Finished</div>
-                            <h6 class="media-title"><a href="#">Redesign header</a></h6>
-                            <div class="text-small text-muted">Alfa Zulkarnain <div class="bullet"></div> <span class="text-primary">Now</span></div>
+                            <div class="badge badge-pill badge-success mb-1 float-right">Hadir</div>
+                            <h6 class="media-title"><a href="javascript:void(0)">{{ $absen -> santriData -> nama }}</a></h6>
+                            <div class="text-small text-muted">{{ $absen -> getKafilahData($absen -> id_santri) }}<div class="bullet"></div> 
+                            <span class="text-primary">{{ $absen -> created_at }}</span></div>
                         </div>
                     </li>
-                    <?php } ?>
+                    @endforeach
                 </ul>
             </div>
         </div>
