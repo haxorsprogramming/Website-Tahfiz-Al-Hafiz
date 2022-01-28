@@ -54,19 +54,19 @@
                         <a href="#home" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#services" class="nav-link">Services</a>
+                        <a href="#kelas" class="nav-link">Kelas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
+                        <a href="#tentang" class="nav-link">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#pricing" class="nav-link">Pricing</a>
+                        <a href="#testimoni" class="nav-link">Testimoni</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#clients" class="nav-link">Clients</a>
+                        <a href="#daftar" class="nav-link">Pendaftaran</a>
                     </li>
                     <li class="nav-item">
-                        <a href="javacript:void(0)" class="nav-link">Login</a>
+                        <a href="javascript:void(0)" class="nav-link">Login</a>
                     </li>
                 </ul>
             </div>
