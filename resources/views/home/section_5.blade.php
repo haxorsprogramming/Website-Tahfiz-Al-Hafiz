@@ -1,5 +1,5 @@
 <!-- Counter Start -->
-<Section class="section counter-bg">
+<Section class="section counter-bg" style="background-color: #08b7c5;">
     <div class="counter-bg-overlay"></div>
     <div class="container">
         <div class="row align-items-center" id="counter">

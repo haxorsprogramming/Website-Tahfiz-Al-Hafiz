@@ -15,7 +15,7 @@
                     <div class="service-icon icon-primary mb-4 mt-3">
                         <i class="mdi mdi-layers-triple"></i>
                     </div>
-                    <h4 class="mb-4 service-title">Dasar</h4>
+                    <h4 class="mb-4 service-title">Dasar (Iqro')</h4>
                     <p class="text-muted f-15">Pada kelas ini diperuntukkan untuk santri yang mulai belajar al-qur'an.</p>
                 </div>
             </div>

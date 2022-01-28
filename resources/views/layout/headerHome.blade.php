@@ -43,7 +43,7 @@
         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo" href="layout-one-1.html">
-                <img src="{{ asset('/ladun/neloz') }}/images/logo-dark.png" alt="" class="" height="21">
+                <img src="{{ asset('/ladun/base') }}/img/logo.png" alt="" class="" height="41">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="mdi mdi-menu"></i>

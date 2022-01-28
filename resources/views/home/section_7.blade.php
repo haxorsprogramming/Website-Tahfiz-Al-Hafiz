@@ -18,7 +18,7 @@
                 <div class="contact-address">
                     <h4 class="title mb-4">Informasi Kontak</h4>
                     <p class="text-muted f-15">Rumah Tahfidz Quran Al Haziq</p>
-                    <p class="text-muted f-15 mb-4">Jalan Tanjung Sari gang masjid, Batang Kuis. ( Samping masjid Baitul qudus)</p>
+                    <p class="text-muted f-15 mb-4">Jalan Tanjung Sari gang masjid, Batang Kuis. <br/>( Samping masjid Baitul qudus)</p>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -39,7 +39,6 @@
             <div class="col-lg-7 offset-lg-1">
                 <div class="custom-form mt-4 mt-lg-0">
                     <div id="message"></div>
-                    <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group app-label">
@@ -51,6 +50,21 @@
                                 <div class="form-group app-label">
                                     <label for="email">Alamat Email</label>
                                     <input name="email" id="email" type="email" class="form-control" placeholder="Enter your email..">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group app-label">
+                                    <label for="name">Nomor Hp (Whatsapp)</label>
+                                    <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group app-label">
+                                    <label for="email">Jenis Kelamin</label>
+                                    <select class="form-control">
+                                        <option>Laki Laki</option>
+                                        <option>Perempuan</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -82,7 +96,6 @@
                                 <div id="simple-msg"></div>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -111,34 +124,28 @@
             <div class="col-lg-7 offset-lg-1">
                 <div class="row">
                     <div class="col-md-4">
-                        <h5 class="footer-list-title f-18 font-weight-normal mb-3">Customer</h5>
+                        <h5 class="footer-list-title f-18 font-weight-normal mb-3">Mitra</h5>
                         <ul class="list-unstyled company-sub-menu">
-                            <li><a href="">Buyer</a></li>
-                            <li><a href="">Supplier</a></li>
+                            <li><a href="">Haura Grafika</a></li>
+                            <li><a href="">Nadhamedia</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <h5 class="footer-list-title f-18 font-weight-normal mb-3">Company</h5>
+                        <h5 class="footer-list-title f-18 font-weight-normal mb-3">Tahfiz Al-Haziq</h5>
                         <ul class="list-unstyled company-sub-menu">
-                            <li><a href="">About</a></li>
-                            <li><a href="">Service</a></li>
-                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Tentang</a></li>
+                            <li><a href="">Kegiatan</a></li>
+                            <li><a href="">Donasi</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-4">
-                        <h5 class="footer-list-title f-18 font-weight-normal mb-3">Further Information</h5>
-                        <ul class="list-unstyled company-sub-menu">
-                            <li><a href="">Term & Condition</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 mt-5">
                 <div class="text-center footer-alt my-3">
-                    <p class="mb-0 f-15">2019 © Neloz. Design by Themesdesign</p>
+                    <p class="mb-0 f-15">2022 © Tahfiz Al-Haziq</p>
                 </div>
             </div>
         </div>
