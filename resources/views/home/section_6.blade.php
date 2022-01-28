@@ -4,8 +4,10 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="text-center mb-5">
-                    <h4 class="text-uppercase mb-0">Our Clients</h4>
-                    <p class="text-muted f-14">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                    <h4 class="text-uppercase mb-0">Testimoni santri / orang tua</h4>
+                    <p class="text-muted f-14">
+                        Berikut adalah testimoni dari para santri/orang tua yang sedang belajar ataupun sudah menjadi alumni di rumah tahfiz qur'an Al-Haziq
+                    </p>
                 </div>
             </div>
         </div>
@@ -16,10 +18,10 @@
                 <div class="item">
                     <div class="testi-content text-center m-3 p-4 position-relative">
                         <div class="testi-icon"><i class="mdi mdi-format-quote-open"></i></div>
-                        <p class="text-muted mb-4 position-relative f-15">Et harum quidem that rerum facilis expedita distinctio nam at what libero tempore cum soluta nobis est eligendi.</p>
+                        <p class="text-muted mb-4 position-relative f-15">@{{ kata-testimoni }}.</p>
                         <img src="https://s3.jagoanstorage.com/nadhamedia/project_asset/Logo_Project/tata-kotak.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
-                        <h5 class="title mb-1 mt-4">Jane Banta</h5>
-                        <p class="text-muted mb-2 f-15">Web Developer</p>
+                        <h5 class="title mb-1 mt-4">Afa Naninda</h5>
+                        <p class="text-muted mb-2 f-15">Orang Tua Santri</p>
                         <ul class="list-unstyled f-15 text-warning mb-0">
                             <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
                             <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>

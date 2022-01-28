@@ -1,17 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\M_User;
+use App\Models\M_Pendaftaran;
+
 
 class C_Auth extends Controller
 {
+
     public function loginPage()
     {
         return view('auth.loginPage');
     }
+
     public function loginProcess(Request $request)
     {
         $username = $request -> username;
@@ -34,8 +38,42 @@ class C_Auth extends Controller
         $dr = ['status' => $status];
         return \Response::json($dr);
     }
+
     public function logoutProcess()
     {
         return redirect('/login');
     }
+
+    public function daftarProses(Request $request)
+    {
+        // {'nama':nama, 'email':email, 'hp':hp, 'jk':jk, 'kelas':kelas, 'alamat':alamat, 'harapan':harapan}
+        // tgl':tgl, 'tmpt':tmpt, 'ortu':ortu}
+        $token = Str::uuid();
+        $daftar = new M_Pendaftaran();
+        $daftar -> id_pendaftaran = $token;
+        $daftar -> nama_santri = $request -> nama;
+        $daftar -> email = $request -> email;
+        $daftar -> no_hp = $request -> hp;
+        $daftar -> jk = $request -> jk;
+        $daftar -> alamat = $request -> alamat;
+        $daftar -> harapan = $request -> harapan;
+        $daftar -> kelas = $request -> kelas;
+        $daftar -> active = "1";
+        $daftar -> tempat_lahir = $request -> tmpt;
+        $daftar -> tanggal_lahir = $request -> tgl;
+        $daftar -> nama_ortu = $request -> ortu;
+        $daftar -> save();
+        $dr = ['status' => 'success', 'token' => $token];
+        return \Response::json($dr);
+    }
+
+    public function cetakBuktiPendaftaran(Request $request, $token)
+    {
+        $dPendaftaran = M_Pendaftaran::where('id_pendaftaran', $token) -> first();
+        $dr = ['judul' => 'Bukti Pendaftaran', 'dp' => $dPendaftaran];
+        $pdf = PDF::loadview('auth.cetakBuktiPendaftaran', $dr);
+        $pdf -> setPaper('A4', 'portait');
+        return $pdf -> stream();
+    }
+
 }

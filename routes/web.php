@@ -21,6 +21,8 @@ Route::get('/', [C_Home::class, 'homePage']);
 Route::get('/login', [C_Auth::class, 'loginPage']);
 Route::post('/auth/login/process', [C_Auth::class, 'loginProcess']);
 Route::get('/logout', [C_Auth::class, 'logoutProcess']);
+Route::post('/auth/daftar/proses', [C_Auth::class, 'daftarProses']);
+Route::get('/auth/daftar/{token}/cetak', [C_Auth::class, 'cetakBuktiPendaftaran']);
 // main app 
 Route::get('/app', [C_Main_App::class, 'mainAppPage']);
 Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);

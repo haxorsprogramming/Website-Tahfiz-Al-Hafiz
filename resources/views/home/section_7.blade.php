@@ -43,56 +43,75 @@
                             <div class="col-lg-6">
                                 <div class="form-group app-label">
                                     <label for="name">Nama</label>
-                                    <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..">
+                                    <input id="txtNama" type="text" class="form-control" placeholder="Nama calon santri">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group app-label">
                                     <label for="email">Alamat Email</label>
-                                    <input name="email" id="email" type="email" class="form-control" placeholder="Enter your email..">
+                                    <input id="txtEmail" type="email" class="form-control" placeholder="Email calon santri/orang tua">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group app-label">
+                                    <label for="name">Tempat Lahir</label>
+                                    <input id="txtTmpt" type="text" class="form-control" placeholder="Tempat lahir calon santri">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group app-label">
+                                    <label for="email">Tanggal Lahir</label>
+                                    <input id="txtTgl" type="date" class="form-control" placeholder="Tanggal lahir calon santri">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group app-label">
                                     <label for="name">Nomor Hp (Whatsapp)</label>
-                                    <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..">
+                                    <input id="txtHp" type="text" class="form-control" placeholder="Nomor hp santri/orang tua">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group app-label">
-                                    <label for="email">Jenis Kelamin</label>
-                                    <select class="form-control">
-                                        <option>Laki Laki</option>
-                                        <option>Perempuan</option>
+                                    <label for="txtJk">Jenis Kelamin</label>
+                                    <select class="form-control" id="txtJk">
+                                        <option value="L">Laki Laki</option>
+                                        <option value="P">Perempuan</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group app-label">
-                                    <label for="subject">Kelas</label>
-                                    <select class="form-control">
-                                        <option>Dasar</option>
-                                        <option>Tahfiz</option>
-                                        <option>Tahsin</option>
+                                    <label for="subject">Nama Orang Tua</label>
+                                    <input type="text" class="form-control" id="txtOrangTua" placeholder="Nama orang tua" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group app-label">
+                                    <label for="txtKelas">Kelas</label>
+                                    <select class="form-control" id="txtKelas">
+                                        <option value="DASAR">Dasar</option>
+                                        <option value="TAHFIZ">Tahfiz</option>
+                                        <option value="TAHSIN">Tahsin</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group app-label">
                                     <label for="subject">Alamat</label>
-                                    <input type="text" class="form-control" id="subject" placeholder="Enter Subject.." />
+                                    <input type="text" class="form-control" id="txtAlamat" placeholder="Alamat santri" />
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group app-label">
-                                    <label for="comments">Message</label>
-                                    <textarea name="comments" id="comments" rows="3" class="form-control" placeholder="Enter message.."></textarea>
+                                    <label for="comments">Harapan & Capaian</label>
+                                    <textarea id="txtHarapan" rows="3" class="form-control" placeholder="Harapan & capaian yang ingin diraih setelah belajar di rumah tahfiz al haziq"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <button type="submit" id="submit" name="send" class="btn btn-primary">Proses pendaftaran <i class="mdi mdi-telegram ml-2"></i></button>
+                                <a href="javascript:void(0)" class="btn btn-primary" id="btnProses" onclick="prosesPendaftaran()">
+                                Proses pendaftaran <i class="mdi mdi-telegram ml-2"></i></a>
                                 <div id="simple-msg"></div>
                             </div>
                         </div>

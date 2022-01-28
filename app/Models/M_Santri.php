@@ -21,7 +21,9 @@ class M_Santri extends Model
         'email',
         'active',
         'id_kafilah',
-        'status_ortu'
+        'kelas',
+        'status_ortu',
+        'nama_ortu'
     ];
 
     public function kafilahData()

@@ -6,8 +6,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="mb-4 mb-lg-0">
                     <h2 class="text-white mb-4">Pencapaian</h2>
-                    <p class="f-15 text-white-70 mb-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-                    <a href="" class="btn btn-light">Read More <span class="ml-2 right-icon">&#8594;</span></a>
+                    <p class="f-15 text-white-70 mb-4">Berikut adalah pencapaian yang telah rumah tahfiz Al-Haziq peroleh.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">

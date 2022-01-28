@@ -63,10 +63,10 @@
                         <a href="#testimoni" class="nav-link">Testimoni</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#daftar" class="nav-link">Pendaftaran</a>
+                        <a href="" class="nav-link">Donasi</a>
                     </li>
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="nav-link">Login</a>
+                        <a href="#daftar" class="nav-link">Pendaftaran</a>
                     </li>
                 </ul>
             </div>

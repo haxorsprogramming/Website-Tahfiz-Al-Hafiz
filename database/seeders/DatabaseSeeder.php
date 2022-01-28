@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this -> faker = $faker;
         $this -> kafilah = array();
         $this -> statusOrtu = array("LENGKAP","YATIM","PIATU","YATIM_PIATU");
+        $this -> kelas = array("DASAR", "TAHFIZ", "TAHSIN");
         $this -> jk = array("L", "P");
     }
 
@@ -63,6 +64,7 @@ class DatabaseSeeder extends Seeder
     {
         $idKafilah = $this -> getKafilah();
         $statusOrtu = $this -> getStatusOrtu();
+        $kelas = $this -> getKelas();
         $santri = new M_Santri();
         $santri -> id_santri = $this -> getIdSantri();
         $santri -> nama = $this -> faker -> name;
@@ -73,9 +75,17 @@ class DatabaseSeeder extends Seeder
         $santri -> no_hp = $this -> faker -> phoneNumber();
         $santri -> email = $this -> faker -> email();
         $santri -> id_kafilah = $idKafilah;
+        $santri -> kelas = $kelas;
         $santri -> status_ortu = $statusOrtu;
+        $santri -> nama_ortu = $this -> faker -> name;
         $santri -> active = "1";
         $santri -> save();   
+    }
+
+    function getKelas()
+    {
+        shuffle($this -> kelas);
+        return $this -> kelas[0];
     }
 
     function getJk()
