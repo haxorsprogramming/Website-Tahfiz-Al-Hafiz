@@ -70,6 +70,19 @@
                         <input type="text" class="form-control" id="txtEmail">
                     </div>
                     <div class="form-group">
+                        <label>Nama Orang Tua</label>
+                        <input type="text" class="form-control" id="txtNamaOrangTua">
+                    </div>
+                    <div class="form-group">
+                        <label>Kelas **<small>Wajib di isi (Bisa di ganti kemudian)</small></label>
+                        <select class="form-control" id="txtKelas">
+                            <option value="none">--- Pilih kafilah ---</option>
+                            <option value="DASAR">Dasar</option>
+                            <option value="TAHFIZ">Tahfiz</option>
+                            <option value="TAHSIN">Tahsin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label>Kafilah **<small>Wajib di isi (Bisa di ganti kemudian)</small></label>
                         <select class="form-control" id="txtKafilah">
                             <option value="none">--- Pilih kafilah ---</option>
