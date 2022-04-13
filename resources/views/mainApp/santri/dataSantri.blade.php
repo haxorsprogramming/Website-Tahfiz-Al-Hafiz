@@ -32,9 +32,9 @@
                     <td>{{ $santri -> alamat }}</td>
                     <td>{{ $santri -> kafilahData -> nama }}</td>
                     <td>
-                        <a href="javascript:void(0)" class="btn btn-sm btn-primary">
+                        <a href="javascript:void(0)" class="btn btn-sm btn-primary" @click="editAtc('{{ $santri -> id_santri }}')">
                             <i class="fas fa-exclamation-circle"></i> Detail
-                        </a>
+                        </a>&nbsp;
                         <a href="javascript:void(0)" class="btn btn-sm btn-warning" @click="hapusAtc('{{ $santri -> id_santri }}')">
                             <i class="fas fa-trash-alt"></i> Hapus
                         </a>

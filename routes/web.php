@@ -30,6 +30,7 @@ Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);
 Route::get('/app/santri', [C_Santri::class, 'santriPage']);
 Route::post('/app/santri/add/process', [C_Santri::class, 'processAddSantri']);
 Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri']);
+Route::post('/app/santri/edit/data', [C_Santri::class, 'restDataEdit']);
 // data pengurus 
 Route::get('/app/pengurus', [C_Pengurus::class, 'pengurusPage']);
 Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus']);

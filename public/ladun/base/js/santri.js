@@ -1,6 +1,7 @@
 // route 
 var rProcessAddSantri = server + "app/santri/add/process";
 var rProcessDeleteSantri = server + "app/santri/delete/process";
+var rGetDataEdit = server + "app/santri/edit/data";
 // vue object 
 var santriApp = new Vue({
     el : '#divSantri',
@@ -45,6 +46,16 @@ var santriApp = new Vue({
         hapusAtc : function(idSantri)
         {
             confirmQuest('info', 'Konfirmasi', 'Hapus data santri ...?', function (x) {deleteConfirm(idSantri)});
+        },
+        editAtc : function(idSantri)
+        {
+          // $("#modalEditSantri").modal("show");
+          let ds = {'idSantri':idSantri}
+          axios.post(rGetDataEdit, ds).then(function(res){
+            document.querySelector("#txtIdSantriEdit").value = res.data.dataSantri.id_santri;
+            $('#modalEditSantri').appendTo("body").modal('show');
+          });
+          
         }
     }
 });

@@ -39,6 +39,15 @@ class C_Santri extends Controller
         return \Response::json($dr);
     }
 
+    public function restDataEdit(Request $request)
+    {
+        // {'idSantri':idSantri}
+        $dataSantri = M_Santri::where('id_santri', $request -> idSantri) -> first();
+
+        $dr = ['status' => 'sukses', 'dataSantri' => $dataSantri];
+        return \Response::json($dr);
+    }
+
     function getIdSantri()
     {
         $totalBk = M_Santri::count();
