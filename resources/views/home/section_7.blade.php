@@ -17,20 +17,20 @@
             <div class="col-lg-4">
                 <div class="contact-address">
                     <h4 class="title mb-4">Informasi Kontak</h4>
-                    <p class="text-muted f-15">Rumah Tahfidz Quran Al Haziq</p>
-                    <p class="text-muted f-15 mb-4">Jalan Tanjung Sari gang masjid, Batang Kuis. <br/>( Samping masjid Baitul qudus)</p>
+                    <p class="text-muted f-15">{{ $setting -> namaTahfiz }}</p>
+                    <p class="text-muted f-15 mb-4">{{ $setting -> alamat }}</p>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="contact-address">
                             <h5 class="title f-18">Telp/Hp/Whatsapp</h5>
-                            <p class="text-muted f-15">0812-6286-3710</p>
+                            <p class="text-muted f-15">{{ $setting -> kontak }}</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="contact-address">
                             <h5 class="title f-18">Email</h5>
-                            <p class="text-muted f-15">cs@tahfizalhaziq.com</p>
+                            <p class="text-muted f-15">{{ $setting -> email }}</p>
                         </div>
                     </div>
                 </div>
@@ -132,13 +132,7 @@
                         <img src="https://s3.jagoanstorage.com/nadhamedia/project_asset/Logo_Project/al-hafiz.png" alt="" class="logo-light" height="62" />
                     </a>
                 </div>
-                <p class="footer-desc f-15">Itaque earum rerum hic tenetur a sapiente delectus ut aut reiciendis voluptatibus.</p>
-                <ul class="footer-icons list-inline f-20 mt-4">
-                    <li class="list-inline-item mr-3"><a href="#" class=""><i class="mdi mdi-facebook"></i></a></li>
-                    <li class="list-inline-item mr-3"><a href="#" class=""><i class="mdi mdi-twitter"></i></a></li>
-                    <li class="list-inline-item mr-3"><a href="#" class=""><i class="mdi mdi-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class=""><i class="mdi mdi-linkedin"></i></a></li>
-                </ul>
+                <p class="footer-desc f-15">{{ $setting -> namaTahfiz }}, menciptakan generasi qur'ani yang berakhlakul karimah serta menjunjung tinggi nilai keislaman.</p>
             </div>
             <div class="col-lg-7 offset-lg-1">
                 <div class="row">

@@ -6,7 +6,9 @@
                 <div class="hero-title">
                     <p class="text-uppercase hero-small-title title font-weight-bold f-14 mb-4">Rumah Tahfiz Qur'an Al-Haqiz</p>
                     <h1 class="font-weight-bold main-title mb-4" style="color: #08b7c5;">Menciptakan generasi qur'ani</h1>
-                    <p class="text-muted mb-4 pb-2">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
+                    <p class="text-muted mb-4 pb-2">
+                        Bersama membangun generasi yang maju, berpendidikan qur'ani, serta menjunjung tinggi nilai nilai keislaman.
+                    </p>
                     
                 </div>
             </div>

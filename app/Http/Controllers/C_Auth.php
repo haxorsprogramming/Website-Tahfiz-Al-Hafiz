@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\M_User;
 use App\Models\M_Pendaftaran;
-
+use App\Http\Controllers\C_Helper;
 
 class C_Auth extends Controller
 {
+    protected $helperCtr;
+
+    public function __construct(C_Helper $helperCtr)
+    {
+        $this -> helperCtr = $helperCtr;
+    }
 
     public function loginPage()
     {
