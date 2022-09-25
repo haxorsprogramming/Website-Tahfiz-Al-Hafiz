@@ -58,6 +58,7 @@ var santriApp = new Vue({
             document.querySelector("#txtTglLahirEdit").value = res.data.dataSantri.tanggal_lahir;
             document.querySelector("#txtNamaSantriEdit").value = res.data.dataSantri.nama;
             document.querySelector("#txtKafilahEdit").value = res.data.kafilah.nama;
+            document.querySelector("#txtKelasEdit").value = res.data.dataSantri.kelas;
             $('#modalEditSantri').appendTo("body").modal('show');
           });
           
