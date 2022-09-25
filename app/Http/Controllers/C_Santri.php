@@ -43,8 +43,13 @@ class C_Santri extends Controller
     {
         // {'idSantri':idSantri}
         $dataSantri = M_Santri::where('id_santri', $request -> idSantri) -> first();
-
-        $dr = ['status' => 'sukses', 'dataSantri' => $dataSantri];
+        $dataKafilah = M_Kafilah::all();
+        $dr = [
+            'status' => 'sukses', 
+            'dataSantri' => $dataSantri, 
+            'kafilah' => $dataSantri -> getDataKafilah($dataSantri -> id_kafilah),
+            'dataKafilah' => $dataKafilah
+        ];
         return \Response::json($dr);
     }
 

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\M_Absensi;
+use App\Models\M_Kafilah;
 
 class M_Santri extends Model
 {
@@ -29,6 +30,11 @@ class M_Santri extends Model
     public function kafilahData()
     {
         return $this -> belongsTo(M_Kafilah::class, 'id_kafilah', 'id_kafilah');
+    }
+
+    public function getDataKafilah($idKafilah)
+    {
+        return M_Kafilah::where('id_kafilah', $idKafilah) -> first();
     }
 
     public function getAbsensiData($idSantri)

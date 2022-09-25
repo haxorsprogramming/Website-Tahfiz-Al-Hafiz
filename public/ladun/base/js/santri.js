@@ -52,18 +52,19 @@ var santriApp = new Vue({
           // $("#modalEditSantri").modal("show");
           let ds = {'idSantri':idSantri}
           axios.post(rGetDataEdit, ds).then(function(res){
-            // console.log(res.data);
+            console.log(res.data);
             document.querySelector("#txtIdSantriEdit").value = res.data.dataSantri.id_santri;
             document.querySelector("#txtAlamatEdit").value = res.data.dataSantri.alamat;
             document.querySelector("#txtTglLahirEdit").value = res.data.dataSantri.tanggal_lahir;
             document.querySelector("#txtNamaSantriEdit").value = res.data.dataSantri.nama;
+            document.querySelector("#txtKafilahEdit").value = res.data.kafilah.nama;
             $('#modalEditSantri').appendTo("body").modal('show');
           });
           
         },
         prosesUpdateDataSantri : function()
         {
-          
+
         }
     }
 });

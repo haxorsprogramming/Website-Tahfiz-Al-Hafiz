@@ -50,7 +50,11 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Kafilah</label>
-                                <input type="date" class="form-control" id="txtExpired" />
+                                <select class="form-control" id="txtKafilahEdit">
+                                    @foreach($dataKafilah as $kaf)
+                                    <option>{{ $kaf -> nama }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
