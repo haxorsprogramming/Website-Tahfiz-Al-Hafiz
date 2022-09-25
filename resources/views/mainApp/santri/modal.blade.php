@@ -16,41 +16,40 @@
                                 <label>Id Santri</label>
                                 <input type="text" class="form-control disabled" readonly placeholder="Id Santri" id="txtIdSantriEdit">
                             </div>
-
                             <div class="form-group col-md-6">
                                 <label>Alamat</label>
-                                <textarea class="form-control" style="resize: none;" placeholder="Description" id="txtDeks"></textarea>
+                                <textarea class="form-control" style="resize: none;" placeholder="Alamat Santri" id="txtAlamatEdit"></textarea>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Nama Santri</label>
-                                <input type="text" class="form-control" placeholder="Promo code" id="txtPromoCode">
+                                <input type="text" class="form-control" placeholder="Nama santri" id="txtNamaSantriEdit">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Type</label>
+                                <label>Jenis Kelamin</label>
                                 <select class="form-control" id="txtType">
-                                    <option value="P">Percent</option>
-                                    <option value="V">Value</option>
+                                    <option value="L">Laki Laki</option>
+                                    <option value="P">Perempuan</option>
                                 </select>
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label>Value</label>
-                                <input type="number" class="form-control" id="txtValue" />
+                                <label>Tanggal Lahir</label>
+                                <input type="date" class="form-control" id="txtTglLahirEdit" />
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Quota</label>
+                                <label>Kafilah</label>
                                 <small>(Leave blank if quota not set)</small>
-                                <input type="number" class="form-control" id="txtQuota" />
+                                
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label>Expired On</label>
+                                <label>Kafilah</label>
                                 <input type="date" class="form-control" id="txtExpired" />
                             </div>
                         </div>
@@ -58,8 +57,8 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-12"></div>
                 </div>
                 <div>
-                    <a class="btn btn-rounded btn-primary" href="javascript:void(0)" @click="processAddNewPromoAtc()">
-                        Add new promo
+                    <a class="btn btn-rounded btn-primary" href="javascript:void(0)" @click="prosesUpdateDataSantri()">
+                        Update data santri
                     </a>
                 </div>
             </div>
