@@ -23,12 +23,24 @@ Route::post('/auth/login/process', [C_Auth::class, 'loginProcess']);
 Route::get('/logout', [C_Auth::class, 'logoutProcess']);
 Route::post('/auth/daftar/proses', [C_Auth::class, 'daftarProses']);
 Route::get('/auth/daftar/{token}/cetak', [C_Auth::class, 'cetakBuktiPendaftaran']);
-// main app 
-Route::get('/app', [C_Main_App::class, 'mainAppPage']);
-Route::get('/app/dashboard', [C_Main_App::class, 'dashboardPage']);
+
+# route app 
+Route::prefix('app') -> group(function(){
+    
+    Route::get('', [C_Main_App::class, 'mainAppPage']);
+    Route::get('dashboard', [C_Main_App::class, 'dashboardPage']);
+
+    Route::prefix('santri') -> group(function(){
+        Route::get('', [C_Santri::class, 'santriPage']);
+        Route::post('add/process', [C_Santri::class, 'processAddSantri']);
+    });
+
+});
+
 // data santri 
-Route::get('/app/santri', [C_Santri::class, 'santriPage']);
-Route::post('/app/santri/add/process', [C_Santri::class, 'processAddSantri']);
+
+
+
 Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri']);
 Route::post('/app/santri/edit/data', [C_Santri::class, 'restDataEdit']);
 // data pengurus 
