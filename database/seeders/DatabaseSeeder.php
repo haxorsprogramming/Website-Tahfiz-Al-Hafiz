@@ -30,7 +30,10 @@ class DatabaseSeeder extends Seeder
         $this -> createKafilah("AL HALIM", "-", "HANIFAH");
         $this -> createKafilah("AL FATTAH", "-", "MAULANA");
         $this -> createKafilah("AR RAHMAN", "-", "DITA");
+        
+        // berikan komentar / hapus perintah dibawah bila tidak ingin melakukan seeder dummy data santri 
         $this -> loopCreateSantri(20);
+
         $this -> createPengurus("M. Agung Aditya", "L", "Batang Kuis", "1988-12-07", "Batang Kuis", "tyo@gmail,com", "0878212312", "PEMBINA");
         $this -> createPengurus("Silvi", "P", "Batang Kuis", "1998-11-27", "Batang Kuis", "silvi@gmail,com", "087889221299", "ADMINISTRASI");
         $this -> createPengurus("Sindy", "P", "Batang Kuis", "1990-02-17", "Batang Kuis", "silvi@gmail,com", "0878221279", "PENGAJAR");

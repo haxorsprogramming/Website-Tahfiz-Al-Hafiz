@@ -41,9 +41,14 @@
                                 <input type="date" class="form-control" id="txtTglLahirEdit" />
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Kafilah</label>
+                                <label>Kelas</label>
                                 <small>(Leave blank if quota not set)</small>
-                                
+                                <select class="form-control" id="txtKelasEdit">
+                                    <option value="none">--- Pilih kafilah ---</option>
+                                    <option value="DASAR">Dasar</option>
+                                    <option value="TAHFIZ">Tahfiz</option>
+                                    <option value="TAHSIN">Tahsin</option>
+                                </select>
                             </div>
 
                         </div>
