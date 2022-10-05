@@ -1,8 +1,8 @@
-// route 
-var rProcessAddSantri = server + "app/santri/add/process";
+// route
+var rProcessAddSantri = server + "app/santri/add";
 var rProcessDeleteSantri = server + "app/santri/delete/process";
 var rGetDataEdit = server + "app/santri/edit/data";
-// vue object 
+// vue object
 var santriApp = new Vue({
     el : '#divSantri',
     data : {
@@ -61,7 +61,7 @@ var santriApp = new Vue({
             document.querySelector("#txtKelasEdit").value = res.data.dataSantri.kelas;
             $('#modalEditSantri').appendTo("body").modal('show');
           });
-          
+
         },
         prosesUpdateDataSantri : function()
         {
@@ -69,7 +69,7 @@ var santriApp = new Vue({
         }
     }
 });
-// inisialisasi 
+// inisialisasi
 $("#tblSantri").dataTable();
 
 function deleteConfirm(idSantri)

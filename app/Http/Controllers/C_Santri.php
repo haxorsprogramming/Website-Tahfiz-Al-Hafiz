@@ -10,7 +10,7 @@ use App\Models\M_Santri;
 
 class C_Santri extends Controller
 {
-    
+
     public function santriPage()
     {
         $kafilah = M_Kafilah::all();
@@ -21,7 +21,7 @@ class C_Santri extends Controller
 
     public function processAddSantri(Request $request)
     {
-        // {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah}
+//        // {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah}
         $santri = new M_Santri();
         $santri -> id_santri = $this -> getIdSantri();
         $santri -> nama = $request -> nama;
@@ -45,8 +45,8 @@ class C_Santri extends Controller
         $dataSantri = M_Santri::where('id_santri', $request -> idSantri) -> first();
         $dataKafilah = M_Kafilah::all();
         $dr = [
-            'status' => 'sukses', 
-            'dataSantri' => $dataSantri, 
+            'status' => 'sukses',
+            'dataSantri' => $dataSantri,
             'kafilah' => $dataSantri -> getDataKafilah($dataSantri -> id_kafilah),
             'dataKafilah' => $dataKafilah
         ];
