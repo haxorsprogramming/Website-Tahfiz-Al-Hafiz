@@ -76,7 +76,7 @@
                     <div class="form-group">
                         <label>Kelas **<small>Wajib di isi (Bisa di ganti kemudian)</small></label>
                         <select class="form-control" id="txtKelas">
-                            <option value="none">--- Pilih kafilah ---</option>
+                            <option value="none">--- Pilih kelas ---</option>
                             <option value="DASAR">Dasar</option>
                             <option value="TAHFIZ">Tahfiz</option>
                             <option value="TAHSIN">Tahsin</option>

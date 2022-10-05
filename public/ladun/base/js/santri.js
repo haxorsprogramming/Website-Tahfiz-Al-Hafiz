@@ -30,18 +30,15 @@ var santriApp = new Vue({
             let kafilah = document.querySelector("#txtKafilah").value;
             let alamat = document.querySelector("#txtAlamat").value;
             let ortu = document.querySelector("#txtStatusOrtu").value;
+            let kelas = document.querySelector("#txtKelas").value;
+            let namaOrtu = document.querySelector("#txtNamaOrangTua").value;
 
-            if(nama === "" || jk === "none" || alamat === "" || kafilah === "none"){
+            if(nama === "" || jk === "none" || alamat === "" || kafilah === "none" || kelas === "none" || namaOrtu === ""){
               pesanUmumApp('warning', 'Isi field !!!', 'Harap isi nama, jk, alamat, & kafilah');
             }else{
-              let ds = {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah, 'alamat':alamat, 'ortu':ortu}
-
-              axios.post(rProcessAddSantri, ds).then(function(res){
-                pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data santri');
-                load_page(rSantri, "Santri");
-              });
+                let ds = {'nama':nama, 'jk':jk, 'tgl':tglLhr, 'tmpt':tmptLhr, 'hp':hp, 'email':email, 'kafilah':kafilah, 'alamat':alamat, 'ortu':ortu, 'kelas':kelas, 'namaOrtu':namaOrtu}
+                confirmQuest('info', 'Konfirmasi', 'Tambah data santri ...?', function (x) {addConfirm(ds)});
             }
-
         },
         hapusAtc : function(idSantri)
         {
@@ -65,12 +62,20 @@ var santriApp = new Vue({
         },
         prosesUpdateDataSantri : function()
         {
-
+            console.log("Haloo");
         }
     }
 });
 // inisialisasi
 $("#tblSantri").dataTable();
+
+function addConfirm(ds)
+{
+    axios.post(rProcessAddSantri, ds).then(function(res){
+        pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data santri');
+        load_page(rSantri, "Santri");
+    });
+}
 
 function deleteConfirm(idSantri)
 {

@@ -30,9 +30,6 @@ Route::group(['prefix' => 'app'], function (){
     // data santri
     Route::group(['prefix' => 'santri'], function (){
         Route::get('', [C_Santri::class, 'santriPage']);
-
-    });
-    Route::group(['prefix' => 'santri'], function (){
         Route::post('add', [C_Santri::class, 'processAddSantri']);
     });
 });

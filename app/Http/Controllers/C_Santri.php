@@ -32,7 +32,9 @@ class C_Santri extends Controller
         $santri -> no_hp = $request -> hp;
         $santri -> email = $request -> email;
         $santri -> id_kafilah = $request -> kafilah;
+        $santri -> kelas = $request -> kelas;
         $santri -> status_ortu = $request -> ortu;
+        $santri -> nama_ortu = $request -> namaOrtu;
         $santri -> active = "1";
         $santri -> save();
         $dr = ['status' => 'sukses'];
