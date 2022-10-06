@@ -1,7 +1,7 @@
-// route 
-var rProcessAddPengurus = server + "app/pengurus/add/process";
-var rProcessDeletePengurus = server + "app/pengurus/delete/process";
-// vue object 
+// route
+var rProcessAddPengurus = server + "app/pengurus/add";
+var rProcessDeletePengurus = server + "app/pengurus/delete";
+// vue object
 var appPengurus = new Vue({
     el : '#divPengurus',
     data : {
@@ -24,11 +24,14 @@ var appPengurus = new Vue({
             let hp = document.querySelector("#txtHp").value;
             let email = document.querySelector("#txtEmail").value;
             let jabatan = document.querySelector("#txtJabatan").value;
-            let ds = {'nama':nama, 'jk':jk, 'tgl':tgl, 'lhr':lhr, 'alamat':alamat, 'hp':hp, 'email':email, 'jabatan':jabatan}
-            axios.post(rProcessAddPengurus, ds).then(function(res){
-                pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data pengurus');
-                load_page(rPengurus, "Pengurus");
-            });
+
+            if(nama === "" || lhr === "" || alamat === "" || tgl === "" || hp === "" || email === ""){
+                pesanUmumApp('warning', 'Isi field !!!', 'Harap isi seluruh field !!!');
+            }else{
+                let ds = {'nama':nama, 'jk':jk, 'tgl':tgl, 'lhr':lhr, 'alamat':alamat, 'hp':hp, 'email':email, 'jabatan':jabatan}
+                confirmQuest('info', 'Konfirmasi', 'Tambah data pengurus ...?', function (x) {addConfirm(ds)});
+            }
+
         },
         hapusAtc : function(idPengurus)
         {
@@ -41,8 +44,16 @@ var appPengurus = new Vue({
     }
 });
 
-// inisialisasi 
+// inisialisasi
 $("#tblPengurus").dataTable();
+
+function  addConfirm(ds)
+{
+    axios.post(rProcessAddPengurus, ds).then(function(res){
+        pesanUmumApp('success', 'Sukses', 'Berhasil menambahkan data pengurus');
+        load_page(rPengurus, "Pengurus");
+    });
+}
 
 function deleteConfirm(idPengurus)
 {

@@ -44,7 +44,6 @@
                                 <label>Kelas</label>
                                 <small>(Leave blank if quota not set)</small>
                                 <select class="form-control" id="txtKelasEdit">
-
                                     <option value="DASAR">Dasar</option>
                                     <option value="TAHFIZ">Tahfiz</option>
                                     <option value="TAHSIN">Tahsin</option>
@@ -57,7 +56,7 @@
                                 <label>Kafilah</label>
                                 <select class="form-control" id="txtKafilahEdit">
                                     @foreach($dataKafilah as $kaf)
-                                    <option>{{ $kaf -> nama }}</option>
+                                        <option value="{{ $kaf -> id_kafilah  }}">{{ $kaf -> nama }}</option>
                                     @endforeach
                                 </select>
                             </div>

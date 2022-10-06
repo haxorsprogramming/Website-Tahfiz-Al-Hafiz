@@ -27,10 +27,10 @@ class M_Santri extends Model
         'nama_ortu'
     ];
 
-    public function kafilahData()
-    {
-        return $this -> belongsTo(M_Kafilah::class, 'id_kafilah', 'id_kafilah');
-    }
+//    public function kafilahData()
+//    {
+//        return $this -> belongsTo(M_Kafilah::class, 'id_kafilah', 'id_kafilah');
+//    }
 
     public function getDataKafilah($idKafilah)
     {

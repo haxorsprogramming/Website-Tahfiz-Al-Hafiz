@@ -30,7 +30,7 @@
                     <td>Perempuan</td>
                     @endif
                     <td>{{ $santri -> alamat }}</td>
-                    <td>{{ $santri -> kafilahData -> nama }}</td>
+                    <td>{{ $santri -> getDataKafilah($santri -> id_kafilah) -> nama }}</td>
                     <td>
                         <a href="javascript:void(0)" class="btn btn-sm btn-primary" @click="editAtc('{{ $santri -> id_santri }}')">
                             <i class="fas fa-exclamation-circle"></i> Detail

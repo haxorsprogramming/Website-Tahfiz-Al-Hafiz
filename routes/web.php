@@ -36,14 +36,15 @@ Route::group(['prefix' => 'app'], function (){
         Route::post('get-data', [C_Santri::class, 'restDataEdit']);
 
     });
+    // data pengurus
+    Route::group(['prefix' => 'pengurus'], function (){
+        Route::get('', [C_Pengurus::class, 'pengurusPage']);
+        Route::post('add', [C_Pengurus::class, 'processAddPengurus']);
+        Route::post('process', [C_Pengurus::class, 'processDeletePengurus']);
+    });
 });
 
 
-
-// data pengurus
-Route::get('/app/pengurus', [C_Pengurus::class, 'pengurusPage']);
-Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus']);
-Route::post('/app/pengurus/delete/process', [C_Pengurus::class, 'processDeletePengurus']);
 // pembayaran spp
 Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
 Route::post('/app/pembayaran-spp/add/proses', [C_Spp::class, 'prosesPembayaranSpp']);

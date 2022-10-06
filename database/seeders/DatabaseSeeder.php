@@ -1,5 +1,5 @@
 <?php
-
+//namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
@@ -25,13 +25,14 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
-        $this -> createRole("1", "ADMINISTRASI", "User untuk mamanajemen seluruh kegiatan tahfiz");
+
+        $this -> call([\Database\Seeders\S_Role::class]);
         $this -> createUser("admin", "1", "admin");
         $this -> createKafilah("AL HALIM", "-", "HANIFAH");
         $this -> createKafilah("AL FATTAH", "-", "MAULANA");
         $this -> createKafilah("AR RAHMAN", "-", "DITA");
-        
-        // berikan komentar / hapus perintah dibawah bila tidak ingin melakukan seeder dummy data santri 
+
+        // berikan komentar / hapus perintah dibawah bila tidak ingin melakukan seeder dummy data santri
         $this -> loopCreateSantri(20);
 
         $this -> createPengurus("M. Agung Aditya", "L", "Batang Kuis", "1988-12-07", "Batang Kuis", "tyo@gmail,com", "0878212312", "PEMBINA");
@@ -82,7 +83,7 @@ class DatabaseSeeder extends Seeder
         $santri -> status_ortu = $statusOrtu;
         $santri -> nama_ortu = $this -> faker -> name;
         $santri -> active = "1";
-        $santri -> save();   
+        $santri -> save();
     }
 
     function getKelas()
@@ -133,15 +134,6 @@ class DatabaseSeeder extends Seeder
             'active' => '1',
             'created_at' => now(),
             'updated_at' => now()
-        ]);
-    }
-
-    function createRole($kdRole, $roleName, $deks)
-    {
-        DB::table('tbl_role') -> insert([
-            'kd_role' => $kdRole,
-            'role_name' => $roleName,
-            'deks' => $deks
         ]);
     }
 

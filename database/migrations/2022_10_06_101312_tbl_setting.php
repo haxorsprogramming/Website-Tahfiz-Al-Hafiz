@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TblRole extends Migration
+class TblSetting extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class TblRole extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_role', function (Blueprint $table) {
+        Schema::create('tbl_setting', function (Blueprint $table) {
             $table -> id();
-            $table -> char('kd_role', 1);
-            $table -> char('role_name', 100);
-            $table -> text('deks') -> nullable();
+            $table -> char('kd_setting', 200);
+            $table -> char('nama_setting', 200);
+            $table -> char('value', 200);
             $table -> timestamps();
         });
     }
@@ -29,6 +29,6 @@ class TblRole extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_role');
+        Schema::dropIfExists('tbl_setting');
     }
 }

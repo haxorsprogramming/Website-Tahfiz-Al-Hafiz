@@ -15,7 +15,10 @@ class C_Santri extends Controller
     {
         $kafilah = M_Kafilah::all();
         $santri = M_Santri::all();
+//        echo $kafilah;
+//        dd($santri);
         $dr = ['dataKafilah' => $kafilah, 'dataSantri' => $santri];
+//        dd($dr);
         return view('mainApp.santri.santriPage', $dr);
     }
 

@@ -55,7 +55,7 @@ var santriApp = new Vue({
             document.querySelector("#txtAlamatEdit").value = res.data.dataSantri.alamat;
             document.querySelector("#txtTglLahirEdit").value = res.data.dataSantri.tanggal_lahir;
             document.querySelector("#txtNamaSantriEdit").value = res.data.dataSantri.nama;
-            document.querySelector("#txtKafilahEdit").value = res.data.kafilah.nama;
+            document.querySelector("#txtKafilahEdit").value = res.data.dataSantri.id_kafilah;
             document.querySelector("#txtKelasEdit").value = res.data.dataSantri.kelas;
             $('#modalEditSantri').appendTo("body").modal('show');
           });
@@ -88,8 +88,13 @@ $("#tblSantri").dataTable();
 
 function  editConfirm(ds)
 {
+
     axios.post(rProcessUpdateSantri, ds).then(function (res){
-        console.log(res.data);
+        $('#modalEditSantri').modal("hide");
+        setTimeout(function (){
+            pesanUmumApp('success', 'Sukses', 'Berhasil mengupdate data santri');
+            load_page(rSantri, "Santri");
+        }, 300);
     });
 }
 
