@@ -41,6 +41,21 @@ class C_Santri extends Controller
         return \Response::json($dr);
     }
 
+    public function processUpdateSantri(Request $request)
+    {
+//        {'nama':nama, 'alamat':alamat, 'jk':jk, 'tglLahir':tglLahir, 'kelas':kelas, 'kafilah':kafilah, 'idSantri':idSantri}
+        M_Santri::where('id_santri', $request -> idSantri) -> update([
+            'nama' => $request -> nama,
+            'tanggal_lahir' => $request -> tglLahir,
+            'alamat' => $request -> alamat,
+            'jk' => $request -> jk,
+            'kelas' => $request -> kelas,
+            'id_kafilah' => $request -> kafilah
+        ]);
+        $dr = ['status' => 'sukses'];
+        return \Response::json($dr);
+    }
+
     public function restDataEdit(Request $request)
     {
         // {'idSantri':idSantri}
@@ -75,6 +90,7 @@ class C_Santri extends Controller
             return($noGr);
         }
     }
+
 
     function processDeleteSantri(Request $request)
     {

@@ -32,7 +32,9 @@ Route::group(['prefix' => 'app'], function (){
         Route::get('', [C_Santri::class, 'santriPage']);
         Route::post('add', [C_Santri::class, 'processAddSantri']);
         Route::post('delete', [C_Santri::class, 'processDeleteSantri']);
+        Route::post('update', [C_Santri::class, 'processUpdateSantri']);
         Route::post('get-data', [C_Santri::class, 'restDataEdit']);
+
     });
 });
 

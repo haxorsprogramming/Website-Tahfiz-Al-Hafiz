@@ -2,6 +2,7 @@
 var rProcessAddSantri = server + "app/santri/add";
 var rProcessDeleteSantri = server + "app/santri/delete";
 var rGetDataEdit = server + "app/santri/get-data";
+var rProcessUpdateSantri = "app/santri/update";
 // vue object
 var santriApp = new Vue({
     el : '#divSantri',
@@ -74,6 +75,7 @@ var santriApp = new Vue({
                 pesanUmumApp('warning', 'Isi field !!!', 'Harap lengkapi field !!!');
             }else{
                 let ds = {'nama':nama, 'alamat':alamat, 'jk':jk, 'tglLahir':tglLahir, 'kelas':kelas, 'kafilah':kafilah, 'idSantri':idSantri}
+                // console.log(ds);
                 confirmQuest('info', 'Konfirmasi', 'Update data santri ...?', function (x) {editConfirm(ds)});
             }
 
@@ -86,7 +88,9 @@ $("#tblSantri").dataTable();
 
 function  editConfirm(ds)
 {
-
+    axios.post(rProcessUpdateSantri, ds).then(function (res){
+        console.log(res.data);
+    });
 }
 
 function addConfirm(ds)

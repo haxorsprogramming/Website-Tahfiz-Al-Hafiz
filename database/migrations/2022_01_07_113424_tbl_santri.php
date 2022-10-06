@@ -25,9 +25,9 @@ class TblSantri extends Migration
             $table -> char('email', 200) -> nullable();
             $table -> char('id_kafilah', 80);
             $table -> char('kelas', 30); // DASAR - TAHFIZ - TAHSIN
-            $table -> char('status_ortu', 20); //  LENGKAP - YATIM - PIATU - YATIM_PIATU
-            $table -> char('nama_ortu', 200);
-            $table -> timestamps(); 
+            $table -> char('status_ortu', 20) -> nullable(); //  LENGKAP - YATIM - PIATU - YATIM_PIATU
+            $table -> char('nama_ortu', 200) -> nullable();
+            $table -> timestamps();
             $table -> char('active', 1);
         });
     }
