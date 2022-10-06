@@ -1,7 +1,7 @@
 // route
 var rProcessAddSantri = server + "app/santri/add";
-var rProcessDeleteSantri = server + "app/santri/delete/process";
-var rGetDataEdit = server + "app/santri/edit/data";
+var rProcessDeleteSantri = server + "app/santri/delete";
+var rGetDataEdit = server + "app/santri/get-data";
 // vue object
 var santriApp = new Vue({
     el : '#divSantri',
@@ -62,12 +62,32 @@ var santriApp = new Vue({
         },
         prosesUpdateDataSantri : function()
         {
-            console.log("Haloo");
+            let idSantri = document.querySelector("#txtIdSantriEdit").value;
+            let nama = document.querySelector("#txtNamaSantriEdit").value;
+            let alamat = document.querySelector("#txtAlamatEdit").value;
+            let jk = document.querySelector("#txtJkEdit").value;
+            let tglLahir = document.querySelector("#txtTglLahirEdit").value;
+            let kelas = document.querySelector("#txtKelasEdit").value;
+            let kafilah = document.querySelector("#txtKafilahEdit").value;
+
+            if(nama === "" || alamat === ""){
+                pesanUmumApp('warning', 'Isi field !!!', 'Harap lengkapi field !!!');
+            }else{
+                let ds = {'nama':nama, 'alamat':alamat, 'jk':jk, 'tglLahir':tglLahir, 'kelas':kelas, 'kafilah':kafilah, 'idSantri':idSantri}
+                confirmQuest('info', 'Konfirmasi', 'Update data santri ...?', function (x) {editConfirm(ds)});
+            }
+
+
         }
     }
 });
 // inisialisasi
 $("#tblSantri").dataTable();
+
+function  editConfirm(ds)
+{
+
+}
 
 function addConfirm(ds)
 {

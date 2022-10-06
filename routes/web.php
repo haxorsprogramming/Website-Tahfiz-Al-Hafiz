@@ -31,11 +31,13 @@ Route::group(['prefix' => 'app'], function (){
     Route::group(['prefix' => 'santri'], function (){
         Route::get('', [C_Santri::class, 'santriPage']);
         Route::post('add', [C_Santri::class, 'processAddSantri']);
+        Route::post('delete', [C_Santri::class, 'processDeleteSantri']);
+        Route::post('get-data', [C_Santri::class, 'restDataEdit']);
     });
 });
 
-Route::post('/app/santri/delete/process', [C_Santri::class, 'processDeleteSantri']);
-Route::post('/app/santri/edit/data', [C_Santri::class, 'restDataEdit']);
+
+
 // data pengurus
 Route::get('/app/pengurus', [C_Pengurus::class, 'pengurusPage']);
 Route::post('/app/pengurus/add/process', [C_Pengurus::class, 'processAddPengurus']);

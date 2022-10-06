@@ -28,7 +28,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Jenis Kelamin</label>
-                                <select class="form-control" id="txtType">
+                                <select class="form-control" id="txtJkEdit">
                                     <option value="L">Laki Laki</option>
                                     <option value="P">Perempuan</option>
                                 </select>
@@ -44,7 +44,7 @@
                                 <label>Kelas</label>
                                 <small>(Leave blank if quota not set)</small>
                                 <select class="form-control" id="txtKelasEdit">
-                                    <option value="none">--- Pilih kafilah ---</option>
+
                                     <option value="DASAR">Dasar</option>
                                     <option value="TAHFIZ">Tahfiz</option>
                                     <option value="TAHSIN">Tahsin</option>
