@@ -19,8 +19,7 @@ class TblUser extends Migration
             $table -> char('role', 1);
             $table -> char('password', 200);
             $table -> text('api_token') -> nullable();
-            $table -> timestamps(); 
-            $table -> char('active', 1);
+            $table -> timestamps();
         });
     }
 

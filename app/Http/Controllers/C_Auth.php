@@ -26,12 +26,12 @@ class C_Auth extends Controller
     {
         $username = $request -> username;
         $password = $request -> password;
-        // cari total user 
+        // cari total user
         $tUser = M_User::where('username', $username) -> count();
         if($tUser < 1){
             $status = "NO_USER";
         }else{
-            // cari data user 
+            // cari data user
             $dataUser = M_User::where('username', $username) -> first();
             $passwordDb = $dataUser -> password;
             $cek_password = password_verify($password, $passwordDb);
@@ -47,7 +47,7 @@ class C_Auth extends Controller
 
     public function logoutProcess()
     {
-        return redirect('/login');
+        return redirect('/auth/login');
     }
 
     public function daftarProses(Request $request)

@@ -35,7 +35,7 @@
                     <li><a class="nav-link" href="javascript:void(0)" @click="rekapAbsensi()">Rekap Absensi</a></li>
                 </ul>
             </li>
-            <li><a class="nav-link" href="{{ url('/logout') }}"><i class="fas fa-sign-out-alt"></i> <span>Log Out</span></a></li>
+            <li><a class="nav-link" href="{{ url('/auth/logout') }}"><i class="fas fa-sign-out-alt"></i> <span>Log Out</span></a></li>
         </ul>
     </aside>
 </div>

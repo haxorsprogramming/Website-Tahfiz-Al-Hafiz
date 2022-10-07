@@ -26,8 +26,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        $this -> call([\Database\Seeders\S_Role::class]);
-        $this -> createUser("admin", "1", "admin");
+        $this -> call([
+            \Database\Seeders\S_Role::class,
+            \Database\Seeders\S_Setting::class,
+            \Database\Seeders\S_User::class
+        ]);
+
         $this -> createKafilah("AL HALIM", "-", "HANIFAH");
         $this -> createKafilah("AL FATTAH", "-", "MAULANA");
         $this -> createKafilah("AR RAHMAN", "-", "DITA");
@@ -117,24 +121,11 @@ class DatabaseSeeder extends Seeder
             'id_kafilah' => $idKafilah,
             'nama' => $nama,
             'deksripsi' => $deks,
-            'username_wali' => $userWali,
+            'nama_wali' => $userWali,
             'created_at' => now(),
             'updated_at' => now(),
-            'active' => '1'
         ]);
         array_push($this -> kafilah, $idKafilah);
-    }
-
-    function createUser($username, $role="1", $password)
-    {
-        DB::table('tbl_user') -> insert([
-            'username' => $username,
-            'role' => $role,
-            'password' => password_hash($password, PASSWORD_DEFAULT),
-            'active' => '1',
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
     }
 
     function getIdPengurus()

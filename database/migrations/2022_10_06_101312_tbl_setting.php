@@ -17,7 +17,7 @@ class TblSetting extends Migration
             $table -> id();
             $table -> char('kd_setting', 200);
             $table -> char('nama_setting', 200);
-            $table -> char('value', 200);
+            $table -> text('value');
             $table -> timestamps();
         });
     }

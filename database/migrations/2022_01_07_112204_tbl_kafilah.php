@@ -18,9 +18,8 @@ class TblKafilah extends Migration
             $table -> char('id_kafilah', 60);
             $table -> char('nama', 60);
             $table -> text('deksripsi');
-            $table -> char('username_wali', 200);
-            $table -> timestamps(); 
-            $table -> char('active', 1);
+            $table -> char('nama_wali', 200);
+            $table -> timestamps();
         });
     }
 

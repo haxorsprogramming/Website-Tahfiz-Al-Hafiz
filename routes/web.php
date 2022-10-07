@@ -17,11 +17,25 @@ use App\Http\Controllers\C_Laporan_Keuangan;
 use App\Http\Controllers\C_Rekap_Absensi;
 
 Route::get('/', [C_Home::class, 'homePage']);
-// auth
-Route::get('/login', [C_Auth::class, 'loginPage']);
-Route::post('/auth/login/process', [C_Auth::class, 'loginProcess']);
-Route::get('/logout', [C_Auth::class, 'logoutProcess']);
-Route::post('/auth/daftar/proses', [C_Auth::class, 'daftarProses']);
+
+// auth group
+Route::group(['prefix' => 'auth'], function (){
+    // login
+    Route::group(['prefix' => 'login'], function (){
+        Route::get('', [C_Auth::class, 'loginPage']);
+        Route::post('process', [C_Auth::class, 'loginProcess']);
+    });
+    // log out
+    Route::get('logout', [C_Auth::class, 'logoutProcess']);
+    // registrasi
+    Route::group(['prefix' => 'daftar'], function (){
+        Route::post('proses', [C_Auth::class, 'daftarProses']);
+    });
+});
+
+
+
+
 Route::get('/auth/daftar/{token}/cetak', [C_Auth::class, 'cetakBuktiPendaftaran']);
 
 Route::group(['prefix' => 'app'], function (){
