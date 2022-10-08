@@ -11,10 +11,19 @@ var appSetting = new Vue({
         {
             let ds = {'id':id}
             axios.post(rGetDataSetting, ds).then(function(res){
-                console.log(res.data);
+                document.querySelector("#txtNamaSetting").value = res.data.dataSetting.nama_setting;
+                document.querySelector("#txtNilaiSetting").value = res.data.dataSetting.value;
+                $("#divDataSetting").hide();
+                $("#divEditDataSetting").show();
+                document.querySelector("#txtNilaiSetting").focus();
             });
         }
     }
 });
 // inisialisasi
 $("#tblDataSetting").dataTable();
+
+function updateProsesAtc()
+{
+    console.log("ready to update");
+}

@@ -16,7 +16,8 @@ class C_Setting extends Controller
     }
     public function getDataSetting(Request $request)
     {
-        $dr = ['status' => 'sukses'];
+        $dataSetting = M_Setting::where('id', $request -> id) -> first();
+        $dr = ['status' => 'sukses', 'dataSetting' => $dataSetting];
         return \Response::json($dr);
     }
 }

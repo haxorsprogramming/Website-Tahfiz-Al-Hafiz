@@ -29,3 +29,29 @@
         </table>
     </div>
 </div>
+
+<div id="divEditDataSetting" style="display: none;">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-3">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h4 class="card-title">Edit setting</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Nama Setting</label>
+                        <input type="text" class="form-control" id="txtNamaSetting" readonly placeholder="Nama setting">
+                    </div>
+                    <div class="form-group">
+                        <label>Nilai</label>
+                        <input type="text" class="form-control" id="txtNilaiSetting" placeholder="Nilai setting">
+                    </div>
+                    <div>
+                        <a href="javascript:void(0)" class="btn btn-primary" onclick="updateProsesAtc()">Update setting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
