@@ -61,9 +61,10 @@
             </div>
             <!-- container-scroller -->
             <!-- base:js -->
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
     <script src="{{ asset('ladun') }}/stisla/vendors/base/vendor.bundle.base.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

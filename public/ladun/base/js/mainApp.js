@@ -12,7 +12,8 @@ var rDonasi = server + "app/donasi";
 var rCashFlow = server + "app/cash-flow";
 var rLaporanKeuangan = server + "app/laporan-keuangan/"+tahun;
 var rRekapAbsensi = server + "app/rekap-absensi";
-// vue object 
+var rSetting = server + "app/setting";
+// vue object
 var menuApp = new Vue({
     el : '#divMenu',
     data : {
@@ -62,6 +63,10 @@ var menuApp = new Vue({
         rekapAbsensi : function()
         {
             load_page(rRekapAbsensi, "Rekap Absensi");
+        },
+        settingAtc : function ()
+        {
+            load_page(rSetting, "Setting");
         }
     }
 });
@@ -71,7 +76,7 @@ var mainApp = new Vue({
         titleSection : "Dashboard"
     }
 });
-// inisialisasi 
+// inisialisasi
 load_page(rDashboard, "Dashboard");
 
 async function load_page(page, page_title, el_div="#divUtama")

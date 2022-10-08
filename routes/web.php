@@ -15,6 +15,7 @@ use App\Http\Controllers\C_Donasi;
 use App\Http\Controllers\C_Cash_Flow;
 use App\Http\Controllers\C_Laporan_Keuangan;
 use App\Http\Controllers\C_Rekap_Absensi;
+use App\Http\Controllers\C_Setting;
 
 Route::get('/', [C_Home::class, 'homePage']);
 
@@ -44,7 +45,6 @@ Route::group(['prefix' => 'app'], function (){
         Route::post('delete', [C_Santri::class, 'processDeleteSantri']);
         Route::post('update', [C_Santri::class, 'processUpdateSantri']);
         Route::post('get-data', [C_Santri::class, 'restDataEdit']);
-
     });
     // data pengurus
     Route::group(['prefix' => 'pengurus'], function (){
@@ -63,11 +63,16 @@ Route::group(['prefix' => 'app'], function (){
         Route::get('', [C_Absensi::class, 'absensiPage']);
         Route::post('proses', [C_Absensi::class, 'prosesAbsensi']);
     });
+    // setting
+    Route::group(['prefix' => 'setting'], function (){
+        Route::get('', [C_Setting::class, 'settingPage']);
+        Route::post('get-data', [C_Setting::class, 'getDataSetting']);
+    });
+
 });
 
 
 
-// absensi
 
 
 Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi']);
