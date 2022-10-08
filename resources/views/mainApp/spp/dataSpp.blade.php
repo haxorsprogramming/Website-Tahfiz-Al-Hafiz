@@ -32,7 +32,7 @@
                     <td>Rp. {{ number_format($spp -> total) }}</td>
                     <td>{{ $spp -> created_at }}</td>
                     <td>
-                        <a href="{{ url('app/pembayaran/spp/'.$spp -> token_pembayaran.'/cetak') }}" target="new" class="btn btn-primary">Cetak</a>
+                        <a href="{{ url('app/pembayaran-spp/'.$spp -> token_pembayaran.'/cetak') }}" target="new" class="btn btn-primary">Cetak</a>
                     </td>
                 </tr>
             @endforeach

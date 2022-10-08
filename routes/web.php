@@ -30,13 +30,9 @@ Route::group(['prefix' => 'auth'], function (){
     // registrasi
     Route::group(['prefix' => 'daftar'], function (){
         Route::post('proses', [C_Auth::class, 'daftarProses']);
+        Route::get('{token}/cetak', [C_Auth::class, 'cetakBuktiPendaftaran']);
     });
 });
-
-
-
-
-Route::get('/auth/daftar/{token}/cetak', [C_Auth::class, 'cetakBuktiPendaftaran']);
 
 Route::group(['prefix' => 'app'], function (){
     Route::get('', [C_Main_App::class, 'mainAppPage']);
@@ -56,16 +52,24 @@ Route::group(['prefix' => 'app'], function (){
         Route::post('add', [C_Pengurus::class, 'processAddPengurus']);
         Route::post('process', [C_Pengurus::class, 'processDeletePengurus']);
     });
+    // pembayaran spp
+    Route::group(['prefix' => 'pembayaran-spp'], function(){
+        Route::get('', [C_Spp::class, 'pembayaranSppPage']);
+        Route::post('proses', [C_Spp::class, 'prosesPembayaranSpp']);
+        Route::get('{token}/cetak', [C_Spp::class, 'cetakPembayaranSpp']);
+    });
+    // absensi
+    Route::group(['prefix' => 'absensi'], function (){
+        Route::get('', [C_Absensi::class, 'absensiPage']);
+        Route::post('proses', [C_Absensi::class, 'prosesAbsensi']);
+    });
 });
 
 
-// pembayaran spp
-Route::get('/app/pembayaran-spp', [C_Spp::class, 'pembayaranSppPage']);
-Route::post('/app/pembayaran-spp/add/proses', [C_Spp::class, 'prosesPembayaranSpp']);
-Route::get('/app/pembayaran/spp/{token}/cetak', [C_Spp::class, 'cetakPembayaranSpp']);
+
 // absensi
-Route::get('/app/absensi', [C_Absensi::class, 'absensiPage']);
-Route::post('/app/absensi/proses', [C_Absensi::class, 'prosesAbsensi']);
+
+
 Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi']);
 // penggajian
 Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);

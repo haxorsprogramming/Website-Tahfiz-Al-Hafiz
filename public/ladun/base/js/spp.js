@@ -1,6 +1,6 @@
-// route 
-var rProsesPembayaranSpp = server + "app/pembayaran-spp/add/proses";
-// vue object 
+// route
+var rProsesPembayaranSpp = server + "app/pembayaran-spp/proses";
+// vue object
 var appSpp = new Vue({
     el : '#divSpp',
     data : {
@@ -35,7 +35,7 @@ var appSpp = new Vue({
                 pesanUmumApp('warning', 'Fail', 'Harap lengkapi field !!!')
             }else{
                 axios.post(rProsesPembayaranSpp, ds).then(function(res){
-                    pesanUmumApp('success', 'Sukses', 'Berhasil memproses pembayaran SPP ..'); 
+                    pesanUmumApp('success', 'Sukses', 'Berhasil memproses pembayaran SPP ..');
                     load_page(rPembayaranSpp, "Pembayaran SPP");
                 });
             }
@@ -46,6 +46,6 @@ var appSpp = new Vue({
         }
     }
 });
-// inisialisasi 
+// inisialisasi
 $("#tblSpp").dataTable();
 $("#tblDataSantri").dataTable();
