@@ -7,7 +7,7 @@
                 <div class="text-center mb-5">
                     <h4 class="text-uppercase mb-0">Informasi kontak & pendaftaran santri</h4>
                     <p class="text-muted f-14">Jika anda atau putra/i anda ingin mendaftar menjadi santri Tahfiz Al-Haziq, dapat melakukan pendaftaran langsung
-                        ke rumah tahfiz atau mengisi pendaftaran secara online di form di bawah ini. 
+                        ke rumah tahfiz atau mengisi pendaftaran secara online di form di bawah ini.
                     </p>
                 </div>
             </div>
@@ -132,7 +132,7 @@
                         <img src="https://s3.jagoanstorage.com/nadhamedia/project_asset/Logo_Project/al-hafiz.png" alt="" class="logo-light" height="62" />
                     </a>
                 </div>
-                <p class="footer-desc f-15">{{ $setting -> namaTahfiz }}, menciptakan generasi qur'ani yang berakhlakul karimah serta menjunjung tinggi nilai keislaman.</p>
+                <p class="footer-desc f-15">{{ $setting -> namaTahfiz }}, {{ $setting -> motto  }}.</p>
             </div>
             <div class="col-lg-7 offset-lg-1">
                 <div class="row">
@@ -151,14 +151,14 @@
                             <li><a href="">Donasi</a></li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 mt-5">
                 <div class="text-center footer-alt my-3">
-                    <p class="mb-0 f-15">2022 © Tahfiz Al-Haziq</p>
+                    <p class="mb-0 f-15">{{ env('TAHUN') }} © Tahfiz Al-Haziq</p>
                 </div>
             </div>
         </div>

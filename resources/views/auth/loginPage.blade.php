@@ -45,7 +45,7 @@
                                             </div>
                                             <div class="mt-2">
                                                 <div style="padding-top:12px;">
-                                                    <h5 class="font-weight-light">Copyright @ 2020 - <a href="{{ env('APP_URL') }}" target='new'>Tahfiz Al Haziq</a></h5>
+                                                    <h5 class="font-weight-light">Copyright @ {{ env('tahun')  }} - <a href="{{ env('APP_URL') }}" target='new'>Tahfiz Al Haziq</a></h5>
                                                 </div>
                                             </div>
                                         </div>

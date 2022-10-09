@@ -19,8 +19,9 @@ class S_Setting extends Seeder
         $this -> addSetting("pembina", "Muhammad Agung Aditya");
         $this -> addSetting("email", "alhaziq@gmail.com");
         $this -> addSetting("hp", "087822118022");
-        $this -> addSetting("alamat", "087811224411");
+        $this -> addSetting("alamat", "Jalan Tanjung Sari gang masjid, Batang Kuis");
         $this -> addSetting("bank", "BSI (10122211221) an Agung Aditya");
+        $this -> addSetting("motto", "menciptakan generasi qur'ani yang berakhlakul karimah serta menjunjung tinggi nilai keislaman.");
     }
 
     function addSetting($nama, $value)

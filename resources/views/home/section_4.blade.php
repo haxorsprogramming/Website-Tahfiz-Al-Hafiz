@@ -18,7 +18,7 @@
                 <div class="text-muted mt-5 mt-lg-0">
                     <h2 class="title font-weight-medium mb-4">Membentuk & membina generasi qur'ani untuk kesejahteraan umat.</h2>
                     <p class="mb-4 f-15">@{{kata kata}}</p>
-                    <strong>M.Agung Aditya, S.Kom & Silvia Anggraini, S.Pd</strong><br/>
+                    <strong>{{ $setting -> pembina  }}</strong><br/>
                     <small>Pendiri & Pembina Rumah Tahfiz Al-Haziq</small>
                 </div>
             </div>

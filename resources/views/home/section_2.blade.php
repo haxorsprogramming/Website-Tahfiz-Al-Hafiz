@@ -11,7 +11,7 @@
                     </p>
                         <hr/>
                     <h2 class="title font-weight-normal text-muted mb-2">Informasi Donasi</h2>
-                    <h4>{{ $setting -> namaBank }} : <br/><strong>{{ $setting -> rekening }}</strong> a/n {{ $setting -> pembina }}</h4>
+                    <h4>{{ $setting -> namaBank }}</h4>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">

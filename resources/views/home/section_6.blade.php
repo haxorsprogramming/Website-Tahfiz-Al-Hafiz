@@ -14,12 +14,12 @@
 
         <div class="row">
             <div class="owl-carousel owl-theme">
-                <?php for($x = 0; $x <= 5; $x++){ ?> 
+                <?php for($x = 0; $x <= 5; $x++){ ?>
                 <div class="item">
                     <div class="testi-content text-center m-3 p-4 position-relative">
                         <div class="testi-icon"><i class="mdi mdi-format-quote-open"></i></div>
                         <p class="text-muted mb-4 position-relative f-15">@{{ kata-testimoni }}.</p>
-                        <img src="https://s3.jagoanstorage.com/nadhamedia/project_asset/Logo_Project/tata-kotak.jpg" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
+                        <img src="https://i.pravatar.cc/300" alt="" class="img-fluid mx-auto d-block rounded-circle user-img">
                         <h5 class="title mb-1 mt-4">Afa Naninda</h5>
                         <p class="text-muted mb-2 f-15">Orang Tua Santri</p>
                         <ul class="list-unstyled f-15 text-warning mb-0">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\M_Cash_Flow;
+use App\Models\M_Setting;
 
 class C_Helper extends Controller
 {
@@ -21,12 +22,17 @@ class C_Helper extends Controller
         $cf -> save();
     }
 
-//    public function getSetting()
-//    {
-//        $ds = file_get_contents("ladun/file/settings.json");
-//        $ds = json_decode($ds);
-//        return $ds[0];
-//    }
+    public function getSetting()
+    {
+        $ds1 = new CH_Data_Setting();
+        $ds1 -> namaTahfiz = $this -> loadDataSetting("nama");
+        $ds1 -> namaBank = $this -> loadDataSetting("bank");
+        $ds1 -> alamat = $this -> loadDataSetting("alamat");
+        $ds1 -> kontak = $this -> loadDataSetting("hp");
+        $ds1 -> email = $this -> loadDataSetting("email");
+        $ds1 -> motto = $this -> loadDataSetting("motto");
+        return $ds1;
+    }
 
     public function deleteCashFlow($idEvent)
     {
@@ -42,4 +48,10 @@ class C_Helper extends Controller
         $pengeluaran = $this -> getFlowBulan("KELUAR", $bulan, $tahun);
         return $pemasukan - $pengeluaran;
     }
+    public function loadDataSetting($namaSetting)
+    {
+        $qDataSetting = M_Setting::where('nama_setting', $namaSetting) -> first();
+        return $qDataSetting -> value;
+    }
 }
+
