@@ -67,6 +67,7 @@ Route::group(['prefix' => 'app'], function (){
     Route::group(['prefix' => 'setting'], function (){
         Route::get('', [C_Setting::class, 'settingPage']);
         Route::post('get-data', [C_Setting::class, 'getDataSetting']);
+        Route::post('update', [C_Setting::class, 'prosesUpdateSetting']);
     });
 
 });

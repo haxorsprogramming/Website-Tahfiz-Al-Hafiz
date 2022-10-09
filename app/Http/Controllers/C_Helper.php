@@ -21,13 +21,13 @@ class C_Helper extends Controller
         $cf -> save();
     }
 
-    public function getSetting()
-    {
-        $ds = file_get_contents("ladun/file/settings.json");
-        $ds = json_decode($ds);
-        return $ds[0];
-    }
-    
+//    public function getSetting()
+//    {
+//        $ds = file_get_contents("ladun/file/settings.json");
+//        $ds = json_decode($ds);
+//        return $ds[0];
+//    }
+
     public function deleteCashFlow($idEvent)
     {
         M_Cash_Flow::where('id_event', $idEvent) -> delete();

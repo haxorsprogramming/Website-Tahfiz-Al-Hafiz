@@ -1,5 +1,6 @@
 // route
 var rGetDataSetting = server + "app/setting/get-data";
+var rProsesUpdateSetting = server + "app/setting/update";
 // vue object
 var appSetting = new Vue({
     el : "#divDataSetting",
@@ -25,5 +26,22 @@ $("#tblDataSetting").dataTable();
 
 function updateProsesAtc()
 {
-    console.log("ready to update");
+    let nama = document.querySelector("#txtNamaSetting").value;
+    let nilai = document.querySelector("#txtNilaiSetting").value;
+
+    if(nama === "" || nilai === ""){
+        pesanUmumApp('warning', 'Isi field !!!', 'Harap isi feild !!!');
+    }else{
+        let ds = {'nama':nama, 'nilai':nilai}
+        confirmQuest('info', 'Konfirmasi', 'Tambah data santri ...?', function (x) {updateConfirm(ds)});
+    }
+
+}
+
+function updateConfirm(ds)
+{
+    axios.post(rProsesUpdateSetting, ds).then(function (res){
+        pesanUmumApp('success', 'Sukses', 'Berhasil mengupdate data setting');
+        load_page(rSetting, "Setting");
+    });
 }
