@@ -48,17 +48,28 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 
 <h4>Instalasi</h4>
 - Aplikasi dibuat dengan menggunakan laravel versi 8, untuk itu harap gunakan sistem kebutuhan sesuai dengan standar kebutuhan laravel 8
+
 - Untuk database menggunakan MySql
+
 - Pastikan sudah menginstall git (untuk clone repository) & composer
+
 - Silahkan clone repository ini dengan perintah <pre>git clone https://github.com/haxorsprogramming/Website-Tahfiz-Al-Hafiz </pre>
+
 - Lakukan instalasi dependency dengan perintah <pre>composer install</pre>
+
 - Copy file <code>.env.exampe</code> menjadi <code>.env</code>, dan ubah pengaturan database pada file tersebut
+
 - Lakukan migrasi database & seeder dengan perintah <pre>php artisan migrate:refresh --seed</pre>
+
 - Silahkan akses browser sesuai path alamat aplikasi di server untuk mengakses aplikasi
+
 - Untuk mengakses alamat administrator, dapat mengakses <code>'url_aplikasi'/auth/login</code>
+
 - Username & password default adalah <code>admin</code>
 
 <h4>Informasi Tambahan</h4>
 - Aplikasi ini merupakan hibah dari komunitas Haxorsprogramming untuk salah satu Tahfiz Qur'an di kota medan
+
 - Aplikasi ini bisa digunakan untuk tahfiz qur'an lain & bebas untuk dikembangkan kembali
+
 - Jika ada pertanyaan seputar aplikasi ini, atau ingin memberikan donasi dapat mengirimkan email ke <code>alditha.forum@gmail.com</code>
