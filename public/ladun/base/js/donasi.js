@@ -1,7 +1,7 @@
-// route 
-var rProsesTambahDonasi = server + "app/donasi/tambah/proses";
-var rProsesHapusDonasi = server + "app/donasi/hapus/proses";
-// vue object 
+// route
+var rProsesTambahDonasi = server + "app/donasi/tambah";
+var rProsesHapusDonasi = server + "app/donasi/hapus";
+// vue object
 var appDonasi = new Vue({
     el : '#divDonasi',
     data : {
@@ -33,7 +33,7 @@ var appDonasi = new Vue({
         }
     }
 });
-// inisialisasi 
+// inisialisasi
 $("#tblDonasi").dataTable();
 
 function konfirmasiHapus(token)

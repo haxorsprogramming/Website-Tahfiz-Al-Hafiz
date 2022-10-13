@@ -61,7 +61,8 @@ Route::group(['prefix' => 'app'], function (){
     // absensi
     Route::group(['prefix' => 'absensi'], function (){
         Route::get('', [C_Absensi::class, 'absensiPage']);
-        Route::post('proses', [C_Absensi::class, 'prosesAbsensi']);
+        Route::post('add', [C_Absensi::class, 'prosesAbsensi']);
+        Route::post('delete', [C_Absensi::class, 'prosesHapusAbsensi']);
     });
     // setting
     Route::group(['prefix' => 'setting'], function (){
@@ -69,35 +70,47 @@ Route::group(['prefix' => 'app'], function (){
         Route::post('get-data', [C_Setting::class, 'getDataSetting']);
         Route::post('update', [C_Setting::class, 'prosesUpdateSetting']);
     });
+    // penggajian
+    Route::group(['prefix' => 'penggajian'], function (){
+        Route::get('', [C_Penggajian::class, 'penggajianPage']);
+        Route::group(['prefix' => 'split'], function (){
+            Route::post('proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
+        });
+        Route::get('{token}/cetak', [C_Penggajian::class, 'cetakSlipGaji']);
+    });
+    // pengeluaran
+    Route::group(['prefix' => 'pengeluaran'], function (){
+        Route::get('', [C_Pengeluaran::class, 'pengeluaranPage']);
+        Route::post('tambah', [C_Pengeluaran::class, 'prosesTambahPengeluaran']);
+        Route::post('hapus', [C_Pengeluaran::class, 'prosesHapusPengeluaran']);
+    });
+    // donasi
+    Route::group(['prefix' => 'donasi'], function (){
+        Route::get('', [C_Donasi::class, 'donasiPage']);
+        Route::post('tambah', [C_Donasi::class, 'prosesTambahDonasi']);
+        Route::post('hapus', [C_Donasi::class, 'prosesHapusDonasi']);
+        Route::get('{token}/cetak', [C_Donasi::class, 'cetakPenerimaanDonasi']);
+    });
+    // cash flow
+    Route::group(['prefix' => 'cash-flow'], function (){
+        Route::get('', [C_Cash_Flow::class, 'cashFlow']);
+    });
+    // laporan keuangan
+    Route::group(['prefix' => 'laporan-keuangan'], function (){
+        Route::get('{tahun}', [C_Laporan_Keuangan::class, 'laporanKeuanganPage']);
+        Route::get('{bulan}/{tahun}/cetak', [C_Laporan_Keuangan::class, 'cetakLaporanBulanan']);
+    });
+    // rekap absensi
+    Route::group(['prefix' => 'rekap-absensi'], function (){
+        Route::get('', [C_Rekap_Absensi::class, 'rekapAbsensiPage']);
+        Route::get('set-rekap/{bulan}/{tahun}', [C_Rekap_Absensi::class, 'setRekapAbsensi']);
+        Route::get('{id_santri}/{bulan}/{tahun}/cetak', [C_Rekap_Absensi::class, 'cetakRekapAbsensi']);
+    });
 
 });
 
 
-
-
-
-Route::post('/app/absensi/hapus/proses', [C_Absensi::class, 'prosesHapusAbsensi']);
-// penggajian
-Route::get('/app/penggajian', [C_Penggajian::class, 'penggajianPage']);
-Route::post('/app/penggajian/split/proses', [C_Penggajian::class, 'prosesSplitPenggajian']);
-Route::get('/app/penggajian/{token}/cetak', [C_Penggajian::class, 'cetakSlipGaji']);
-// pengeluaran
-Route::get('/app/pengeluaran', [C_Pengeluaran::class, 'pengeluaranPage']);
-Route::post('/app/pengeluaran/tambah/proses', [C_Pengeluaran::class, 'prosesTambahPengeluaran']);
-Route::post('/app/pengeluaran/hapus/proses', [C_Pengeluaran::class, 'prosesHapusPengeluaran']);
-// donasi
-Route::get('/app/donasi', [C_Donasi::class, 'donasiPage']);
-Route::post('/app/donasi/tambah/proses', [C_Donasi::class, 'prosesTambahDonasi']);
-Route::post('/app/donasi/hapus/proses', [C_Donasi::class, 'prosesHapusPengeluaran']);
-Route::get('/app/donasi/{token}/cetak', [C_Donasi::class, 'cetakPenerimaanDonasi']);
-// cash flow
-Route::get('/app/cash-flow', [C_Cash_Flow::class, 'cashFlow']);
-// laporan keuangan
-Route::get('/app/laporan-keuangan/{tahun}', [C_Laporan_Keuangan::class, 'laporanKeuanganPage']);
-Route::get('/app/laporan-keuangan/{bulan}/{tahun}/cetak', [C_Laporan_Keuangan::class, 'cetakLaporanBulanan']);
 // rekap absensi
-Route::get('/app/rekap-absensi', [C_Rekap_Absensi::class, 'rekapAbsensiPage']);
-Route::get('/app/rekap-absensi/set-rekap/{bulan}/{tahun}', [C_Rekap_Absensi::class, 'setRekapAbsensi']);
-Route::get('/app/rekap-absensi/{id_santri}/{bulan}/{tahun}/cetak', [C_Rekap_Absensi::class, 'cetakRekapAbsensi']);
+
 // testing
 Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

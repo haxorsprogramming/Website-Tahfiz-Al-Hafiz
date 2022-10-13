@@ -1,6 +1,6 @@
-var rProsesAbsensi = server + "app/absensi/proses";
-var rProsesHapusAbsensi = server + "app/absensi/hapus/proses";
-// vue object 
+var rProsesAbsensi = server + "app/absensi/add";
+var rProsesHapusAbsensi = server + "app/absensi/delete";
+// vue object
 var appAbsensi = new Vue({
     el : "#divAbsensi",
     data : {
@@ -36,7 +36,7 @@ var appAbsensi = new Vue({
         }
     }
 });
-// inisialisasi 
+// inisialisasi
 $("#tblAbsensi").dataTable();
 $("#tblDataSantri").dataTable();
 

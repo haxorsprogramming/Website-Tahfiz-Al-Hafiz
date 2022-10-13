@@ -1,7 +1,7 @@
-// route 
-var rProsesPengeluaran = "app/pengeluaran/tambah/proses";
-var rProsesHapusPengeluaran = "app/pengeluaran/hapus/proses";
-// vue object 
+// route
+var rProsesPengeluaran = "app/pengeluaran/tambah";
+var rProsesHapusPengeluaran = "app/pengeluaran/hapus";
+// vue object
 var appExpend = new Vue({
     el : '#divPengeluaran',
     data : {
@@ -37,7 +37,7 @@ var appExpend = new Vue({
     }
 });
 
-// inisialisasi 
+// inisialisasi
 $("#tblPengeluaran").dataTable();
 
 function konfirmasiHapus(token)

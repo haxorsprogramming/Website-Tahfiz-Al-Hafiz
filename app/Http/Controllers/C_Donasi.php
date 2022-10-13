@@ -27,7 +27,7 @@ class C_Donasi extends Controller
     public function prosesTambahDonasi(Request $request)
     {
         // {'nama':nama, 'detail':detail, 'tipe':tipe, 'nominal':nominal, 'tgl':tgl}
-        // save tabel donasi 
+        // save tabel donasi
         $token = Str::uuid();
         $donasi = new M_Donasi();
         $donasi -> token = $token;
@@ -38,17 +38,17 @@ class C_Donasi extends Controller
         $donasi -> nominal = $request -> nominal;
         $donasi -> active = "1";
         $donasi -> save();
-        // create cash flow 
+        // create cash flow
         $this -> helperCtr -> createCashFlow($token, "MASUK", "DONASI", $request -> nominal);
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }
 
-    public function prosesHapusPengeluaran(Request $request)
+    public function prosesHapusDonasi(Request $request)
     {
         $token = $request -> token;
         M_Donasi::where('token', $token) -> delete();
-        // hapus cash flow 
+        // hapus cash flow
         $this -> helperCtr -> deleteCashFlow($token);
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
