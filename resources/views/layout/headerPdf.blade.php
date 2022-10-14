@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>{{ $judul }}</title>
+    <title>{{ $judul }} - {{ $dataSetting -> namaTahfiz  }}</title>
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/bootstrap.min.css">
 </head>
 
@@ -14,9 +14,9 @@
                 <img src="{{ asset('ladun/stisla/img/al-hafiz.png')}}" style="width: 100px;margin-bottom:10px;">
             </td>
             <td>
-                <b>Tahfiz Qur'an Al-Hafiz</b><br />
-                Jalan Tanjung Sari gang masjid, Batang Kuis<br />
-                Contact : 0812-6286-3710
+                <b>{{ $dataSetting -> namaTahfiz  }}</b><br />
+                {{ $dataSetting -> alamat  }}<br />
+                {{ $dataSetting -> kontak }}
             </td>
             <td style="text-align: right;">
                 <h3><b>{{ $judul }}</b></h3>
