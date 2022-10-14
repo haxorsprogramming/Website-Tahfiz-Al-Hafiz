@@ -11,10 +11,12 @@
 </div>
 
 <h4>Deksripsi</h4>
+
 Sistem manajemen tahfiz qur'an ini dapat digunakan untuk memanajemen proses administrasi & pendataan santri 
 yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendaftaran, pendataan, serta pengelolaan keuangan dapat digunakan pada aplikasi ini.
 
 <h4>Fitur</h4>
+
 <li> Pendaftaran santri</li>
 <li> Manajemen data santri</li>
 <li> Manajemen absensi</li>
@@ -28,6 +30,7 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 
 
 <h4>Screenshoot</h4>
+
 - Home
 <img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_home.png">
 
@@ -47,6 +50,7 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 <img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_bukti_pembayaran_spp.png">
 
 <h4>Instalasi</h4>
+
 - Aplikasi dibuat dengan menggunakan laravel versi 8, untuk itu harap gunakan sistem kebutuhan sesuai dengan standar kebutuhan laravel 8
 
 - Untuk database menggunakan MySql
@@ -67,7 +71,11 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 
 - Username & password default adalah <code>admin</code>
 
+- Pada saat migrate & seeder, data santri akan di generate secara dummy sebanyak 20 records, jika tidak ingin melakukan proses dummy generate silahkan komentar/disable code di file
+<code>database/seeders/DatabaseSeeder.php</code> pada baris ke 40
+
 <h4>Informasi Tambahan</h4>
+
 - Aplikasi ini merupakan hibah dari komunitas Haxorsprogramming untuk salah satu Tahfiz Qur'an di kota medan
 
 - Aplikasi ini bisa digunakan untuk tahfiz qur'an lain & bebas untuk dikembangkan kembali
