@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://laravel.com" target="_blank">
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/logo/logo.png" width="400">
+<img src="https://nos.jkt-1.neo.id/aditiastorage/asset/logo/logo-tahfiz-al-haziq.png" width="400">
 </a>
 </p>
 <div style="text-align: center;">
@@ -32,22 +32,22 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 <h4>Screenshoot</h4>
 
 - Home
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_home.png">
+
 
 - Form pendaftaran
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_form_pendaftaran.png">
+
 
 - Bukti Pendaftaran
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_bukti_pendaftaran.png">
+
 
 - Dashboard 
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_dashboard.png">
+
 
 - Form pembayaran SPP 
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_pembayaran_spp.png">
+
 
 - Bukti pembayaran SPP
-<img src="https://s3.jagoanstorage.com/aditia-storage/asset/ss_program/alhaziqtahfizquran/alhaziq_bukti_pembayaran_spp.png">
+
 
 <h4>Instalasi</h4>
 

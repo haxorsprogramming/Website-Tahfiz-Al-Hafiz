@@ -109,8 +109,5 @@ Route::group(['prefix' => 'app'], function (){
 
 });
 
-
 // rekap absensi
 
-// testing
-Route::get('/tes-tailwind', [C_Home::class, 'tesTailwind']);

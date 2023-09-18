@@ -11,7 +11,7 @@
     <table style="width: 100%;border-bottom: 2px solid black;">
         <tr>
             <td style="width: 100px;">
-                <img src="{{ asset('ladun/stisla/img/al-hafiz.png')}}" style="width: 100px;margin-bottom:10px;">
+                <img src="https://nos.jkt-1.neo.id/aditiastorage/asset/logo/logo-tahfiz-al-haziq.png" style="width: 100px;margin-bottom:10px;">
             </td>
             <td>
                 <b>{{ $dataSetting -> namaTahfiz  }}</b><br />

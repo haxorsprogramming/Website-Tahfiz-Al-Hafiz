@@ -9,6 +9,12 @@ use App\Models\M_Santri;
 
 class C_Rekap_Absensi extends Controller
 {
+    protected $helperCtr;
+
+    public function __construct(C_Helper $helperCtr)
+    {
+        $this -> helperCtr = $helperCtr;
+    }
     public function rekapAbsensiPage()
     {
         return view('mainApp.rekapAbsensi.rekapAbsensiPage');
@@ -22,16 +28,18 @@ class C_Rekap_Absensi extends Controller
     }
     public function cetakRekapAbsensi(Request $request, $id_santri, $bulan, $tahun)
     {
+        $dataSetting = $this -> helperCtr -> getSetting();
         $tHari = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
         $namaBulan = date("F", mktime(0, 0, 0, $bulan, 10));
         $dataSantri = M_Santri::where('id_santri', $id_santri) -> first();
         $dr = [
-            'judul' => 'Rekap Absensi', 
-            'tHari' => $tHari, 
-            'dataSantri' => $dataSantri, 
-            'bulan' => $bulan, 
-            'tahun' => $tahun, 
-            'namaBulan' => $namaBulan
+            'judul' => 'Rekap Absensi',
+            'tHari' => $tHari,
+            'dataSantri' => $dataSantri,
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+            'namaBulan' => $namaBulan,
+            'dataSetting' => $dataSetting
         ];
         $pdf = PDF::loadview('mainApp.rekapAbsensi.cetakRekapAbsensi', $dr);
         $pdf -> setPaper('A4', 'portait');
