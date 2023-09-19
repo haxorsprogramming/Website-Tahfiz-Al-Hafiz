@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use PDF;
 use Illuminate\Http\Request;
 use App\Models\M_Absensi;
+use Carbon\Carbon;
 
 use App\Models\M_Santri;
 
@@ -29,12 +30,13 @@ class C_Rekap_Absensi extends Controller
     public function cetakRekapAbsensi(Request $request, $id_santri, $bulan, $tahun)
     {
         $dataSetting = $this -> helperCtr -> getSetting();
-        $tHari = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
+        $dt = Carbon::createFromDate($tahun, $bulan);
+
         $namaBulan = date("F", mktime(0, 0, 0, $bulan, 10));
         $dataSantri = M_Santri::where('id_santri', $id_santri) -> first();
         $dr = [
             'judul' => 'Rekap Absensi',
-            'tHari' => $tHari,
+            'tHari' => $dt->daysInMonth,
             'dataSantri' => $dataSantri,
             'bulan' => $bulan,
             'tahun' => $tahun,

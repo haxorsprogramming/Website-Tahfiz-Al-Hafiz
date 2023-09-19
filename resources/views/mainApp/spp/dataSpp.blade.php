@@ -14,7 +14,7 @@
                     <th>Nama Santri</th>
                     <th>Bulan / Tahun</th>
                     <th>Total Pembayaran</th>
-                    <th>Tanggal Pembayaran</th>
+                    <th>Waktu Pembayaran</th>
                     <th>Aksi</th>
                 </tr>
             </thead>

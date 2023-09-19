@@ -3,7 +3,7 @@
 <div class="main-content" id="divMain">
     <section class="section">
         <div class="section-header">
-            <h1 id="txtTitlePage"> Manajemen Tahfiz Al Haziq - @{{ titleSection }}</h1>
+            <h1 id="txtTitlePage"> Manajemen {{$namaTahfiz}} - @{{ titleSection }}</h1>
         </div>
 
         <div id="divUtama"></div>

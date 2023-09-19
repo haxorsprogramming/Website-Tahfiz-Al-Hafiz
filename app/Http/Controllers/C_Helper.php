@@ -24,14 +24,14 @@ class C_Helper extends Controller
 
     public function getSetting()
     {
-        $ds1 = new CH_Data_Setting();
-        $ds1 -> namaTahfiz = $this -> loadDataSetting("nama");
-        $ds1 -> namaBank = $this -> loadDataSetting("bank");
-        $ds1 -> alamat = $this -> loadDataSetting("alamat");
-        $ds1 -> kontak = $this -> loadDataSetting("hp");
-        $ds1 -> email = $this -> loadDataSetting("email");
-        $ds1 -> motto = $this -> loadDataSetting("motto");
-        return $ds1;
+        $ds = new CH_Data_Setting();
+        $ds -> namaTahfiz = $this -> loadDataSetting("nama");
+        $ds -> namaBank = $this -> loadDataSetting("bank");
+        $ds -> alamat = $this -> loadDataSetting("alamat");
+        $ds -> kontak = $this -> loadDataSetting("hp");
+        $ds -> email = $this -> loadDataSetting("email");
+        $ds -> motto = $this -> loadDataSetting("motto");
+        return $ds;
     }
 
     public function deleteCashFlow($idEvent)

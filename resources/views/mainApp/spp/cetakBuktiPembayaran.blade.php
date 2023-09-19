@@ -8,7 +8,7 @@
 
 <div style="margin-top: 20px;font-size:12px">
     <strong>Informasi pembayaran SPP</strong><br />
-    <table class="table">
+    <table class="table" border="1">
         <thead>
             <tr>
                 <td>Id Pembayaran</td>
