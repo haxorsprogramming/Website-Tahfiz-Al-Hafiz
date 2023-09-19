@@ -16,6 +16,7 @@ use App\Http\Controllers\C_Cash_Flow;
 use App\Http\Controllers\C_Laporan_Keuangan;
 use App\Http\Controllers\C_Rekap_Absensi;
 use App\Http\Controllers\C_Setting;
+use App\Http\Controllers\C_Pendaftaran;
 
 Route::get('/', [C_Home::class, 'homePage']);
 
@@ -105,6 +106,10 @@ Route::group(['prefix' => 'app'], function (){
         Route::get('', [C_Rekap_Absensi::class, 'rekapAbsensiPage']);
         Route::get('set-rekap/{bulan}/{tahun}', [C_Rekap_Absensi::class, 'setRekapAbsensi']);
         Route::get('{id_santri}/{bulan}/{tahun}/cetak', [C_Rekap_Absensi::class, 'cetakRekapAbsensi']);
+    });
+    // pendaftaran santri
+    Route::group(['prefix' => 'pendaftaran'], function (){
+       Route::get('', [C_Pendaftaran::class, 'pendaftaranPage']);
     });
 
 });

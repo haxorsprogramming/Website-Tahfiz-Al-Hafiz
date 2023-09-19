@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
 use App\Http\Controllers\C_Helper;
@@ -13,10 +14,10 @@ class C_Laporan_Keuangan extends Controller
 
     public function __construct(C_Helper $helperCtr)
     {
-        $this -> helperCtr = $helperCtr;
-        $this -> bulan = date("m");
-        $this -> tahun = date("Y");
-        $this -> td = cal_days_in_month(CAL_GREGORIAN, $this -> bulan, $this -> tahun); 
+        $this->helperCtr = $helperCtr;
+        $this->bulan = date("m");
+        $this->tahun = date("Y");
+        $this->td = Carbon::createFromDate(date("Y"), date("m"));
     }
 
     public function laporanKeuanganPage(Request $request, $tahun)

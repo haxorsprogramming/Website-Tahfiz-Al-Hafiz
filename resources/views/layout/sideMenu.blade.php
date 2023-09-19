@@ -16,6 +16,7 @@
                 <a href="javascript:void(0)" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-newspaper"></i> <span>Data Master</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="javascript:void(0)" @click="santriAtc()">Santri</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)" @click="pendaftaranSantriAtc()">Pendaftaran Santri</a></li>
                     <li><a class="nav-link" href="javascript:void(0)" @click="pengurusAtc()">Pengurus</a></li>
                 </ul>
             </li>

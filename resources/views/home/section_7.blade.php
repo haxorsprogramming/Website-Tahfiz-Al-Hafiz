@@ -129,7 +129,7 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="mb-4">
                     <a href="{{ url('/') }}">
-                        <img src="https://s3.jagoanstorage.com/nadhamedia/project_asset/Logo_Project/al-hafiz.png" alt="" class="logo-light" height="62" />
+                        <img src="https://nos.jkt-1.neo.id/aditiastorage/asset/logo/logo-tahfiz-al-haziq.png" alt="" class="logo-light" height="62" />
                     </a>
                 </div>
                 <p class="footer-desc f-15">{{ $setting -> namaTahfiz }}, {{ $setting -> motto  }}.</p>
@@ -139,16 +139,16 @@
                     <div class="col-md-4">
                         <h5 class="footer-list-title f-18 font-weight-normal mb-3">Mitra</h5>
                         <ul class="list-unstyled company-sub-menu">
-                            <li><a href="">Haura Grafika</a></li>
-                            <li><a href="">Nadhamedia</a></li>
+                            <li><a href="https://haura-grafika.com">Haura Grafika</a></li>
+                            <li><a href="https://almira-tech.com">Almira Tech</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <h5 class="footer-list-title f-18 font-weight-normal mb-3">Tahfiz Al-Haziq</h5>
                         <ul class="list-unstyled company-sub-menu">
-                            <li><a href="">Tentang</a></li>
-                            <li><a href="">Kegiatan</a></li>
-                            <li><a href="">Donasi</a></li>
+                            <li><a href="#">Tentang</a></li>
+                            <li><a href="#">Kegiatan</a></li>
+                            <li><a href="#">Donasi</a></li>
                         </ul>
                     </div>
 
@@ -158,7 +158,7 @@
         <div class="row">
             <div class="col-lg-12 mt-5">
                 <div class="text-center footer-alt my-3">
-                    <p class="mb-0 f-15">{{ env('TAHUN') }} © Tahfiz Al-Haziq</p>
+                    <p class="mb-0 f-15">{{ now()->year }} © Tahfiz Al-Haziq</p>
                 </div>
             </div>
         </div>

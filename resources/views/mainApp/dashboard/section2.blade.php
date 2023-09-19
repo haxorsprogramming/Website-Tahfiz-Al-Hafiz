@@ -6,8 +6,8 @@
             </div>
             <div class="card-body">
                 <div class="owl-carousel owl-theme slider" id="slider1">
-                    <?php for($x=1; $x <= 4; $x++){ ?> 
-                        <div><img alt="image" src="{{ asset('/ladun/base/img/kegiatan/'.$x.'.jpg') }}"></div>
+                    <?php for($x=1; $x <= 4; $x++){ ?>
+                        <div><img alt="Kegiatan siswa" style="border-radius: 12px;border:#b2bec3 solid 2px;" src="{{ asset('/ladun/base/img/kegiatan/'.$x.'.jpg') }}"></div>
                     <?php } ?>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                         <div class="media-body">
                             <div class="badge badge-pill badge-success mb-1 float-right">Hadir</div>
                             <h6 class="media-title"><a href="javascript:void(0)">{{ $absen -> santriData -> nama }}</a></h6>
-                            <div class="text-small text-muted">{{ $absen -> getKafilahData($absen -> id_santri) }}<div class="bullet"></div> 
+                            <div class="text-small text-muted">{{ $absen -> getKafilahData($absen -> id_santri) }}<div class="bullet"></div>
                             <span class="text-primary">{{ $absen -> created_at }}</span></div>
                         </div>
                     </li>
@@ -40,7 +40,6 @@
 <script>
     $("#slider1,#slider2").owlCarousel({
         items: 1,
-        nav: true,
-        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>']
+        nav: false,
     });
 </script>

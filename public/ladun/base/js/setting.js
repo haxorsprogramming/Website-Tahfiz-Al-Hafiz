@@ -33,7 +33,7 @@ function updateProsesAtc()
         pesanUmumApp('warning', 'Isi field !!!', 'Harap isi feild !!!');
     }else{
         let ds = {'nama':nama, 'nilai':nilai}
-        confirmQuest('info', 'Konfirmasi', 'Tambah data santri ...?', function (x) {updateConfirm(ds)});
+        confirmQuest('info', 'Konfirmasi', 'Edit setting data website ...?', function (x) {updateConfirm(ds)});
     }
 
 }

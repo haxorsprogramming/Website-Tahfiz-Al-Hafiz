@@ -3,6 +3,7 @@ var tahun = d.getFullYear();
 
 var rDashboard = server + "app/dashboard";
 var rSantri = server + "app/santri";
+var rPendaftaran = server + "app/pendaftaran";
 var rPengurus = server + "app/pengurus";
 var rPembayaranSpp = server + "app/pembayaran-spp";
 var rAbsensi = server + "app/absensi";
@@ -13,6 +14,7 @@ var rCashFlow = server + "app/cash-flow";
 var rLaporanKeuangan = server + "app/laporan-keuangan/"+tahun;
 var rRekapAbsensi = server + "app/rekap-absensi";
 var rSetting = server + "app/setting";
+
 // vue object
 var menuApp = new Vue({
     el : '#divMenu',
@@ -27,6 +29,10 @@ var menuApp = new Vue({
         santriAtc : function()
         {
             load_page(rSantri, "Santri");
+        },
+        pendaftaranSantriAtc : function ()
+        {
+            load_page(rPendaftaran, "Pendaftaran Santri");
         },
         pengurusAtc : function()
         {

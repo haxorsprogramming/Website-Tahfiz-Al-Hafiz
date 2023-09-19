@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/jqvmap.min.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/summernote-bs4.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://s3.jagoanstorage.com/nadhamedia/lib_cdn/owlcarousel2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://nos.jkt-1.neo.id/aditiastorage/asset/web_lib/owlcarousel2/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/dashboard/stisla/css/datatables.min.css">
     <link rel="stylesheet" href="{{ asset('ladun') }}/iziToast/iziToast.min.css">
     <!-- Template CSS -->

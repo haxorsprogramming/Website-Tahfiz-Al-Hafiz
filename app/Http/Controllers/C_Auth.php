@@ -75,8 +75,9 @@ class C_Auth extends Controller
 
     public function cetakBuktiPendaftaran(Request $request, $token)
     {
+        $dataSetting = $this -> helperCtr -> getSetting();
         $dPendaftaran = M_Pendaftaran::where('id_pendaftaran', $token) -> first();
-        $dr = ['judul' => 'Bukti Pendaftaran', 'dp' => $dPendaftaran];
+        $dr = ['judul' => 'Bukti Pendaftaran', 'dp' => $dPendaftaran, 'dataSetting'=>$dataSetting];
         $pdf = PDF::loadview('auth.cetakBuktiPendaftaran', $dr);
         $pdf -> setPaper('A4', 'portait');
         return $pdf -> stream();
