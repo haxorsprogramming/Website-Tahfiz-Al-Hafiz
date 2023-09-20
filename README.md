@@ -74,6 +74,12 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 - Pada saat migrate & seeder, data santri akan di generate secara dummy sebanyak 20 records, jika tidak ingin melakukan proses dummy generate silahkan komentar/disable code di file
 <code>database/seeders/DatabaseSeeder.php</code> pada baris ke 40
 
+<h4>Instalasi dengan docker</h4>
+
+- Jika tidak ingin melakukan konfigurasi secara manual, anda dapat menggunakan docker untuk mendeploy aplikasi ini
+
+- Silahkan jalankan perintah <code>docker compose build up -d</code> pada server anda
+
 <h4>Informasi Tambahan</h4>
 
 - Aplikasi ini merupakan hibah dari komunitas Haxorsprogramming untuk salah satu Tahfiz Qur'an di kota medan

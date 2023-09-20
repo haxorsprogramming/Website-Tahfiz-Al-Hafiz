@@ -111,6 +111,7 @@ Route::group(['prefix' => 'app'], function (){
     Route::group(['prefix' => 'pendaftaran'], function (){
        Route::get('', [C_Pendaftaran::class, 'pendaftaranPage']);
        Route::post('/get-data', [C_Pendaftaran::class, 'getDataPendaftaran']);
+       Route::post('/action', [C_Pendaftaran::class, 'actionPendaftaran']);
     });
 
 });

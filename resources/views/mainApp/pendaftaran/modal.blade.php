@@ -15,6 +15,7 @@
                             <div class="form-group col-md-6">
                                 <label>Kode Pendaftaran</label><br/>
                                 <span id="txtKdPendaftaran"></span>
+                                <input type="hidden" id="txtKodePendaftaranHidden">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Alamat</label><br/>
@@ -55,7 +56,7 @@
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Kafilah santri yang akan diterima</label>
-                                <select class="form-control" id="txtKafilahEdit">
+                                <select class="form-control" id="txtKafilah">
                                     @foreach($dataKafilah as $kaf)
                                         <option value="{{ $kaf -> id_kafilah  }}">{{ $kaf -> nama }}</option>
                                     @endforeach
@@ -73,7 +74,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-12"></div>
                 </div>
                 <div>
-                    <a class="btn btn-rounded btn-primary" href="javascript:void(0)">
+                    <a class="btn btn-rounded btn-primary" href="javascript:void(0)" onclick="submitAction('approve')">
                         Setujui pendaftaran santri
                     </a>
                     <a class="btn btn-rounded btn-warning" href="javascript:void(0)">

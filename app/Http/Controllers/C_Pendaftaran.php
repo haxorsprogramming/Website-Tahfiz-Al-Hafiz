@@ -32,6 +32,17 @@ class C_Pendaftaran extends Controller
         return \Response::json($dr);
     }
 
+    public function actionPendaftaran(Request $request)
+    {
+        $kdPendaftaran = $request->kd;
+        $dr = [
+            'success' => true,
+            'data' => '',
+            'action' => $request->action
+        ];
+        return \Response::json($dr);
+    }
+
     function createIdSantri():string
     {
         $dSantri = M_Santri::orderBy('id', 'DESC')->first();
