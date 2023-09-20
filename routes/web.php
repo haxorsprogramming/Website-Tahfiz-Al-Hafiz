@@ -110,9 +110,9 @@ Route::group(['prefix' => 'app'], function (){
     // pendaftaran santri
     Route::group(['prefix' => 'pendaftaran'], function (){
        Route::get('', [C_Pendaftaran::class, 'pendaftaranPage']);
+       Route::post('/get-data', [C_Pendaftaran::class, 'getDataPendaftaran']);
     });
 
 });
 
-// rekap absensi
 

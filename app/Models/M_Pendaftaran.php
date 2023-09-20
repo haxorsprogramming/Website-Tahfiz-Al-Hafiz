@@ -38,6 +38,8 @@ class M_Pendaftaran extends Model
     {
         if($code == null){
             return "Belum Diterima";
+        }else if($code == "DITOLAK"){
+            return "Ditolak";
         }else{
             return "Sudah Diterima";
         }
