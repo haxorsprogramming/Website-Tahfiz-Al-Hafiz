@@ -50,6 +50,7 @@
                                 <div class="form-group app-label">
                                     <label for="email">Alamat Email</label>
                                     <input id="txtEmail" type="email" class="form-control" placeholder="Email calon santri/orang tua">
+                                    <small><i>(Bukti pendaftaran akan dikirim ke email)</i></small>
                                 </div>
                             </div>
                             <div class="col-lg-6">

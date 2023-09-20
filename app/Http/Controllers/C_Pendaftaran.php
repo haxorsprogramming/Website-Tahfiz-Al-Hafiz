@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\M_Pendaftaran;
+use App\Models\M_Kafilah;
 
 class C_Pendaftaran extends Controller
 {
@@ -14,6 +16,8 @@ class C_Pendaftaran extends Controller
 
     public function pendaftaranPage()
     {
-        return view('mainApp.pendaftaran.pendaftaranPage');
+        $dataPendaftaran = M_Pendaftaran::all();
+        $dr = ['dataPendaftaran' => $dataPendaftaran, 'dataKafilah' => M_Kafilah::all()];
+        return view('mainApp.pendaftaran.pendaftaranPage', $dr);
     }
 }

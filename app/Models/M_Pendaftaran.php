@@ -25,4 +25,22 @@ class M_Pendaftaran extends Model
         'nama_ortu'
     ];
 
+    public function ConvertJk($code): string
+    {
+       if($code == "L"){
+           return "Laki laki";
+       }else{
+           return "Perempuan";
+       }
+    }
+
+    public function StatusDiterima($code):string
+    {
+        if($code == null){
+            return "Belum Diterima";
+        }else{
+            return "Sudah Diterima";
+        }
+    }
+
 }

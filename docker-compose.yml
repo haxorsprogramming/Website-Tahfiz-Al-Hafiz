@@ -16,7 +16,7 @@ services:
         environment:
             MYSQL_ALLOW_EMPTY_PASSWORD: yes
         volumes:
-            - /Users/aditiadarmanasution/Documents/SqlDocker/path_1:/var/lib/mysql
+            - ${PATH_DB_LOCAL}:/var/lib/mysql
     nginx:
         image: nginx:alpine
         ports:

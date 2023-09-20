@@ -88,7 +88,6 @@ $("#tblSantri").dataTable();
 
 function  editConfirm(ds)
 {
-
     axios.post(rProcessUpdateSantri, ds).then(function (res){
         $('#modalEditSantri').modal("hide");
         setTimeout(function (){
