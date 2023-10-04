@@ -13,30 +13,30 @@ class C_Helper extends Controller
     {
         $tokenFlow = Str::uuid();
         $cf = new M_Cash_Flow();
-        $cf -> token_flow = $tokenFlow;
-        $cf -> flow = $flow;
-        $cf -> id_event = $idEvent;
-        $cf -> type = $type;
-        $cf -> total = $total;
-        $cf -> active = "1";
-        $cf -> save();
+        $cf->token_flow = $tokenFlow;
+        $cf->flow = $flow;
+        $cf->id_event = $idEvent;
+        $cf->type = $type;
+        $cf->total = $total;
+        $cf->active = "1";
+        $cf->save();
     }
 
     public function getSetting()
     {
         $ds = new CH_Data_Setting();
-        $ds -> namaTahfiz = $this -> loadDataSetting("nama");
-        $ds -> namaBank = $this -> loadDataSetting("bank");
-        $ds -> alamat = $this -> loadDataSetting("alamat");
-        $ds -> kontak = $this -> loadDataSetting("hp");
-        $ds -> email = $this -> loadDataSetting("email");
-        $ds -> motto = $this -> loadDataSetting("motto");
+        $ds->namaTahfiz = $this->loadDataSetting("nama");
+        $ds->namaBank = $this->loadDataSetting("bank");
+        $ds->alamat = $this->loadDataSetting("alamat");
+        $ds->kontak = $this->loadDataSetting("hp");
+        $ds->email = $this->loadDataSetting("email");
+        $ds->motto = $this->loadDataSetting("motto");
         return $ds;
     }
 
     public function deleteCashFlow($idEvent)
     {
-        M_Cash_Flow::where('id_event', $idEvent) -> delete();
+        M_Cash_Flow::where('id_event', $idEvent)->delete();
     }
     public function getFlowBulan($flow, $bulan, $tahun)
     {
