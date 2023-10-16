@@ -63,7 +63,10 @@
                         <a href="#testimoni" class="nav-link">Testimoni</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Donasi</a>
+                        <a href="#donasi" class="nav-link">Donasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#pembayaranspp" class="nav-link">Pembayaran SPP</a>
                     </li>
                     <li class="nav-item">
                         <a href="#daftar" class="nav-link">Pendaftaran</a>

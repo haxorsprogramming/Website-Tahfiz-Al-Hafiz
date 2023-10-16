@@ -94,6 +94,29 @@ class C_Santri extends Controller
         }
     }
 
+    public function checkDataSantriSetorSpp(Request  $request)
+    {
+        $tSantri = M_Santri::where('no_hp', $request->hp)->count();
+
+        if($tSantri < 1){
+            $dr = [
+                'success' => false
+            ];
+        }else{
+            $dataSantri = M_Santri::where('no_hp', $request->hp)->first();
+
+            $dr = [
+                'success' => true,
+                'nama_santri' => $dataSantri->nama,
+                'id_santri' => $dataSantri->id_santri,
+                'nama_orang_tua' => $dataSantri->nama_ortu,
+                'kelas' => $dataSantri->kelas
+            ];
+        }
+
+
+        return \Response::json($dr);
+    }
 
     function processDeleteSantri(Request $request)
     {

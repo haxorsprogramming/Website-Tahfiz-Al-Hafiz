@@ -20,6 +20,8 @@ use App\Http\Controllers\C_Pendaftaran;
 
 Route::get('/', [C_Home::class, 'homePage']);
 
+Route::post('/check-data-santri', [C_Santri::class, 'checkDataSantriSetorSpp']);
+
 // auth group
 Route::group(['prefix' => 'auth'], function (){
     // login

@@ -1,4 +1,36 @@
 var rProsesDaftar = server + "auth/daftar/proses";
+var rCheckDataSantri = server + "check-data-santri";
+var statusBtnSetor = true;
+function checkDataSantriAtc()
+{
+    let nHandphone = document.querySelector("#txtNomorHandphoneSantriSetorSpp").value;
+
+    if(nHandphone.length === 0){
+        pesanUmumApp('warning', '300', 'Harap masukkan nomor handphone ...');
+    }else{
+        if(statusBtnSetor === true){
+            statusBtnSetor = false;
+            let ds = {'hp':nHandphone}
+            axios.post(rCheckDataSantri, ds).then(function (res){
+                if(res.data.success === true){
+                    pesanUmumApp('success', '400', 'Data santri ditemukan ...');
+                    $("#divBothSantriData").show();
+                    document.querySelector('#rNamaSantri').innerHTML = res.data.id_santri;
+                    document.querySelector('#rIdSantri').innerHTML = res.data.nama_santri;
+                    document.querySelector('#rNamaOrangTua').innerHTML = res.data.nama_orang_tua;
+                    document.querySelector('#rKelas').innerHTML = res.data.kelas;
+                }else{
+                    pesanUmumApp('error', '200', 'Data santri tidak ditemukan!!!, periksa kembali nomor handphone atau hubungi pengurus tahfiz ...');
+                    $("#divBothSantriData").hide();
+                }
+                statusBtnSetor = true;
+            });
+        }else{
+            pesanUmumApp('warning', '300', 'Proses pengecekan sedang berlangsung, harap menunggu ...');
+        }
+    }
+
+}
 
 function prosesPendaftaran() {
     let isiForm = document.getElementsByClassName("form-control");
@@ -11,7 +43,7 @@ function prosesPendaftaran() {
         }
     }
 
-    if (statusForm == false) {
+    if (statusForm === false) {
         pesanUmumApp("warning", "Lengkapi form", "Harap lengkapi form");
     } else {
         Swal.fire({

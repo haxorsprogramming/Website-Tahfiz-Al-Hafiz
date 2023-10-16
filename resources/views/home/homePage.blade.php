@@ -5,5 +5,6 @@
 @include('home.section_5')
 @include('home.section_6')
 @include('home.section_2')
+@include('home.section_8')
 @include('home.section_7')
 @include('layout.footerHome')
