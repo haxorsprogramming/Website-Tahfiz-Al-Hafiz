@@ -11,7 +11,7 @@ class C_Cash_Flow extends Controller
     public function cashFlow()
     {
         $dataCashFlow = M_Cash_Flow::all();
-        $dr = ['dataCashFlow' => $dataCashFlow];
+        $dr = ['dataCashFlow'=>$dataCashFlow];
         return view('mainApp.cashFlow.cashFlowPage', $dr);
     }
 }

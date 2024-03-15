@@ -22,7 +22,10 @@ class C_Absensi extends Controller
     {
         $dataSantri = M_Santri::all();
         $dataAbsensi = M_Absensi::whereRaw('MONTH(created_at)='.$this->bulan)->whereRaw('DAY(created_at)='.$this->tanggal)->whereRaw('YEAR(created_at)='.$this->tahun)->get();
-        $dr = ['dataSantri' => $dataSantri, 'dataAbsensi' => $dataAbsensi];
+        $dr = [
+            'dataSantri' => $dataSantri,
+            'dataAbsensi' => $dataAbsensi,
+        ];
         return view('mainApp.absensi.absensiPage', $dr);
     }
     public function prosesAbsensi(Request $request)
@@ -35,24 +38,24 @@ class C_Absensi extends Controller
             $ab = new M_Absensi();
             $ab -> token_absensi = $tokenAbsensi;
             $ab -> id_santri = $idSantri;
-            $ab -> tanggal = $this -> tanggal;
-            $ab -> bulan = $this -> bulan;
-            $ab -> tahun = $this -> tahun;
+            $ab -> tanggal = $this->tanggal;
+            $ab -> bulan = $this->bulan;
+            $ab -> tahun = $this->tahun;
             $ab -> active = "1";
             $ab -> save();
             $status = "INSERT";
         }else{
-            M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $this -> tanggal) -> where('bulan', $this -> bulan) -> where('tahun', $this -> tahun) -> delete();
+            M_Absensi::where('id_santri', $idSantri)->where('tanggal', $this->tanggal)->where('bulan', $this->bulan)->where('tahun', $this->tahun)->delete();
             $status = "DELETE";
         }
 
-        $dr = ['status' => $status];
+        $dr = ['status'=>$status];
         return \Response::json($dr);
     }
 
     function prosesHapusAbsensi(Request $request)
     {
-        M_Absensi::where('token_absensi', $request -> token) -> delete();
+        M_Absensi::where('token_absensi', $request->token)->delete();
         $dr = ['status' => 'sukses'];
         return \Response::json($dr);
     }

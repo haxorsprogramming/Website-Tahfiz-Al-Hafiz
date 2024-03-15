@@ -26,8 +26,8 @@ class C_Laporan_Keuangan extends Controller
         for($x = 1; $x <= 12; $x++){
             $nested = array();
             $bulanNama = date("F", mktime(0, 0, 0, $x, 10));
-            $dataFlowMasuk = $this -> helperCtr -> getFlowBulan("MASUK", $x, $tahun);
-            $dataFlowKeluar = $this -> helperCtr -> getFlowBulan("KELUAR", $x, $tahun);
+            $dataFlowMasuk = $this->helperCtr->getFlowBulan("MASUK", $x, $tahun);
+            $dataFlowKeluar = $this->helperCtr->getFlowBulan("KELUAR", $x, $tahun);
             $nested['namaBulan'] = $bulanNama;
             $nested['bulan'] = $x;
             $nested['flowMasuk'] = $dataFlowMasuk;
@@ -36,22 +36,26 @@ class C_Laporan_Keuangan extends Controller
             $dataLaporan[] = $nested;
         }
         $tahunList = array('2022', '2023', '2024', '2025', '2026', '2027');
-        $dr = ['dataLaporan' => $dataLaporan, 'tahun' => $tahun, 'tahunList' => $tahunList];
+        $dr = [
+            'dataLaporan'=>$dataLaporan,
+            'tahun'=>$tahun,
+            'tahunList'=>$tahunList,
+        ];
         return view('mainApp.laporanKeuangan.laporanKeuanganPage', $dr);
     }
     public function cetakLaporanBulanan(Request $request, $bulan, $tahun)
     {
         $dataSetting = $this->helperCtr->getSetting();
-        $dataFlow = M_Cash_Flow::whereRaw('MONTH(created_at) = '.$bulan) -> whereRaw('YEAR(created_at) = '. $tahun) -> get();
-        $pembukuan['pemasukan'] = $this -> helperCtr -> getFlowBulan("MASUK", $bulan, $tahun);
-        $pembukuan['pengeluaran'] = $this -> helperCtr -> getFlowBulan("KELUAR", $bulan, $tahun);
-        $pembukuan['selisih'] = $this -> helperCtr -> getSelisihBulan($bulan, $tahun);
+        $dataFlow = M_Cash_Flow::whereRaw('MONTH(created_at) = '.$bulan)->whereRaw('YEAR(created_at) = '. $tahun)->get();
+        $pembukuan['pemasukan'] = $this->helperCtr->getFlowBulan("MASUK", $bulan, $tahun);
+        $pembukuan['pengeluaran'] = $this->helperCtr->getFlowBulan("KELUAR", $bulan, $tahun);
+        $pembukuan['selisih'] = $this->helperCtr->getSelisihBulan($bulan, $tahun);
         $dr = [
-            'judul' => 'Laporan Keuangan',
-            'dataFlow' => $dataFlow,
-            'pembukuan' => $pembukuan,
-            'bulan' => $bulan,
-            'tahun' => $tahun,
+            'judul'=>'Laporan Keuangan',
+            'dataFlow'=>$dataFlow,
+            'pembukuan'=>$pembukuan,
+            'bulan'=>$bulan,
+            'tahun'=>$tahun,
             'dataSetting' => $dataSetting,
             ];
         $pdf = PDF::loadview('mainApp.laporanKeuangan.cetakLaporanBulanan', $dr);

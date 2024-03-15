@@ -18,16 +18,16 @@ class C_Pendaftaran extends Controller
     public function pendaftaranPage()
     {
         $dataPendaftaran = M_Pendaftaran::all();
-        $dr = ['dataPendaftaran' => $dataPendaftaran, 'dataKafilah' => M_Kafilah::all()];
-        return view('mainApp.pendaftaran.pendaftaranPage', $dr);
+        $dr = ["dataPendaftaran"=>$dataPendaftaran, "dataKafilah"=>M_Kafilah::all()];
+        return view("mainApp.pendaftaran.pendaftaranPage", $dr);
     }
 
     public function getDataPendaftaran(Request $request)
     {
-        $fData = M_Pendaftaran::where('id_pendaftaran', $request->kd)->first();
+        $fData = M_Pendaftaran::where("id_pendaftaran", $request->kd)->first();
         $dr = [
-            'success' => true,
-            'data' => $fData
+            "success"=>true,
+            "data"=>$fData
         ];
         return \Response::json($dr);
     }
@@ -36,16 +36,16 @@ class C_Pendaftaran extends Controller
     {
         $kdPendaftaran = $request->kd;
         $dr = [
-            'success' => true,
-            'data' => '',
-            'action' => $request->action
+            "success"=>true,
+            "data"=>"",
+            "action"=>$request->action
         ];
         return \Response::json($dr);
     }
 
     function createIdSantri():string
     {
-        $dSantri = M_Santri::orderBy('id', 'DESC')->first();
+        $dSantri = M_Santri::orderBy("id", "DESC")->first();
         $lastIdSantri = $dSantri->id_santri;
 
         $exId = explode("-", $lastIdSantri);

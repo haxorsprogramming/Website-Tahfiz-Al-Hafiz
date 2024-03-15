@@ -14,13 +14,13 @@ class C_Donasi extends Controller
 
     public function __construct(C_Helper $helperCtr)
     {
-        $this -> helperCtr = $helperCtr;
+        $this->helperCtr = $helperCtr;
     }
 
     public function donasiPage()
     {
         $dataDonasi = M_Donasi::all();
-        $dr = ['dataDonasi' => $dataDonasi];
+        $dr = ['dataDonasi'=>$dataDonasi];
         return view('mainApp.donasi.donasiPage', $dr);
     }
 
@@ -30,42 +30,42 @@ class C_Donasi extends Controller
         // save tabel donasi
         $token = Str::uuid();
         $donasi = new M_Donasi();
-        $donasi -> token = $token;
-        $donasi -> nama_donatur = $request -> nama;
-        $donasi -> detail = $request -> detail;
-        $donasi -> tipe = $request -> tipe;
-        $donasi -> tanggal_donasi = $request -> tgl;
-        $donasi -> nominal = $request -> nominal;
-        $donasi -> active = "1";
-        $donasi -> save();
+        $donasi->token = $token;
+        $donasi->nama_donatur = $request->nama;
+        $donasi->detail = $request->detail;
+        $donasi->tipe = $request->tipe;
+        $donasi->tanggal_donasi = $request->tgl;
+        $donasi->nominal = $request->nominal;
+        $donasi->active = "1";
+        $donasi->save();
         // create cash flow
-        $this -> helperCtr -> createCashFlow($token, "MASUK", "DONASI", $request -> nominal);
-        $dr = ['status' => 'sukses'];
+        $this->helperCtr->createCashFlow($token, "MASUK", "DONASI", $request->nominal);
+        $dr = ['status'=>'sukses'];
         return \Response::json($dr);
     }
 
     public function prosesHapusDonasi(Request $request)
     {
-        $token = $request -> token;
-        M_Donasi::where('token', $token) -> delete();
+        $token = $request->token;
+        M_Donasi::where('token', $token)->delete();
         // hapus cash flow
-        $this -> helperCtr -> deleteCashFlow($token);
-        $dr = ['status' => 'sukses'];
+        $this->helperCtr->deleteCashFlow($token);
+        $dr = ['status'=>'sukses'];
         return \Response::json($dr);
     }
 
     public function cetakPenerimaanDonasi(Request $request, $token)
     {
-        $dataDonasi = M_Donasi::where('token', $token) -> first();
-        $dataSetting = $this -> helperCtr -> getSetting();
+        $dataDonasi = M_Donasi::where('token', $token)->first();
+        $dataSetting = $this->helperCtr->getSetting();
         $dr = [
-            'judul' => 'Penerimaan Donasi',
-            'dataDonasi' => $dataDonasi,
-            'dataSetting' => $dataSetting
+            'judul'=>'Penerimaan Donasi',
+            'dataDonasi'=>$dataDonasi,
+            'dataSetting'=>$dataSetting
         ];
         $pdf = PDF::loadview('mainApp.donasi.cetakBuktiDonasi', $dr);
-        $pdf -> setPaper('A4', 'portait');
-        return $pdf -> stream();
+        $pdf->setPaper('A4', 'portait');
+        return $pdf->stream();
     }
 
 }
