@@ -41,11 +41,19 @@ class C_Laporan_Keuangan extends Controller
     }
     public function cetakLaporanBulanan(Request $request, $bulan, $tahun)
     {
+        $dataSetting = $this->helperCtr->getSetting();
         $dataFlow = M_Cash_Flow::whereRaw('MONTH(created_at) = '.$bulan) -> whereRaw('YEAR(created_at) = '. $tahun) -> get();
         $pembukuan['pemasukan'] = $this -> helperCtr -> getFlowBulan("MASUK", $bulan, $tahun);
         $pembukuan['pengeluaran'] = $this -> helperCtr -> getFlowBulan("KELUAR", $bulan, $tahun);
         $pembukuan['selisih'] = $this -> helperCtr -> getSelisihBulan($bulan, $tahun);
-        $dr = ['judul' => 'Laporan Keuangan', 'dataFlow' => $dataFlow, 'pembukuan' => $pembukuan, 'bulan' => $bulan, 'tahun' => $tahun];
+        $dr = [
+            'judul' => 'Laporan Keuangan',
+            'dataFlow' => $dataFlow,
+            'pembukuan' => $pembukuan,
+            'bulan' => $bulan,
+            'tahun' => $tahun,
+            'dataSetting' => $dataSetting,
+            ];
         $pdf = PDF::loadview('mainApp.laporanKeuangan.cetakLaporanBulanan', $dr);
         $pdf -> setPaper('A4', 'portait');
         return $pdf -> stream();
