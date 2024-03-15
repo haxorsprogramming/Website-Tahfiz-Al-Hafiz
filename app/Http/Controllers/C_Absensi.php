@@ -13,24 +13,24 @@ class C_Absensi extends Controller
 
     public function __construct()
     {
-        $this -> tanggal = date("d");
-        $this -> bulan = date("m");
-        $this -> tahun = date("Y");
+        $this->tanggal = date("d");
+        $this->bulan = date("m");
+        $this->tahun = date("Y");
     }
 
     public function absensiPage()
     {
         $dataSantri = M_Santri::all();
-        $dataAbsensi = M_Absensi::whereRaw('MONTH(created_at)='.$this -> bulan) -> whereRaw('DAY(created_at)='.$this -> tanggal) -> whereRaw('YEAR(created_at)='.$this -> tahun) -> get();
+        $dataAbsensi = M_Absensi::whereRaw('MONTH(created_at)='.$this->bulan)->whereRaw('DAY(created_at)='.$this->tanggal)->whereRaw('YEAR(created_at)='.$this->tahun)->get();
         $dr = ['dataSantri' => $dataSantri, 'dataAbsensi' => $dataAbsensi];
         return view('mainApp.absensi.absensiPage', $dr);
     }
     public function prosesAbsensi(Request $request)
     {
         $tokenAbsensi = Str::uuid();
-        $idSantri = $request -> idSantri;
-        // cek apakah sudah absensi 
-        $cekAbsensi = M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $this -> tanggal) -> where('bulan', $this -> bulan) -> where('tahun', $this -> tahun) -> count();
+        $idSantri = $request->idSantri;
+        // cek apakah sudah absensi
+        $cekAbsensi = M_Absensi::where('id_santri', $idSantri)->where('tanggal', $this->tanggal)->where('bulan', $this->bulan)->where('tahun', $this->tahun)->count();
         if($cekAbsensi < 1){
             $ab = new M_Absensi();
             $ab -> token_absensi = $tokenAbsensi;
@@ -45,7 +45,7 @@ class C_Absensi extends Controller
             M_Absensi::where('id_santri', $idSantri) -> where('tanggal', $this -> tanggal) -> where('bulan', $this -> bulan) -> where('tahun', $this -> tahun) -> delete();
             $status = "DELETE";
         }
-        
+
         $dr = ['status' => $status];
         return \Response::json($dr);
     }
