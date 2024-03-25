@@ -1,23 +1,37 @@
-FROM php:8.1-fpm-alpine
+FROM php:8.0-fpm
 
-WORKDIR /var/www/laravel
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    zip \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN apk update && apk add --no-cache \
-    $PHPIZE_DEPS \
-    supervisor \
-    postgresql-dev \
-    libpng-dev \
-    libwebp-dev \
-    libjpeg-turbo-dev \
-    freetype-dev
+# Install PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql
 
-RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp && \
-    docker-php-ext-install -j$(nproc) pdo pdo_mysql pcntl gd
+# Set working directory
+WORKDIR /var/www/html
 
-RUN pecl install -o -f redis \
-    &&  rm -rf /tmp/pear \
-    &&  docker-php-ext-enable redis
-
-RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
-
+# Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Copy composer.lock and composer.json
+COPY composer.json composer.lock ./
+
+# Install project dependencies
+RUN composer install --no-scripts --no-autoloader
+
+# Copy existing application directory contents
+COPY . .
+
+# Generate autoload files
+RUN composer dump-autoload
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html/storage
+
+EXPOSE 9000
+
+CMD ["php-fpm"]
