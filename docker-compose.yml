@@ -30,7 +30,7 @@ services:
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - travellist
+      - alhaziq
 
   nginx:
     image: nginx:alpine
