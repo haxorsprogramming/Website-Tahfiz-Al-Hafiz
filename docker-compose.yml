@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.7"
 services:
   app:
     build:
@@ -6,18 +6,19 @@ services:
         user: sammy
         uid: 1000
       context: ./
-      dockerfile: Dockerfile
-    image: alhaziq
-    container_name: alhaziq-app
-    restart: unless-stopped
+      dockerfile: Dockerfile.dev
     working_dir: /var/www/
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www
     networks:
-      - alhaziq
+      - lahmi
 
   db:
-    image: mysql:8.0
-    container_name: alhaziq-db
-    restart: unless-stopped
+    image: mysql:5.7
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
@@ -26,22 +27,31 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+      - dbdata:/var/lib/mysql
+      - ./docker-compose/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./docker-compose/mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - 3307:3306
     networks:
-      - alhaziq
+      - lahmi
 
   nginx:
     image: nginx:alpine
-    container_name: alhaziq-nginx
-    restart: unless-stopped
     ports:
-      - 8000:80
+      - 8005:80
+    depends_on:
+      - db
+      - app
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - alhaziq
+      - lahmi
 
 networks:
-  alhaziq:
+  lahmi:
     driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
