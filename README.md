@@ -76,9 +76,12 @@ yang dalam dalam lingkungan tahfiz qur'an, beberapa modul dasar seperti pendafta
 
 <h4>Instalasi dengan docker</h4>
 
-- Jika tidak ingin melakukan konfigurasi secara manual, anda dapat menggunakan docker untuk mendeploy aplikasi ini
-
-- Silahkan jalankan perintah <code>docker compose build up -d</code> pada server anda
+- Jika tidak ingin melakukan konfigurasi secara manual, anda dapat menggunakan docker untuk mendeploy aplikasi ini. File Dockerfile sudah disediakan
+<pre>
+sudo chgrp -R www-data /var/www/html/nama_project/
+sudo chmod -R 775 /var/www/html/nama_project/storage
+sudo chmod o+w ./storage/ -R
+</pre>
 
 <h4>Informasi Tambahan</h4>
 

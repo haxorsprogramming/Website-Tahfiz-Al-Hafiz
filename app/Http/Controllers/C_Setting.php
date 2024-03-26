@@ -16,17 +16,19 @@ class C_Setting extends Controller
     }
     public function getDataSetting(Request $request)
     {
-        $dataSetting = M_Setting::where('id', $request -> id) -> first();
-        $dr = ['status' => 'sukses', 'dataSetting' => $dataSetting];
+        $dataSetting = M_Setting::where("id", $request->id)->first();
+        $dr = [
+            "status"=>"sukses",
+            "dataSetting"=>$dataSetting
+        ];
         return \Response::json($dr);
     }
     public function prosesUpdateSetting(Request $request)
     {
-//        {'nama':nama, 'nilai':nilai}
-        M_Setting::where('nama_setting', $request -> nama) -> update([
-            'value' => $request -> nilai
+        M_Setting::where("nama_setting", $request->nama)->update([
+            "value" => $request->nilai
         ]);
-        $dr = ['status' => 'sukses'];
+        $dr = ["status"=>"sukses"];
         return \Response::json($dr);
     }
 }
