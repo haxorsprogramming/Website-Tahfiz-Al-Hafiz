@@ -5,14 +5,12 @@ WORKDIR /var/www/laravel
 RUN apk update && apk add --no-cache \
     $PHPIZE_DEPS \
     supervisor \
-    postgresql-dev \
-    mysqli \
-    pdo \
-    pdo_mysql \
     libpng-dev \
     libwebp-dev \
     libjpeg-turbo-dev \
     freetype-dev
+
+RUN docker-php-ext-install pdo pdo_mysql
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp && \
     docker-php-ext-install -j$(nproc) pdo pdo_pgsql pcntl gd
