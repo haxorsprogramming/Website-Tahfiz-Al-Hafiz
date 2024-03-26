@@ -6,6 +6,7 @@ RUN apk update && apk add --no-cache \
     $PHPIZE_DEPS \
     supervisor \
     postgresql-dev \
+    mysql-dev \
     libpng-dev \
     libwebp-dev \
     libjpeg-turbo-dev \
