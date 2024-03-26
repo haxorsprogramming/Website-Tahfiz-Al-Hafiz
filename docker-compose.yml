@@ -1,57 +1,46 @@
-version: "3.7"
+version: '3'
+
 services:
-  app:
-    build:
-      args:
-        user: sammy
-        uid: 1000
-      context: ./
-      dockerfile: Dockerfile
-    working_dir: /var/www/
-    environment:
-      - COMPOSER_MEMORY_LIMIT=-1
-    depends_on:
-      - db
-    volumes:
-      - ./:/var/www
-    networks:
-      - lahmi
+    app:
+        build:
+            context: .
+        volumes:
+            - .:/var/www/laravel
+            - ./supervisord.conf:/etc/supervisord.conf
+            - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+            - ./docker/logs:/var/log
+        depends_on:
+            - db
+            - redis
+    db:
+        image: postgres:alpine
+        ports:
+            - "5444:5432"
+        environment:
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_USER: ${DB_USERNAME}
+            POSTGRES_DB: ${DB_DATABASE}
+            TZ: 'GMT+2'
+            PGTZ: 'GMT+2'
+        volumes:
+            - db-volume:/var/lib/postgresql/data
+        shm_size: '2gb'
 
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
-    volumes:
-      - dbdata:/var/lib/mysql
-      - ./docker-compose/mysql/my.cnf:/etc/mysql/my.cnf
-      - ./docker-compose/mysql/init:/docker-entrypoint-initdb.d
-    ports:
-      - 3307:3306
-    networks:
-      - lahmi
-
-  nginx:
-    image: nginx:alpine
-    ports:
-      - 8005:80
-    depends_on:
-      - db
-      - app
-    volumes:
-      - ./:/var/www
-      - ./docker-compose/nginx:/etc/nginx/conf.d/
-    networks:
-      - lahmi
-
-networks:
-  lahmi:
-    driver: bridge
+    redis:
+        image: redis:alpine
+        ports:
+            - "6399:6379"
+    nginx:
+        image: nginx:alpine
+        ports:
+            - "8090:80"
+        volumes:
+            - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./docker/nginx/logs:/var/log/nginx
+            - .:/var/www/laravel
+        links:
+            - app
 
 volumes:
-  dbdata:
-    driver: local
+    db-volume:
