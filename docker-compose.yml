@@ -6,7 +6,7 @@ services:
             context: .
         volumes:
             - .:/var/www/laravel
-            - ./supervisord.conf:/etc/supervisord.conf
+            # - ./supervisord.conf:/etc/supervisord.conf
             - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
             - ./docker/logs:/var/log
         depends_on:
