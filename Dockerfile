@@ -1,35 +1,25 @@
-FROM php:8.2-fpm
+FROM php:8.1-fpm-alpine
 
-# Arguments defined in docker-compose.yml
-ARG user
-ARG uid
+WORKDIR /var/www/laravel
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
+RUN apk update && apk add --no-cache \
+    $PHPIZE_DEPS \
+    supervisor \
+    postgresql-dev \
     libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    libzip-dev \
-    -y mariadb-client
+    libwebp-dev \
+    libjpeg-turbo-dev \
+    freetype-dev
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp && \
+    docker-php-ext-install -j$(nproc) pdo pdo_pgsql pcntl gd
 
-# Install PHP extensions
-RUN docker-php-ext-install zip mysqli pdo_mysql mbstring exif pcntl bcmath gd && docker-php-ext-enable mysqli
+RUN pecl install -o -f redis \
+    &&  rm -rf /tmp/pear \
+    &&  docker-php-ext-enable redis
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
 
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Set working directory
-WORKDIR /var/www
-
-USER $user
+CMD ["/usr/bin/supervisord"]
