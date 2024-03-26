@@ -6,7 +6,7 @@ services:
         user: sammy
         uid: 1000
       context: ./
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     working_dir: /var/www/
     environment:
       - COMPOSER_MEMORY_LIMIT=-1
